@@ -9,7 +9,10 @@ const usersRouter = require("./routes/users");
 const app = express();
 
 //database connection
-const dbURI = mongoose
+const dbURI =
+  "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
