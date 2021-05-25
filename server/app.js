@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose')
 const userRoutes = require('./routes/users')
+const experienceRoutes = require ('./routes/experience')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -12,7 +13,7 @@ const usersRouter = require('./routes/users');
 const app = express();
 
 //database connection
-const dbURI = 
+const dbURI = "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose.connect(dbURI, useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then((result) => app.listen(3000)).catch((err) => console.log(err))
 
 app.use(logger('dev'));
