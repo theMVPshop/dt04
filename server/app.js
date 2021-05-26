@@ -1,24 +1,24 @@
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const mongoose = require("mongoose");
-const userRoutes = require("./routes/users");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose')
+const userRoutes = require('./routes/users')
 
+const experienceRouter = require ('./routes/experience')
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
 const app = express();
 
 //database connection
-const dbURI = mongoose
-  .connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then((result) => app.listen(3000))
-  .catch((err) => console.log(err));
+const dbURI = "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+mongoose.connect(dbURI, useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then((result) => app.listen(3000)).catch((err) => console.log(err))
 
-app.use(logger("dev"));
+app.use(logger('dev'));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
