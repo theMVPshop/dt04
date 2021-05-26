@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000
 
 //database connection Option 1
 
-const dbURI = "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const dbURI = "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/sample_restaurants?retryWrites=true&w=majority"
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then((result) => app.listen(port)).catch((err) => console.log(err))
 
 //database connection Option 2
