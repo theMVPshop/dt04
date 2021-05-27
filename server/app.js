@@ -13,6 +13,8 @@ const usersRouter = require("./routes/users");
 const app = express();
 const port = process.env.PORT || 3000
 
+app.use(logger("dev"));
+
 //database connection Option 1
 
 const dbURI = "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/test_db?retryWrites=true&w=majority"
@@ -41,8 +43,6 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useCre
 //   })
 //   .then((result) => app.listen(3000))
 //   .catch((err) => console.log(err));
-
-app.use(logger("dev"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
