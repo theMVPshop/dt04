@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./server/app.js"
+    "start": "node /server/app.js"
   },
   "dependencies": {
     "@react-pdf/renderer": "^2.0.13",
