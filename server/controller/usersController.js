@@ -24,7 +24,7 @@ module.exports.signup_get = async (req, res) => {
   res.render("signup");
 };
 
-module.exports.signup_post = (req, res) => {
+module.exports.signup_post = async (req, res) => {
   const { email, password } = req.body
 
   try {
