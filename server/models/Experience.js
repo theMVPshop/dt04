@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const experienceSchema = new  mongoose.experienceSchema({
+const experienceSchema = new  mongoose.Schema({
     company: {
         type: String,
         required: [true, 'Please enter Company Name'],
