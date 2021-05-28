@@ -7,7 +7,7 @@ const Navigation =()=> {
    
     return(
         
-<Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+<Navbar expand="lg" sticky="top">
 
 <Navbar.Brand href="/" className="App-logo">Medical</Navbar.Brand>
     <Navbar.Toggle aria-controls='responsive-navbar-nav'/>

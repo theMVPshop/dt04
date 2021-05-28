@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Navigation from "./Navigation";
 
 
  function Login() {
@@ -16,8 +17,13 @@ import Button from "react-bootstrap/Button";
     }
   
     return (
-      <div className="Login">
+
+        <div>
+        <Navigation/>
+        
+        <div className="Login" >
         <Form onSubmit={handleSubmit}>
+            Sign In
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>
             <Form.Control
@@ -39,6 +45,7 @@ import Button from "react-bootstrap/Button";
             Login
           </Button>
         </Form>
+      </div>
       </div>
     );
   }
