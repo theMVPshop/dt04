@@ -1,5 +1,4 @@
-const Experience = require("../models/Experience")
-
+const Experience = require("../models/Experience");
 
 // const handleError = (res, err) => {
 //   console.error('Error: ', {err})
@@ -8,7 +7,13 @@ const Experience = require("../models/Experience")
 
 const handleError = (err) => {
   console.log(err.message, err.code);
-  let errors = { company: "", position: "", startDate: "", endDate: "", description: "" };
+  let errors = {
+    company: "",
+    position: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+  };
 
   //validation errors
   if (err.message.includes("experience validation failed")) {
@@ -20,22 +25,20 @@ const handleError = (err) => {
 };
 
 const addExperience = async (req, res) => {
-
   try {
-      const userExperience = await Experience.create(req.body)
-      res.status(201).json(userExperience)
-  }
-  catch(err) {
+    const userExperience = await Experience.create(req.body);
+    res.status(201).json(userExperience);
+  } catch (err) {
     // return handleError(err)
-      const errors = handleError(err)
-      res.status(400).json({ errors })
+    const errors = handleError(err);
+    res.status(400).json({ errors });
   }
-}
+};
 
 const viewExperience = (req, res) => {
-  console.log("Fetching User Job Experience")
-  res.send('Getting Job Experience')
+  console.log("Fetching User Job Experience");
+  res.send("Getting Job Experience");
   // res.render('Job Experience')
-}
+};
 
-module.exports = {addExperience, viewExperience}
+module.exports = { addExperience, viewExperience };
