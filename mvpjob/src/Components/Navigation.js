@@ -22,6 +22,9 @@ const Navigation =()=> {
         <NavItem>
         <Nav.Link href='/login'>Login</Nav.Link>
         </NavItem>
+        <NavItem>
+        <Nav.Link href='/SignUp'>Sign Up</Nav.Link>
+        </NavItem>
     </Nav>
         </Navbar.Collapse>
 

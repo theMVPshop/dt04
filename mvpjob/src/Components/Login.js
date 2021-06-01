@@ -23,7 +23,8 @@ import Navigation from "./Navigation";
         
         <div className="Login" >
         <Form onSubmit={handleSubmit}>
-            Sign In
+          <h4>Sign In</h4>
+            <div className="Username">
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>
             <Form.Control
@@ -41,9 +42,13 @@ import Navigation from "./Navigation";
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
+          </div>
           <Button block size="lg" type="submit" disabled={!validateForm()}>
-            Login
+            Sign In
           </Button>
+          <p className="signuptext">
+              New to the App? <a href="">Sign up</a>
+            </p>
         </Form>
       </div>
       </div>
