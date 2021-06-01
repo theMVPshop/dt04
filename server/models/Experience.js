@@ -10,12 +10,12 @@ const experienceSchema = new  mongoose.Schema({
         required: [true, 'Please enter your position title']
     },
     startDate: {
-      type:Date,
-      required: [true, 'Please enter your start date']
+      type:String,
+      required: [true, 'Please enter your start date: MM/YYY']
     },
     endDate: {
-      type:Date,
-      required: [true, 'Please enter your Position']
+      type:String,
+      required: [true, 'Please enter your end date: MM/YYY']
     },
     description: {
       type:String,

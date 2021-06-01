@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const userRoutes = require('./routes/users')
 
 const experienceRouter = require ('./routes/experience')
-const indexRouter = require("./routes/index");
+// const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
 const app = express();
@@ -49,7 +49,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // app.use("/", indexRouter);
-// app.use("/users", usersRouter);
+app.use("/users", usersRouter);
+app.use("/experience", experienceRouter);
+
 
 app.get('/', (req, res) => {
   res.send('Welcome to our server')

@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-const authController = require('../controller/experienceController')
+const express = require('express');
+const router = express.Router();
+const experienceController = require('../controller/experienceController')
 
 
-router.post('/experience', authController.addExperience)
-router.get('/experience', authController.viewExperience)
+router.post('/', experienceController.addExperience)
+router.get('/', experienceController.viewExperience)
 
 
 module.exports = router;
