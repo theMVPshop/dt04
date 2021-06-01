@@ -25,15 +25,14 @@ module.exports.signup_get = async (req, res) => {
 };
 
 module.exports.signup_post = async (req, res) => {
-  const { email, password } = req.body
+  const { email, password } = req.body;
 
   try {
-      const user = await User.create({ email, password })
-      res.status(201).json(user)
-  }
-  catch(err) {
-      const errors = handelErrors(err)
-      res.status(400).json({ errors })
+    const user = await User.create({ email, password });
+    res.status(201).json(user);
+  } catch (err) {
+    const errors = handelErrors(err);
+    res.status(400).json({ errors });
   }
 };
 
@@ -42,8 +41,8 @@ module.exports.login_get = (req, res) => {
 };
 
 module.exports.login_post = async (req, res) => {
-    const { email, password } = req.body
+  const { email, password } = req.body;
 
-    console.log(email, password)
-    res.send('user login')
+  console.log(email, password);
+  res.send("user login");
 };

@@ -5,8 +5,8 @@ import Navigation from './Navigation';
 const LandingPage=()=>{
     return(
         
- <div>
-    <Navigation />
+        <div>
+        <Navigation />
  </div>
         
     )

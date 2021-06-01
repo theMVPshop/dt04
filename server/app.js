@@ -10,7 +10,6 @@ const app = express();
 // const port = process.env.PORT || 3000;
 
 
-
 //establishing database connection
 const dbURI =
   "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/test_db?retryWrites=true&w=majority";
