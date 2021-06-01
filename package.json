@@ -2,10 +2,14 @@
   "name": "dt04",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node server/app.js"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "@react-pdf/renderer": "^2.0.13",
     "bootstrap": "^5.0.1",
     "cookie-parser": "~1.4.4",
