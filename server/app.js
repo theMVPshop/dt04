@@ -11,14 +11,22 @@ const experienceRouter = require ('./routes/experience')
 const usersRouter = require("./routes/users");
 
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 
 
 //database connection Option 1
 
-const dbURI = "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/test_db?retryWrites=true&w=majority"
-mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then((result) => app.listen(port)).catch((err) => console.log(err))
+const dbURI =
+  "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/test_db?retryWrites=true&w=majority";
+mongoose
+  .connect(dbURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then((result) => app.listen(port))
+  .catch((err) => console.log(err));
 
 //database connection Option 2
 // var MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost/dbName";
@@ -26,10 +34,9 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useCre
 //   useNewUrlParser: true,
 //   useCreateIndex: true,
 //   useFindAndModify: false,
-//   family: 4 
+//   family: 4
 // };
 // mongoose.connect(MONGODB_URI,options)
-
 
 //database connection
 // const dbURI =
@@ -52,10 +59,9 @@ app.use(cookieParser());
 app.use("/users", usersRouter);
 app.use("/experience", experienceRouter);
 
-
-app.get('/', (req, res) => {
-  res.send('Welcome to our server')
-})
+app.get("/", (req, res) => {
+  res.send("Welcome to our server");
+});
 
 // // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
@@ -72,6 +78,5 @@ app.get('/', (req, res) => {
 //   res.status(err.status || 500);
 //   res.render("error");
 // });
-
 
 module.exports = app;
