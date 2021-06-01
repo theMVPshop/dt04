@@ -1,0 +1,17 @@
+//DROPDOWN FOR FILTERS 
+
+const Filters =()=> {
+
+    const [show, setShow] = useState(false);
+const showDropdown = (e)=>{
+    setShow(!show);
+}
+const hideDropdown = e => {
+    setShow(false);
+}
+//     <NavDropdown title="Dropdown" 
+// id="collasible-nav-dropdown" 
+// show={show}
+// onMouseEnter={showDropdown} 
+// onMouseLeave={hideDropdown}
+// /> */

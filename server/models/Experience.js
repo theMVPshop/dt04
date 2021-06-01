@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const experienceSchema = new  mongoose.experienceSchema({
+const experienceSchema = new  mongoose.Schema({
     company: {
         type: String,
         required: [true, 'Please enter Company Name'],
@@ -10,12 +10,12 @@ const experienceSchema = new  mongoose.experienceSchema({
         required: [true, 'Please enter your position title']
     },
     startDate: {
-      type:Date,
-      required: [true, 'Please enter your start date']
+      type:String,
+      required: [true, 'Please enter your start date: MM/YYY']
     },
     endDate: {
-      type:Date,
-      required: [true, 'Please enter your Position']
+      type:String,
+      required: [true, 'Please enter your end date: MM/YYY']
     },
     description: {
       type:String,
