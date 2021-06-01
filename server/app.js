@@ -2,21 +2,16 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const mongoose = require('mongoose')
-const userRoutes = require('./routes/users')
-
-const experienceRouter = require ('./routes/experience')
-// const indexRouter = require("./routes/index");
+const mongoose = require('mongoose');
+const experienceRouter = require ('./routes/experience');
 const usersRouter = require("./routes/users");
 
 const app = express();
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
 
 
-//database connection Option 1
-
+//establishing database connection
 const dbURI =
   "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/test_db?retryWrites=true&w=majority";
 mongoose
@@ -28,40 +23,27 @@ mongoose
   .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
-//database connection Option 2
-// var MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost/dbName";
-// const options = {
-//   useNewUrlParser: true,
-//   useCreateIndex: true,
-//   useFindAndModify: false,
-//   family: 4
-// };
-// mongoose.connect(MONGODB_URI,options)
 
-//database connection
-// const dbURI =
-//   "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/test_db?retryWrites=true&w=majority";
-
-// mongoose
-//   .connect(dbURI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//   })
-//   .then((result) => app.listen(3000))
-//   .catch((err) => console.log(err));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/experience", experienceRouter);
 
 app.get("/", (req, res) => {
   res.send("Welcome to our server");
 });
+
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, '../mvpjob/build')))
+
+// AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../mvpjob/build/index.html'))
+})
 
 // // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
