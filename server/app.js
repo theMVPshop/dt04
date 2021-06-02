@@ -1,14 +1,13 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const mongoose = require('mongoose');
-const experienceRouter = require ('./routes/experience');
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
+const experienceRouter = require("./routes/experience");
 const usersRouter = require("./routes/users");
 
 const app = express();
 // const port = process.env.PORT || 3000;
-
 
 //establishing database connection
 const dbURI =
@@ -22,8 +21,6 @@ mongoose
   .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -35,29 +32,12 @@ app.get("/", (req, res) => {
   res.send("Welcome to our server");
 });
 
-
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, '../mvpjob/build')))
+app.use(express.static(path.join(__dirname, "../mvpjob/build")));
 
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../mvpjob/build/index.html'))
-})
-
-// // catch 404 and forward to error handler
-// app.use(function (req, res, next) {
-//   next(createError(404));
-// });
-
-// // error handler
-// app.use(function (err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get("env") === "development" ? err : {};
-
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.render("error");
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/../mvpjob/build/index.html"));
+});
 
 module.exports = app;
