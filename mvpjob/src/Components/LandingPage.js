@@ -7,6 +7,7 @@ const LandingPage=()=>{
         
         <div>
         <Navigation />
+       <h2>The Landing Page</h2> 
  </div>
         
     )
