@@ -4,6 +4,7 @@ import About from './Components/About';
 import LandingPage from './Components/LandingPage';
 import Login from './Components/Login'
 import SignIn from './Components/SignIn'
+import Resume from './Components/Resume'
 import './App.css'
 
 
@@ -19,6 +20,7 @@ const App = () => {
               <Route exact path="/login" component={Login}></Route>
               <Route exact path="/login" component={Login}></Route>
               <Route exact path="/signup" component={SignIn}></Route>
+              <Route exact path="/resume" component={Resume}></Route>
             </Switch>
              </Router>
              </Fragment>
