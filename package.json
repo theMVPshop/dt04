@@ -1,0 +1,33 @@
+{
+  "name": "dt04",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "14.x"
+  },
+  "proxy": "http://localhost:3000",
+  "scripts": {
+    "server": "node server/app.js",
+    "client": "npm start --prefix mvpjob",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd mvpjob && npm install && npm run build"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@react-pdf/renderer": "^2.0.13",
+    "bootstrap": "^5.0.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "^1.9.2",
+    "mongodb": "^3.6.8",
+    "mongoose": "^5.12.11",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
