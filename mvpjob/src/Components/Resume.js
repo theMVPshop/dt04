@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const axios = require('axios');
 
 const Resume = () => {
   const [resume, setResume] = useState({
