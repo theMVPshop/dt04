@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from './Navigation';
+import './landingpage';
 
 
 export const Navigation = (props) => {
@@ -20,7 +20,7 @@ export const Navigation = (props) => {
               <span className='icon-bar'></span>{' '}
             </button>
             <a className='navbar-brand page-scroll' href='#page-top'>
-              My Landing Page
+              Medical Externiship App
             </a>{' '}
           </div>
   
@@ -60,4 +60,4 @@ export const Navigation = (props) => {
       </nav>
     )
   }
-,
+
