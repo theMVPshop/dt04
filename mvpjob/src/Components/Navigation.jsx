@@ -1,7 +1,3 @@
-import React from 'react';
-import Navigation from './Navigation';
-
-
 export const Navigation = (props) => {
     return (
       <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
@@ -20,7 +16,7 @@ export const Navigation = (props) => {
               <span className='icon-bar'></span>{' '}
             </button>
             <a className='navbar-brand page-scroll' href='#page-top'>
-              My Landing Page
+              Medical App
             </a>{' '}
           </div>
   
@@ -30,27 +26,28 @@ export const Navigation = (props) => {
           >
             <ul className='nav navbar-nav navbar-right'>
               <li>
-                <a href='#Jobtype' className='page-scroll'>
-                  Type of Jobs 
+                <a href='#features' className='page-scroll'>
+                  Features
                 </a>
               </li>
               <li>
-               
-                
-              </li>
-              <li>
-                <a href='#JobLocation' className='page-scroll'>
-                  Locations
+                <a href='#about us' className='page-scroll'>
+                  About
                 </a>
               </li>
               <li>
-                <a href='#JobSearch' className='page-scroll'>
-                  Jobs available
+                <a href='#search' className='page-scroll'>
+                  Services
                 </a>
               </li>
               <li>
-                <a href='#About us' className='page-scroll'>
-                  The team
+                <a href='#Job Type' className='page-scroll'>
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a href='#Location' className='page-scroll'>
+                  Testimonials
                 </a>
               </li>
               
@@ -60,4 +57,3 @@ export const Navigation = (props) => {
       </nav>
     )
   }
-,
