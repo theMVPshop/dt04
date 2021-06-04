@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import Navigation from "./Navigation";
 
-const SignIn = (props) => {
+const SignUp = (props) => {
   //     const alertContext = useContext(AlertContext);
   //     const authContext = useContext(AuthContext)
 
   //     const { setAlert } = alertContext;
-  //   const { login, error, clearErrors, isAuthenticated } = authContext;
+  //   const { Signup, error, clearErrors, isAuthenticated } = authContext;
 
   //   useEffect(()=>{
   //     if(isAuthenticated){
@@ -34,7 +33,7 @@ const SignIn = (props) => {
   //   if(email === '' ||password === ''){
   //     setAlert('Please fill in all fields','danger')
   //   }else{
-  //     login({
+  //     Signup({
   //       email,
   //       password
   //     })
@@ -44,7 +43,7 @@ const SignIn = (props) => {
   return (
     <div className="form-container">
       <h1>
-        Account <span className="text-primary">Login</span>
+        Account <span className="text-primary">Signup</span>
       </h1>
       <form className="wholethang">
         <div className="form-group">
@@ -58,7 +57,7 @@ const SignIn = (props) => {
 
         <input
           type="submit"
-          value="Login"
+          value="Signup"
           className="btn btn-primary btn-block"
         />
       </form>
@@ -66,4 +65,4 @@ const SignIn = (props) => {
   );
 };
 
-export default SignIn;
+export default SignUp;
