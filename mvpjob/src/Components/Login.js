@@ -17,7 +17,6 @@ function Login() {
 
   return (
     <div>
-      <Navigation />
 
       <div className="Login">
         <Form onSubmit={handleSubmit}>

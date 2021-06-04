@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Navigation from "./Navigation";
-
-const SignIn = (props) => {
+const SignUp = (props) => {
   //     const alertContext = useContext(AlertContext);
   //     const authContext = useContext(AuthContext)
 
@@ -66,4 +64,4 @@ const SignIn = (props) => {
   );
 };
 
-export default SignIn;
+export default SignUp;

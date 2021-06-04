@@ -4,7 +4,6 @@ import Navigation from "./Navigation";
 const LandingPage = () => {
   return (
     <div>
-      <Navigation />
     </div>
   );
 };
