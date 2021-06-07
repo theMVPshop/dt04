@@ -21,14 +21,14 @@ const SignIn = (props) => {
 //   },[error, isAuthenticated, props.history]);
   
   
-    const [user, setUser] = useState({
-      email: '',
-      password: '',
-    });
+    // const [user, setUser] = useState({
+    //   email: '',
+    //   password: '',
+    // });
   
-    const { email, password } = user;
+    // const { email, password } = user;
   
-    const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
+    // const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
   
     // const onSubmit = (e) => {
     //   e.preventDefault();
@@ -42,35 +42,30 @@ const SignIn = (props) => {
     //   }
     // };
 
-     return(
-        <div className="form-container">
-        <h1>
-          Account <span className="text-primary">Login</span>
-        </h1>
-        <form className="wholethang" >
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <input type="email" name="email" 
-            value={email}  required/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              
-              required
-            />
-          </div>
-  
-          <input
-            type="submit"
-            value="Login"
-            className="btn btn-primary btn-block"
-          />
-        </form>
-      </div>
+    return(
+        <form>
+        <Navigation/>
+        <h3>Register</h3>
+
+    <div className="registration-form">
+        
+      
+        <div className="form-group-2">
+            <label>Email</label>
+            <input type="email" className="form-control" placeholder="Enter email" />
+        </div>
+
+        <div className="form-group-2">
+            <label>Password</label>
+            <input type="password" className="form-control" placeholder="Enter password" />
+        </div>
+        <button className="create-account" type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
+
+        <p className="forgot-password text-right">
+            Already registered? <a href="/Login">log in</a>
+        </p>
+        </div>
+    </form>
 )
 }
 

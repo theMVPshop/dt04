@@ -21,6 +21,7 @@
   color: #61dafb;
 }
 
+
   /* .Signin form{
     padding: 15px;
     justify-content: center;
@@ -63,8 +64,7 @@
     width: 250px;
     justify-content: center;
     border-radius: 50px;
-
-  }
+}
 
 .Login p.signuptext{
   justify-content: center;
@@ -72,15 +72,10 @@
   width: 240px;
 }
 
-  .signin{
+.signin{
     text-size-adjust: 25px;
-  }
-  
-.form-container .wholethang{
-  padding: 30px;
-  margin: 211px;
-  justify-content: center;
 }
+  
 
 .form-container .form-group{
   margin: auto;
@@ -89,3 +84,16 @@
   border: solid;
 
 }
+
+.registration-form{
+width: 50%;
+margin: auto;
+justify-content: center;
+padding: 55px;
+border: solid;
+}
+
+body {
+  background-image: linear-gradient(130deg, #6250A6, #59FAD2);
+}
+

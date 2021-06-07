@@ -47,7 +47,7 @@ import Navigation from "./Navigation";
             Sign In
           </Button>
           <p className="signuptext">
-              New to the App? <a href="">Sign up</a>
+              New to the App? <a href="/signUp">Sign up</a>
             </p>
         </Form>
       </div>
