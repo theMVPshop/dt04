@@ -5,7 +5,7 @@
   "engines": {
     "node": "14.x"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "server": "node ./server/app.js",
     "client": "npm start --prefix mvpjob",

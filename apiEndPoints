@@ -1,0 +1,69 @@
+USA JOBS: 
+    Documentation: https://developer.usajobs.gov/API-Reference
+
+    var request = require('request');  
+
+    var host = 'data.usajobs.gov';  
+    var userAgent = 'your@email.address';  
+    var authKey = 'YourAPIKey';    
+
+    request({      
+        url: 'https://data.usajobs.gov/api/search?{SEARCH_PARAMATERS_HERE}',      
+        method: 'GET',      
+        headers: {          
+            "Host": host,          
+            "User-Agent": userAgent,          
+            "Authorization-Key": authKey      
+        }  
+    }, function(error, response, body) {      
+        var data = JSON.parse(body);  
+    });
+
+
+INDEED: 
+
+    Keith's codepen to convert RSS to JSON: https://codepen.io/keithakritselis/pen/gOmeJEV?editors=1011
+    Note: Any Indeed job search URL can be converted into an RSS feed by replacing "www" and "jobs" with "rss"
+
+https://rss.indeed.com/rss?q={JOB_TITLE ie:medical+assistant}&l={CITY}%2C+{STATE}
+
+
+
+
+ADZUNA:  
+    Documentation: https://developer.adzuna.com/activedocs
+    API KEY: 91e9f06279e878970e11dee09fd5f833
+    Application ID: d8054f18
+
+    Example EndPoint:
+    https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=d8054f18&app_key=91e9f06279e878970e11dee09fd5f833&results_per_page=20&what={JOB_TITLE ie: medical+assistant}&where={LOCATION - City, State, or Zip}&content-type=application/json
+
+
+
+//app.js code
+
+const [jobFeed, setJobFeed] = useState({ adzuna: null, usajobs: null, indeed: null });
+
+const adzunaURL = https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=d8054f18&app_key=91e9f06279e878970e11dee09fd5f833&results_per_page=20&what=medical+assistant&where=Austin+TX&content-type=application/json
+const usajobsURL = https://data.usajobs.gov/api/Search?PositionTitle=Medical%20Assistant&LocationName=Austin%20Texas
+const indeedURL = 
+
+
+  useEffect(() => {    
+    const fetchData = async () => {
+      const adzunaJobs = await axios(
+        `adzunaURL}`
+      );
+
+
+      setJobsList({ adzuna: adzunaJobs.data, useJobs: usaJobsJobs });
+    };
+
+    fetchData();
+  }, []);
+
+
+  return{
+
+      <app>
+  }
