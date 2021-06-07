@@ -1,15 +1,11 @@
-import React from 'react';
-import Navigation from './Navigation';
+import React from "react";
+import Navigation from "./Navigation";
 
-
-const LandingPage=()=>{
-    return(
-        
-        <div>
-        <Navigation />
- </div>
-        
-    )
-}
+const LandingPage = () => {
+  return (
+    <div>
+    </div>
+  );
+};
 
 export default LandingPage;
