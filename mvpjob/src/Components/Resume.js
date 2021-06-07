@@ -34,7 +34,7 @@ const Resume = () => {
           value={resume.company}
           onChange={textChange}
         />
-        <div class="company error"></div>
+        <div class="companyError"></div>
 
         <label htmlFor="position">Position</label>
         <input
@@ -44,7 +44,7 @@ const Resume = () => {
           value={resume.position}
           onChange={textChange}
         />
-        <div class="position error"></div>
+        <div class="positionError"></div>
 
         <label htmlFor="startDate">Start Date</label>
         <input
@@ -54,7 +54,7 @@ const Resume = () => {
           value={resume.startDate}
           onChange={textChange}
         />
-        <div class="startDate error"></div>
+        <div class="startDateError"></div>
 
         <label htmlFor="endDate">End Date</label>
         <input
@@ -64,7 +64,7 @@ const Resume = () => {
           value={resume.endDate}
           onChange={textChange}
         />
-        <div class="endDate error"></div>
+        <div class="endDateError"></div>
 
         <label htmlFor="description">Description</label>
         <input
@@ -74,7 +74,7 @@ const Resume = () => {
           value={resume.description}
           onChange={textChange}
         />
-        <div class="description error"></div>
+        <div class="descriptionError"></div>
 
         <input
           type="submit"
