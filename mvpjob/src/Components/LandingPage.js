@@ -1,5 +1,16 @@
+
 import React from 'react';
 import './landingpage';
+import React from "react";
+import Navigation from "./Navigation";
+
+
+const LandingPage = () => {
+  return (
+    <div>
+    </div>
+  );
+};
 
 
 export const Navigation = (props) => {
@@ -60,4 +71,6 @@ export const Navigation = (props) => {
       </nav>
     )
   }
+
+export default LandingPage;
 

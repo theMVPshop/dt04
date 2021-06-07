@@ -1,6 +1,6 @@
-import React from 'react';
-import Navigation from './Navigation';
+import React from "react";
 
+ aboutpage
 const About=()=>{
     return(
         <div className="about">
@@ -19,5 +19,14 @@ const About=()=>{
         
     
     
+
+const About = () => {
+  return (
+    <div className="about">
+      <h2>This is the about page</h2>
+    </div>
+  );
+};
+main
 
 export default About;
