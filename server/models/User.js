@@ -25,17 +25,15 @@ const userSchema = new mongoose.Schema({
   phoneNumber: {
     type: Number,
   },
-  location: {
-    zipcode:{
-      type: Number,
-    },
-    city: {
-      type: String,
-    },
-    state:{
-      type: String
-    }
-  }
+  zipcode: {
+    type: Number,
+  },
+  city: {
+    type: String,
+  },
+  state: {
+    type: String,
+  },
   //create a timestamp when they first create a user and anytime they log in.
 });
 
