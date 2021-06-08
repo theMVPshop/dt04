@@ -11,7 +11,9 @@ const LandingPage = () => {
     </div>
   );
 };
-
+<Link className='main-link' to='/job-search'>
+Search For Medical Jobs
+</Link>
 
 export const Navigation = (props) => {
     return (
