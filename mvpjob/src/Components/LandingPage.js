@@ -50,7 +50,7 @@ export const Navigation = (props) => {
               </li>
               <li>
                 <a href='#About us' className='page-scroll'>
-                  The team
+                  The team <img></img>
                 </a>
               </li>
               
@@ -61,3 +61,4 @@ export const Navigation = (props) => {
     )
   }
 
+export default LandingPage
