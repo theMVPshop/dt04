@@ -44,8 +44,8 @@ function Login() {
             Sign In
           </Button>
           <p className="signuptext">
-            New to the App? <a href="">Sign up</a>
-          </p>
+              New to the App? <a href="/signUp">Sign up</a>
+            </p>
         </Form>
       </div>
     </div>
