@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 const axios = require("axios");
 
 const SignUp = (props) => {
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -198,4 +199,3 @@ const SignUp = (props) => {
 };
 
 export default SignUp;
-
