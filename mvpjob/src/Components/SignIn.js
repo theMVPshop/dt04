@@ -1,72 +1,201 @@
 import React, { useState } from "react";
-import Navigation from "./Navigation";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+const axios = require("axios");
 
-const SignIn = (props) => {
-//     const alertContext = useContext(AlertContext);
-//     const authContext = useContext(AuthContext)
-  
-//     const { setAlert } = alertContext;
-//   const { login, error, clearErrors, isAuthenticated } = authContext;
-  
-//   useEffect(()=>{
-//     if(isAuthenticated){
-//       props.history.push('/')
-//     }
-  
-//     if(error === 'Invalid Credentials'){
-//       setAlert(error, 'danger');
-//       clearErrors()
-//     }
-//     //eslit-disable-next-line
-//   },[error, isAuthenticated, props.history]);
-  
-  
-    // const [user, setUser] = useState({
-    //   email: '',
-    //   password: '',
-    // });
-  
-    // const { email, password } = user;
-  
-    // const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
-  
-    // const onSubmit = (e) => {
-    //   e.preventDefault();
-    //   if(email === '' ||password === ''){
-    //     setAlert('Please fill in all fields','danger')
-    //   }else{
-    //     login({
-    //       email,
-    //       password
-    //     })
-    //   }
-    // };
+const SignUp = (props) => {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    zipcode: "",
+    city: "",
+    state: "",
+  });
 
-    return(
-        <form>
-        <Navigation/>
-        <h3>Register</h3>
+  const textChange = (e) =>
+    setUser({ ...user, [e.target.name]: e.target.value });
 
-    <div className="registration-form">
-        
-      
-        <div className="form-group-2">
-            <label>Email</label>
-            <input type="email" className="form-control" placeholder="Enter email" />
-        </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const payload = { ...user };
+    console.log(payload);
+    axios.post("http://localhost:3000/users/signup", {
+      ...payload,
+    });
+  };
 
-        <div className="form-group-2">
-            <label>Password</label>
-            <input type="password" className="form-control" placeholder="Enter password" />
-        </div>
-        <button className="create-account" type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
+  return (
+    <div>
+      <div className="Signup">
+        <Form onSubmit={handleSubmit}>
+          <h4>Account Sign Up</h4>
+          <div className="f-i-l">
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autonFocus
+                type="email"
+                value={user.email}
+                onChange={textChange}
+                required  
+              ></Form.Control>
+            </Form.Group>
 
-        <p className="forgot-password text-right">
-            Already registered? <a href="/Login">log in</a>
-        </p>
-        </div>
-    </form>
-)
-}
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                autonFocus
+                type="password"
+                value={user.password}
+                onChange={textChange}
+                required
+              ></Form.Control>
+            </Form.Group>
 
-export default SignIn
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                autonFocus
+                type="firstName"
+                value={user.firstName}
+                onChange={textChange}
+                required
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                autonFocus
+                type="lastName"
+                value={user.lastName}
+                onChange={textChange}
+                required
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                autonFocus
+                type="phoneNumber"
+                value={user.phoneNumber}
+                onChange={textChange}
+                required
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Zip Code</Form.Label>
+              <Form.Control
+                autonFocus
+                type="zipCode"
+                value={user.zipCode}
+                onChange={textChange}
+                required
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                autonFocus
+                type="City"
+                value={user.city}
+                onChange={textChange}
+                required
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>State</Form.Label>
+              <Form.Control
+                autonFocus
+                type="State"
+                value={user.state}
+                onChange={textChange}
+                required
+              ></Form.Control>
+            </Form.Group>
+          </div>
+          <Button block size="lg" type="submit">
+            Create Account
+          </Button>
+        </Form>
+      </div>
+    </div>
+    //     <div>
+    //     <div className="signup">
+    //       <h1>
+    //         Account <span className="text-primary">Signup</span>
+    //       </h1>
+    //       <form onSubmit={handleSubmit}>
+    //         <div className="form-group">
+    //           <div>
+    //           <label htmlFor="email">Email Address</label>
+    //           </div>
+    //           <input type="email" name="email" value={user.email} onChange={textChange} required />
+    //         </div>
+    //         <div class="emailError"></div>
+    //         <div className="form-group">
+    //           <div>
+    //           <label htmlFor="password">Password</label>
+    //           </div>
+    //           <input type="password" name="password" value={user.password} onChange={textChange} required />
+    //         </div>
+    //         <div class="passwordError"></div>
+    //         <div className="form-group">
+    //           <div>
+    //           <label htmlFor="firstName">First Name</label>
+    //           </div>
+    //           <input type="firstName" name="firstName" value={user.firstName} onChange={textChange} required />
+    //         </div>
+    //         <div class="firstNameError"></div>
+    //         <div className="form-group">
+    //           <div>
+    //           <label htmlFor="lastName">Last Name</label>
+    //           </div>
+    //           <input type="lastName" name="lastName" value={user.lastName} onChange={textChange} required />
+    //         </div>
+    //         <div class="lastNameError"></div>
+    //         <div class="firstNameError"></div>
+    //         <div className="form-group">
+    //           <div>
+    //           <label htmlFor="phoneNumber">Phone Number</label>
+    //           </div>
+    //           <input type="phoneNumber" name="phoneNumber" value={user.phoneNumber} onChange={textChange} required />
+    //         </div>
+    //         <div class="phoneNumberError"></div>
+    //         <div className="form-group">
+    //           <div>
+    //           <label htmlFor="zipcode">Zipcode</label>
+    //           </div>
+    //           <input type="zipcode" name="zipcode" value={user.zipcode} onChange={textChange} required />
+    //         </div>
+    //         <div class="zipcodeError"></div>
+    //         <div className="form-group">
+    //           <div>
+    //           <label htmlFor="city">City</label>
+    //           </div>
+    //           <input type="city" name="city" value={user.city} onChange={textChange} required />
+    //         </div>
+    //         <div class="cityError"></div>
+    //         <div className="form-group">
+    //           <div>
+    //           <label htmlFor="state">State</label>
+    //           </div>
+    //           <input type="state" name="state" value={user.state} onChange={textChange} required />
+    //         </div>
+    //         <div class="stateError"></div>
+
+    //         <input
+    //           type="submit"
+    //           value="Signup"
+    //           className="btn btn-primary btn-block"
+    //         />
+    //       </form>
+    //     </div>
+    //     </div>
+  );
+};
+
+export default SignUp;
+
