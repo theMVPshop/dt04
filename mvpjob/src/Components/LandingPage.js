@@ -1,6 +1,12 @@
 import React from 'react';
 import './landingpage';
 
+const LandingPage = () => {
+  return (
+    <div>
+    </div>
+  );
+};
 
 export const Navigation = (props) => {
     return (
