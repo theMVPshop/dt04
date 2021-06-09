@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Navigation from "./Navigation";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,7 +16,6 @@ function Login() {
 
   return (
     <div>
-
       <div className="Login">
         <Form onSubmit={handleSubmit}>
           <h4>Sign In</h4>
@@ -44,8 +42,8 @@ function Login() {
             Sign In
           </Button>
           <p className="signuptext">
-              New to the App? <a href="/signUp">Sign up</a>
-            </p>
+            New to the App? <a href="/signUp">Sign up</a>
+          </p>
         </Form>
       </div>
     </div>
