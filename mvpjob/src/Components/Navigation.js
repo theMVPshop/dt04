@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, NavDropdown, Navbar, NavItem } from "react-bootstrap";
+import { Nav,  Navbar, NavItem } from "react-bootstrap";
 
 const Navigation = () => {
   return (
@@ -21,6 +21,9 @@ const Navigation = () => {
           </NavItem>
           <NavItem>
             <Nav.Link href="/SignUp">Sign Up</Nav.Link>
+          </NavItem>
+          <NavItem>
+            <Nav.Link href="/popup">Pop Up</Nav.Link>
           </NavItem>
         </Nav>
       </Navbar.Collapse>
