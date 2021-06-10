@@ -9,6 +9,7 @@ const usersRouter = require("./routes/users");
 const app = express();
 const port = process.env.PORT || 3000;
 
+
 //establishing database connection
 const dbURI =
   "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/test_db?retryWrites=true&w=majority";
@@ -31,6 +32,8 @@ app.use("/experience", experienceRouter);
 app.get("/", (req, res) => {
   res.send("Welcome to our server");
 });
+
+
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../mvpjob/build")));
