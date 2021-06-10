@@ -6,8 +6,8 @@ import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Resume from "./Components/Resume";
 import Navigation from "./Components/Navigation";
-import Pop from "./Components/Pop"
 import "./App.css";
+import PopUp from "./Components/PopUp";
 
 const App = () => {
   return (
@@ -20,7 +20,8 @@ const App = () => {
           <Route exact path="/login" component={Login}></Route>      
           <Route exact path="/SignUp" component={SignUp}></Route>
           <Route exact path="/resume" component={Resume}></Route>
-          <Route exact path="/popup" component={Pop}></Route>
+          <Route exact path="/popup" component={PopUp}></Route>
+
         </Switch>
       </Router>
     </Fragment>
