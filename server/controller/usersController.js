@@ -52,12 +52,16 @@ module.exports.signup_post = async (req, res) => {
   }
 };
 
-module.exports.login_get = (req, res) => {
+module.exports.login_get = async (req, res) => {
   const { email, password } = req.body;
-  const userDoc = await Experience.find({ email: email }, function (err, docs) {
-    res.send("login")
+  const userDoc = await User.find({ email: email }, function (err, docs) {
+    if(docs){
+      console.log(docs)
+    res.cookie('email', email, { httpOnly: true })
+    } 
+    console.log(err)
  })
-  res.cookie('email', email, { httpOnly: true })
+  
 };
 
 module.exports.login_post = async (req, res) => {
