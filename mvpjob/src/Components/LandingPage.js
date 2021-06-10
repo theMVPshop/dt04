@@ -1,64 +1,62 @@
-import React from 'react';
 
+import React from "react";
 
 const LandingPage = () => {
   return (
-    <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
-      <div className='container'>
-        <div className='navbar-header'>
+      <div className="container">
+        <div className="navbar-header">
           <button
-            type='button'
-            className='navbar-toggle collapsed'
-            data-toggle='collapse'
-            data-target='#bs-example-navbar-collapse-1'
+            type="button"
+            className="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
           >
-            {' '}
-            <span className='sr-only'>Toggle navigation</span>{' '}
-            <span className='icon-bar'></span>{' '}
-            <span className='icon-bar'></span>{' '}
-            <span className='icon-bar'></span>{' '}
+            {" "}
+            <span className="sr-only">Toggle navigation</span>{" "}
+            <span className="icon-bar"></span>{" "}
+            <span className="icon-bar"></span>{" "}
+            <span className="icon-bar"></span>{" "}
           </button>
-          <a className='navbar-brand page-scroll' href='#page-top'>
+          <a className="navbar-brand page-scroll" href="#page-top">
             Medical Externiship App
-          </a>{' '}
+          </a>{" "}
         </div>
 
         <div
-          className='collapse navbar-collapse'
-          id='bs-example-navbar-collapse-1'
+          className="collapse navbar-collapse"
+          id="bs-example-navbar-collapse-1"
         >
-          <ul className='nav navbar-nav navbar-right'>
+          <ul className="nav navbar-nav navbar-right">
             <li>
-                Type of Jobs 
+              <a href="#Jobtype" className="page-scroll">
+                Type of Jobs
               </a>
             </li>
+            <li></li>
             <li>
-             
-              
-            </li>
-            <li>
-              <a href='#JobLocation' className='page-scroll'>
+              <a href="#JobLocation" className="page-scroll">
+
                 Locations
               </a>
             </li>
             <li>
-              <a href='#JobSearch' className='page-scroll'>
+
+              <a href="#JobSearch" className="page-scroll">
+
                 Jobs available
               </a>
             </li>
             <li>
-              <a href='#About us' className='page-scroll'>
+
+              <a href="#About us" className="page-scroll">
                 The team <img></img>
               </a>
             </li>
-            
           </ul>
         </div>
       </div>
-    </nav>
-  )
+  );
 };
 
+export default LandingPage;
 
-
-export default LandingPage
