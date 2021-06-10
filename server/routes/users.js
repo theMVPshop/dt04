@@ -1,10 +1,11 @@
 var express = require("express");
 var router = express.Router();
-const authController = require("../controller/usersController");
+const userController = require("../controller/usersController");
 
-router.get("/signup", authController.signup_get);
-router.post("/signup", authController.signup_post);
-router.get("/login", authController.login_get);
-router.post("/login", authController.login_post);
+router.get("/signup", userController.signup_get);
+router.post("/signup", userController.signup_post);
+router.get("/login", userController.login_get);
+router.post("/login", userController.login_post);
+router.put("/login", userController.login_put)
 
 module.exports = router;

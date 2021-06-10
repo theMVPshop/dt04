@@ -26,7 +26,8 @@ const handleError = (err) => {
 
 const addExperience = async (req, res) => {
   try {
-    const userExperience = await Experience.create(req.body);
+    const cookies = req.cookies
+    const userExperience = await Experience.create(req.body, cookies.email);
     res.status(201).json(userExperience);
   } catch (err) {
     // return handleError(err)
@@ -35,7 +36,12 @@ const addExperience = async (req, res) => {
   }
 };
 
-const viewExperience = (req, res) => {
+const viewExperience = async (req, res) => {
+  const cookies = req.cookies
+  const expDoc = await Experience.find({ email: `${cookies.email}` }, function (err, docs) {
+     res.send(docs)
+  })
+  
   console.log("Fetching User Job Experience");
   res.send("Getting Job Experience");
   // res.render('Job Experience')
