@@ -6,6 +6,7 @@ import { Redirect } from "react-router";
 import { saveSearchFieldToStore } from "../../actions/jobSearchAction";
 import JobHeader from "../Header/JobHeader";
 import "./JobsLanding.css";
+import JobResults from './JobResults'
 
 import {
   saveSavedJobsToStore,
