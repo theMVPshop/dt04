@@ -53,11 +53,11 @@ module.exports.signup_post = async (req, res) => {
 };
 
 module.exports.login_get = (req, res) => {
-  const { userEmail, password } = req.body;
-  
+  const { email, password } = req.body;
+  const userDoc = await Experience.find({ email: email }, function (err, docs) {
+    res.send("login")
+ })
   res.cookie('email', email, { httpOnly: true })
-
-  res.render("login");
 };
 
 module.exports.login_post = async (req, res) => {

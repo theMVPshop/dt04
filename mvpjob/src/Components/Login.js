@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+const axios = require("axios");
 
 
 function Login() {
@@ -13,11 +14,20 @@ function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    axios
+      .get("http://localhost:3000/users/login")
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
   }
 
   return (
     <div>
-
       <div className="Login">
         <Form onSubmit={handleSubmit}>
           <h4>Sign In</h4>
@@ -44,8 +54,8 @@ function Login() {
             Sign In
           </Button>
           <p className="signuptext">
-              New to the App? <a href="/signUp">Sign up</a>
-            </p>
+            New to the App? <a href="/signUp">Sign up</a>
+          </p>
         </Form>
       </div>
     </div>

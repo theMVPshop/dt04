@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const LandingPage = () => {
@@ -34,15 +35,19 @@ const LandingPage = () => {
             <li></li>
             <li>
               <a href="#JobLocation" className="page-scroll">
+
                 Locations
               </a>
             </li>
             <li>
+
               <a href="#JobSearch" className="page-scroll">
+
                 Jobs available
               </a>
             </li>
             <li>
+
               <a href="#About us" className="page-scroll">
                 The team <img></img>
               </a>
@@ -54,3 +59,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
