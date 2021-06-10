@@ -27,6 +27,57 @@ INDEED:
 
 https://rss.indeed.com/rss?q={JOB_TITLE ie:medical+assistant}&l={CITY}%2C+{STATE}
 
+var JQUERYconvertRSS;
+
+(function ($) {
+	JQUERYconvertRSS = function (opt) {
+		var def = $.extend(
+			{
+				MaxCount: 25,
+				ShowDesc: true,
+				ShowPubDate: true,
+				DescCharacterLimit: 0,
+				TitleLinkTarget: "_blank",
+				DateFormat: "",
+				DateFormatLang: "en",
+			},
+			opt
+		);
+
+		var id = $(this).attr("id"),
+			s = "",
+			dt;
+		$("#" + id).empty();
+		if (def.FeedUrl == undefined) return;
+		$.ajax({
+			url:
+				"https://feed.jquery-plugins.net/load?url=" +
+				encodeURIComponent(def.FeedUrl) +
+				"&maxCount=" +
+				def.MaxCount +
+				"&dateCulture=" +
+				def.DateFormatLang +
+				"&dateFormat=" +
+				def.DateFormat,
+			dataType: "json",
+			success: function (result) {
+				$("#" + id).empty();
+				if (result.data == null) return;
+//////////////// data is returned
+         console.log(result.data);
+        
+			},
+		});
+	};
+})(jQuery);
+
+const covertToJSON = () => {
+  JQUERYconvertRSS({
+        FeedUrl:"https://rss.indeed.com/rss?q=medical+assistant&l=Austin,+TX&jt=parttime",
+        MaxCount: 120,
+      })
+}
+
 
 
 
@@ -67,3 +118,5 @@ const indeedURL =
 
       <app>
   }
+
+
