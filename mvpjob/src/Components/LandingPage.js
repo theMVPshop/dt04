@@ -192,30 +192,6 @@ class JobsLandingPage extends Component {
             </button>
           </form>
         </div>
-
-        {/* <div className="row"> */}
-        {/* <div className="jobs-search-alerts-container pull-center-1 col t-09 t-normal t-white nav-links">
-                        Job search alerts:
-                      </div>
-                      <div className="jobs-search-alerts-container col-3 t-09 t-normal t-white nav-links">
-                        <b>
-                          <Link to="#">8 new jobs</Link>
-                        </b>
-                        for Software Engineer in San Jose, CA
-                      </div>
-                      <div className="jobs-search-alerts-container col-4 t-09 t-normal t-white nav-links">
-                        <b>
-                          <Link to="#">1 new job</Link>
-                        </b>
-                        for Software Development Engineer in San Jose, CA
-                      </div>
-                      <div className="jobs-search-alerts-container pull-center-2 col t-09 t-normal t-white nav-links">
-                        <b>
-                          <Link to="#">Manage alerts</Link>
-                        </b>
-                      </div> */}
-        {/* </div> */}
-
         <div className="jobs-landing-main-bg">
           <div className="row mt-3 pull-center-1 pull-center-2">
             <div className="jobs-landing-bar-container mb-3">
