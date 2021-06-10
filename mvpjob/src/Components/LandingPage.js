@@ -1,17 +1,9 @@
 import React from 'react';
-import './landingpage';
+import JobResults from './JobResults'
 
 const LandingPage = () => {
   return (
-    <div>
-    </div>
-  );
-};
-
-export const Navigation = (props) => {
-    return (
-      <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
-        <div className='container'>
+<div className='container'>
           <div className='navbar-header'>
             <button
               type='button'
@@ -29,7 +21,10 @@ export const Navigation = (props) => {
               Medical Externiship App
             </a>{' '}
           </div>
-  
+
+          {/* added JobResults component */}
+          <JobResults />
+
           <div
             className='collapse navbar-collapse'
             id='bs-example-navbar-collapse-1'
@@ -63,8 +58,8 @@ export const Navigation = (props) => {
             </ul>
           </div>
         </div>
-      </nav>
-    )
-  }
+  );
+};
+
 
 export default LandingPage
