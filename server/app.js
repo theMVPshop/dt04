@@ -11,6 +11,7 @@ const searchRouter = require("./routes/search");
 const app = express();
 const port = process.env.PORT || 5000;
 
+
 //establishing database connection
 const dbURI =
   "mongodb+srv://MVPUser:MVPshop123@mvp.sqwsb.mongodb.net/test_db?retryWrites=true&w=majority";
@@ -34,6 +35,8 @@ app.use("/search", searchRouter)
 app.get("/", (req, res) => {
   res.send("Welcome to our server");
 });
+
+
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../mvpjob/build")));
