@@ -53,6 +53,10 @@ module.exports.signup_post = async (req, res) => {
 };
 
 module.exports.login_get = (req, res) => {
+  const { userEmail, password } = req.body;
+  
+  res.cookie('email', email, { httpOnly: true })
+
   res.render("login");
 };
 
@@ -62,3 +66,8 @@ module.exports.login_post = async (req, res) => {
   console.log(email, password);
   res.send("user login");
 };
+
+module.exports.login_put = async (req, res) => {
+
+};
+
