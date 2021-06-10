@@ -216,6 +216,9 @@ class JobsLandingPage extends Component {
             </div>
           </div>
 
+          {/* added JobResults component */}
+          <JobResults />
+
           <div className="album py-5 bg-light">
             <div className="container">
               <div>

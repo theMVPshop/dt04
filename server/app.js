@@ -5,9 +5,11 @@ const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const experienceRouter = require("./routes/experience");
 const usersRouter = require("./routes/users");
+const searchRouter = require("./routes/search");
+
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 
 //establishing database connection
@@ -28,6 +30,7 @@ app.use(cookieParser());
 
 app.use("/users", usersRouter);
 app.use("/experience", experienceRouter);
+app.use("/search", searchRouter)
 
 app.get("/", (req, res) => {
   res.send("Welcome to our server");
