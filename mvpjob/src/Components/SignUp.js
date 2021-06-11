@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 const axios = require("axios");
 
 const SignUp = (props) => {
-
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -41,14 +40,13 @@ const SignUp = (props) => {
                 type="email"
                 value={user.email}
                 onChange={textChange}
-                required  
+                required
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                autonFocus
                 type="password"
                 value={user.password}
                 onChange={textChange}
@@ -56,60 +54,54 @@ const SignUp = (props) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="firstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control
-                autonFocus
                 type="firstName"
                 value={user.firstName}
                 onChange={textChange}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="lastName">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
-                autonFocus
                 type="lastName"
                 value={user.lastName}
                 onChange={textChange}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="phoneNumber">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
-                autonFocus
                 type="phoneNumber"
                 value={user.phoneNumber}
                 onChange={textChange}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="zipCode">
               <Form.Label>Zip Code</Form.Label>
               <Form.Control
-                autonFocus
                 type="zipCode"
                 value={user.zipCode}
                 onChange={textChange}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="City">
               <Form.Label>City</Form.Label>
               <Form.Control
-                autonFocus
                 type="City"
                 value={user.city}
                 onChange={textChange}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="State">
               <Form.Label>State</Form.Label>
               <Form.Control
-                autonFocus
                 type="State"
                 value={user.state}
                 onChange={textChange}
