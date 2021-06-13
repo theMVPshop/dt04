@@ -38,7 +38,7 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="email"
-                value={user.email}
+                // value={user.email}
                 onChange={textChange}
                 required
               ></Form.Control>
@@ -48,7 +48,7 @@ const SignUp = (props) => {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
-                value={user.password}
+                // value={user.password}
                 onChange={textChange}
                 required
               ></Form.Control>
@@ -58,7 +58,7 @@ const SignUp = (props) => {
               <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="firstName"
-                value={user.firstName}
+                // value={user.firstName}
                 onChange={textChange}
                 required
               ></Form.Control>
@@ -67,7 +67,7 @@ const SignUp = (props) => {
               <Form.Label>Last Name</Form.Label>
               <Form.Control
                 type="lastName"
-                value={user.lastName}
+                // value={user.lastName}
                 onChange={textChange}
                 required
               ></Form.Control>
@@ -76,7 +76,7 @@ const SignUp = (props) => {
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
                 type="phoneNumber"
-                value={user.phoneNumber}
+                // value={user.phoneNumber}
                 onChange={textChange}
                 required
               ></Form.Control>
@@ -85,7 +85,7 @@ const SignUp = (props) => {
               <Form.Label>Zip Code</Form.Label>
               <Form.Control
                 type="zipCode"
-                value={user.zipCode}
+                // value={user.zipCode}
                 onChange={textChange}
                 required
               ></Form.Control>
@@ -94,7 +94,7 @@ const SignUp = (props) => {
               <Form.Label>City</Form.Label>
               <Form.Control
                 type="City"
-                value={user.city}
+                // value={user.city}
                 onChange={textChange}
                 required
               ></Form.Control>
@@ -103,7 +103,7 @@ const SignUp = (props) => {
               <Form.Label>State</Form.Label>
               <Form.Control
                 type="State"
-                value={user.state}
+                // value={user.state}
                 onChange={textChange}
                 required
               ></Form.Control>
