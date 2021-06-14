@@ -5,26 +5,40 @@ const axios = require("axios");
 
 const SignUp = (props) => {
 
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    zipcode: "",
-    city: "",
-    state: "",
-  });
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [zipcode, setZipcode] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
 
-  const textChange = (e) =>
-    setUser({ ...user, [e.target.name]: e.target.value });
+  // const [user, setUser] = useState({
+  //   email: "",
+  //   password: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   phoneNumber: "",
+  //   zipcode: "",
+  //   city: "",
+  //   state: "",
+  // });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...user };
+    const payload = { email, password, firstName, lastName, phoneNumber, zipcode, city, state };
     console.log(payload);
     axios.post("http://localhost:3000/users/signup", {
       ...payload,
+    })
+    .then(function (response) {
+      // handle success
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
     });
   };
 
@@ -39,8 +53,8 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="email"
-                value={user.email}
-                onChange={textChange}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required  
               ></Form.Control>
             </Form.Group>
@@ -50,8 +64,8 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="password"
-                value={user.password}
-                onChange={textChange}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
@@ -61,8 +75,8 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="firstName"
-                value={user.firstName}
-                onChange={textChange}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
@@ -71,8 +85,8 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="lastName"
-                value={user.lastName}
-                onChange={textChange}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
@@ -81,8 +95,8 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="phoneNumber"
-                value={user.phoneNumber}
-                onChange={textChange}
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
@@ -91,8 +105,8 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="zipCode"
-                value={user.zipCode}
-                onChange={textChange}
+                value={zipcode}
+                onChange={(e) => setZipcode(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
@@ -101,8 +115,8 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="City"
-                value={user.city}
-                onChange={textChange}
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
@@ -111,8 +125,8 @@ const SignUp = (props) => {
               <Form.Control
                 autonFocus
                 type="State"
-                value={user.state}
-                onChange={textChange}
+                value={state}
+                onChange={(e) => setState(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
