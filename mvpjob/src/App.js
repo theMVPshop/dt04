@@ -8,6 +8,7 @@ import Resume from "./Components/Resume";
 import Navigation from "./Components/Navigation";
 import "./App.css";
 import PopUp from "./Components/PopUp";
+import JobResults from "./Components/"
 
 const App = () => {
   return (
