@@ -6,6 +6,7 @@ import { Redirect } from "react-router";
 import { saveSearchFieldToStore } from "../../actions/jobSearchAction";
 import JobHeader from "../Header/JobHeader";
 import "./JobsLanding.css";
+import JobResults from './JobResults'
 
 import {
   saveSavedJobsToStore,
@@ -215,6 +216,9 @@ class JobsLandingPage extends Component {
               </span>
             </div>
           </div>
+
+          {/* added JobResults component */}
+          <JobResults />
 
           <div className="album py-5 bg-light">
             <div className="container">

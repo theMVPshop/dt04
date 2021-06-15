@@ -9,9 +9,10 @@
 .Login {
   justify-content: center;
   margin: auto;
-  padding: 150px 0;
+  /* padding: 150px 0; */
   height: 100%;
-  width: 40%;
+  background-color: none;
+  /* width: 40%; */
 }
 
 .Login form {
@@ -22,6 +23,7 @@
   margin: auto;
   max-width: 320px;
   height: 600px;
+  background-image: linear-gradient(130deg, #6250a6, #59fad2);
 }
 
 .Username {
@@ -58,6 +60,39 @@
 .signin {
   text-size-adjust: 25px;
 }
+
+.nav-button {
+  border-radius: 25px important!;
+}
+.nav-item button.btn.btn{
+ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+ color:rgba(0,0,0,.5) ; 
+margin-top: 1px;
+}
+
+.nav-item button.btn.btn:hover{
+color: black;
+}
+
+MODAL STYLING
+.modal-dialog.modal-lg{
+  background-color: none;
+}
+
+.modal-background{
+  background-color: none;
+}
+
+.div.modal-content{
+  background-color: none;
+  border: none;
+}
+
+/* .modal-lg, .modal-xl {
+  /* max-width: 38%; */
+/* } */
+
+
 
 body {
   background-image: linear-gradient(130deg, #6250a6, #59fad2);
