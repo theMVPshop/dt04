@@ -52,8 +52,22 @@ module.exports.signup_post = async (req, res) => {
   }
 };
 
-module.exports.login_get = (req, res) => {
-  res.render("login");
+module.exports.login_get = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+  const userDoc = await User.find({ email: email }, function (err, docs) {
+    if(docs){
+      console.log(docs)
+    res.cookie('email', email, { httpOnly: true })
+    res.send(200)
+    } 
+    console.log(err)
+ })
+} catch (err) {
+   // return handleError(err)
+   const errors = handleError(err);
+   res.status(400).json({ errors });
+ }
 };
 
 module.exports.login_post = async (req, res) => {
@@ -62,3 +76,8 @@ module.exports.login_post = async (req, res) => {
   console.log(email, password);
   res.send("user login");
 };
+
+module.exports.login_put = async (req, res) => {
+
+};
+
