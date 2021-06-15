@@ -15,7 +15,6 @@ var authKey = '+B7adBgiL5PUqf8xnx64GZjI1Xldz+HS0s/xZrYqrCw=';
 //Controller function to call both APIs
 const fetchResults = async (req, res) => {
 
-	var jobList = []
   const position =  "medical%20assistant" //req.body.location
   const location = "austin%20tx" //req.body.location
 
@@ -42,15 +41,8 @@ const fetchResults = async (req, res) => {
   // })
   .then(data =>  res.send(data.SearchResult.SearchResultItems))
   
-	// .then(data =>  {
-	// 	res.send(Object.keys(data.SearchResult.SearchResultItems))
-	// })
 
-	// .then(data =>  res.send(data.SearchResult.SearchResultItems).map((job, idx) => (
-	// 	console.log(job.MatchedObjectDescriptor)
-	// 	))
-
-	.then(data => res(data))
+	// .then(data => res(data))
 	// )
 };
 
