@@ -14,8 +14,12 @@ function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const payload = { email, password };
+    console.log(payload)
     axios
-      .get("http://localhost:3000/users/login")
+      .get("http://localhost:3000/users/login", {
+        ...payload,
+      })
       .then(function (response) {
         // handle success
         console.log(response);
@@ -47,7 +51,7 @@ function Login() {
                     <Form.Group size="lg" controlId="email">
                       <Form.Label>Email</Form.Label>
                       <Form.Control
-                        autoFocus
+                        autofocus
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}

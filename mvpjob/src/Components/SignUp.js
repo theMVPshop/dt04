@@ -4,26 +4,31 @@ import Button from "react-bootstrap/Button";
 const axios = require("axios");
 
 const SignUp = (props) => {
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    zipcode: "",
-    city: "",
-    state: "",
-  });
 
-  const textChange = (e) =>
-    setUser({ ...user, [e.target.name]: e.target.value });
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [zipcode, setZipcode] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...user };
+    const payload = { email, password, firstName, lastName, phoneNumber, zipcode, city, state };
     console.log(payload);
     axios.post("http://localhost:3000/users/signup", {
       ...payload,
+    })
+    .then(function (response) {
+      // handle success
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
     });
   };
 
@@ -36,20 +41,21 @@ const SignUp = (props) => {
             <Form.Group size="lg" controlId="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
-                autonFocus
+                // autoonFocus
                 type="email"
-                // value={user.email}
-                onChange={textChange}
-                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required  
               ></Form.Control>
             </Form.Group>
 
             <Form.Group size="lg" controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
+               
                 type="password"
-                // value={user.password}
-                onChange={textChange}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
@@ -57,54 +63,60 @@ const SignUp = (props) => {
             <Form.Group size="lg" controlId="firstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control
+                
                 type="firstName"
-                // value={user.firstName}
-                onChange={textChange}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
             <Form.Group size="lg" controlId="lastName">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
+                
                 type="lastName"
-                // value={user.lastName}
-                onChange={textChange}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
             <Form.Group size="lg" controlId="phoneNumber">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
+             
                 type="phoneNumber"
-                // value={user.phoneNumber}
-                onChange={textChange}
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="zipCode">
+            <Form.Group size="lg" controlId="zipcode">
               <Form.Label>Zip Code</Form.Label>
               <Form.Control
-                type="zipCode"
-                // value={user.zipCode}
-                onChange={textChange}
+         
+                type="zipcode"
+                value={zipcode}
+                onChange={(e) => setZipcode(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="City">
+            <Form.Group size="lg" controlId="city">
               <Form.Label>City</Form.Label>
               <Form.Control
-                type="City"
-                // value={user.city}
-                onChange={textChange}
+       
+                type="city"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
             <Form.Group size="lg" controlId="State">
               <Form.Label>State</Form.Label>
               <Form.Control
+            
                 type="State"
-                // value={user.state}
-                onChange={textChange}
+                value={state}
+                onChange={(e) => setState(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
