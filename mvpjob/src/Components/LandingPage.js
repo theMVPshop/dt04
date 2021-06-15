@@ -1,17 +1,17 @@
-import React from "react";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { Redirect } from "react-router";
-import { saveSearchFieldToStore } from "../../actions/jobSearchAction";
-import JobHeader from "../Header/JobHeader";
-import "./JobsLanding.css";
+// import { saveSearchFieldToStore } from "../../actions/jobSearchAction";
+// import JobHeader from "../Header/JobHeader";
+// import "./JobsLanding.css";
 import JobResults from './JobResults'
+import axios from 'axios'
 
-import {
-  saveSavedJobsToStore,
-  saveAppliedobsToStore,
-} from "../../actions/jobsLandingPageAction";
+// import {
+//   saveSavedJobsToStore,
+//   saveAppliedobsToStore,
+// } from "../../actions/jobsLandingPageAction";
 
 class JobsLandingPage extends Component {
   constructor(props) {
@@ -121,9 +121,9 @@ class JobsLandingPage extends Component {
     var redirectVar = null;
     console.log(this.state.redirectToJobResultsPage);
 
-    if (!this.props.loginStateStore) {
-      redirectVar = <Redirect to="/login" />;
-    }
+    // if (!this.props.loginStateStore) {
+    //   redirectVar = <Redirect to="/login" />;
+    // }
     if (this.state.redirectToJobResultsPage == true) {
       redirectVar = <Redirect to="/jobs/results" />;
     }
@@ -167,7 +167,7 @@ class JobsLandingPage extends Component {
     return (
       <div>
         {redirectVar}
-        <JobHeader />
+        {/* <JobHeader /> */}
         <div className="jobs-landing-header-container pad-top-1-pc pb-3">
           <form>
             <input
@@ -217,8 +217,6 @@ class JobsLandingPage extends Component {
             </div>
           </div>
 
-          {/* added JobResults component */}
-          <JobResults />
 
           <div className="album py-5 bg-light">
             <div className="container">
@@ -226,6 +224,8 @@ class JobsLandingPage extends Component {
                 <p>
                   <b>Jobs you may be interested in</b>
                 </p>
+          {/* added JobResults component */}
+          <JobResults />
               </div>
 
               <div className="row">{interestedJobs}</div>
@@ -246,9 +246,9 @@ const mapStateToProps = (state) => ({
   loginStateStore: state.Login.result,
 });
 
-export default LandingPage;
-export default connect(mapStateToProps, {
-  saveSearchFieldToStore,
-  saveSavedJobsToStore,
-  saveAppliedobsToStore,
-})(JobsLandingPage);
+export default JobsLandingPage;
+// export default connect(mapStateToProps, {
+//   saveSearchFieldToStore,
+//   saveSavedJobsToStore,
+//   saveAppliedobsToStore,
+// })(JobsLandingPage);
