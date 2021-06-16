@@ -5,7 +5,6 @@
   "engines": {
     "node": "14.x"
   },
-
   "scripts": {
     "server": "node ./server/app.js",
     "client": "npm start --prefix mvpjob",

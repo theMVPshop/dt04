@@ -15,10 +15,3 @@
     right: 50%;
     transform: translate(-50%, -50%);
     }
-
-
-    body {
-        background-image: url("../Images/lucas-vasques-9vnACvX2748-unsplash.jpg");
-        image-orientation: center;
-        justify-content: center;
-      }
