@@ -14,7 +14,7 @@ We hope you enjoy our Medical Assistance job search website as much as we enjoy 
 
 All the best,
 
-  Medican Assistance team</h2>
+  Medical Assistance team</h2>
     </div>
   );
 };
