@@ -84,7 +84,8 @@ const JobResults = () => {
 
   //fetch USAJobs
   const fetchUSAJobs = async () => {
-    axios.get('http://localhost:5000/search')
+    let searchParams = 'PositionTitle=Medical%20Assistant&Location=Austin%20Texas'
+    axios.get(`http://localhost:5000/search/${searchParams}`)
     .then((res) => {
       let tempArray = []
       let results = res.data
@@ -106,7 +107,7 @@ const JobResults = () => {
 
   const fetchAllJobs = () => {
     // Promise.all([
-      convertToJSON()
+      // convertToJSON()
       fetchUSAJobs()
       // ])
   }

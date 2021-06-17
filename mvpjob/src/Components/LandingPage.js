@@ -5,9 +5,7 @@ import JobResults from "./JobResults"
 
 const LandingPage = ()=> {
 
-  
 
-  
 
 //getInterestedJobs = () => {
   //   axios.defaults.withCredentials = true;
@@ -158,8 +156,6 @@ const LandingPage = ()=> {
             </div> */}
           </div>
 
-          {/* added JobResults component */}
-          <JobResults />
 
           {/* <div className="album py-5 bg-light">
             <div className="container">
@@ -167,11 +163,13 @@ const LandingPage = ()=> {
                 <p>
                   <b>Jobs you may be interested in</b>
                 </p>
-              </div>
+          {/* added JobResults component */}
+          <JobResults />
+              {/* </div>
 
               <div className="row">{interestedJobs}</div>
             </div>
-          </div> */}
+          </div> */} 
         </div>
       </div>
 
