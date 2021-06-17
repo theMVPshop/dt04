@@ -2,12 +2,77 @@ import React from "react";
 import JobResults from "./JobResults"
 
 
-
-const LandingPage = ()=> {
+const LandingPage = (props)=> {
+  const {indeedJobs,  
+        usaJobs, 
+        searchParams, 
+        setSearchParams, 
+        jobTitle, 
+        setJobTitle, 
+        jobLocation, 
+        setLocation, 
+        fetchAllJobs} = props
 
   
+  let jobTitleInput = React.createRef();
+  let jobLocationInput = React.createRef();
 
+  const handleChange = () => {
+    setJobTitle(jobTitleInput.current.value)
+    setLocation(jobLocationInput.current.value)
+    console.log(jobLocation, jobTitle)
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSearchParams({title: jobTitle, location: jobLocation})
+    console.log(searchParams)
+    fetchAllJobs()
+    
+  }
   
+   
+    return (
+      <div>
+        <div className="jobs-landing-header-container pad-top-1-pc pb-3">
+          <form onSubmit={handleSubmit}>
+            <input
+              ref={jobTitleInput}
+              type="text"
+              value={jobTitle}
+              onChange={handleChange}
+              placeholder="Search Jobs"
+            ></input>
+            &nbsp;&nbsp;
+            <input
+              ref={jobLocationInput}
+              type="text"
+              value={jobLocation}
+              onChange={handleChange}
+              placeholder="Search Location"
+            ></input>
+            &nbsp;&nbsp;
+            <button
+              className="btn btn-outline-default white-outline btn-md searchbox-submit"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+        <div className="jobs-landing-main-bg">
+          <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
+        </div>
+      </div>
+
+    );
+    }
+
+
+export default LandingPage;
+
+
+//For Later:
 
 //getInterestedJobs = () => {
   //   axios.defaults.withCredentials = true;
@@ -73,18 +138,6 @@ const LandingPage = ()=> {
   //   });
   // };
 
-  const handleJobTitle = (e) => {
-    this.setState({
-      jobTitle: e.target.value,
-    });
-  };
-
-  const handleLocation = (e) => {
-    this.setState({
-      location: e.target.value,
-    });
-  };
-
   // render() {
   //   var redirectVar = null;
   //   console.log(this.state.redirectToJobResultsPage);
@@ -104,39 +157,8 @@ const LandingPage = ()=> {
     //   this.props.saveAppliedobsToStore(this.state.appliedJobs);
     // }
 
-   
-    return (
-      <div>
-        
-        
-        <div className="jobs-landing-header-container pad-top-1-pc pb-3">
-          <form>
-            <input
-              type="text"
-              onChange={handleJobTitle}
-              className="jobs"
-              placeholder="Search Jobs"
-            ></input>
-            &nbsp;&nbsp;
-            <input
-              type="text"
-              onChange={handleLocation}
-              className="location"
-              placeholder="Search Location"
-            ></input>
-            &nbsp;&nbsp;
-            <button
-              // onClick={searchResultsHandler}
-              className="btn btn-outline-default white-outline btn-md searchbox-submit"
-              type="button"
-            >
-              Search
-            </button>
-          </form>
-        </div>
-        <div className="jobs-landing-main-bg">
-          <div className="row mt-3 pull-center-1 pull-center-2">
-            {/* <div className="jobs-landing-bar-container mb-3">
+
+    {/* <div className="jobs-landing-bar-container mb-3">
               <span className="p-3">
                 <Link to="/jobs/saved-jobs">
                   {this.state.savedJobsCount} Saved Jobs
@@ -156,12 +178,9 @@ const LandingPage = ()=> {
                 </button>
               </span>
             </div> */}
-          </div>
 
-          {/* added JobResults component */}
-          <JobResults />
 
-          {/* <div className="album py-5 bg-light">
+                      {/* <div className="album py-5 bg-light">
             <div className="container">
               <div>
                 <p>
@@ -172,15 +191,3 @@ const LandingPage = ()=> {
               <div className="row">{interestedJobs}</div>
             </div>
           </div> */}
-        </div>
-      </div>
-
-      // </div>
-    );
-    }
-
-
-
-
-export default LandingPage;
-
