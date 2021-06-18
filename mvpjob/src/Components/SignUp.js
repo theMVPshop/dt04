@@ -29,17 +29,11 @@ const SignUp = (props) => {
     e.preventDefault();
     const payload = { email, password, firstName, lastName, phoneNumber, zipcode, city, state };
     console.log(payload);
-    axios.post("http://localhost:3000/users/signup", {
-      ...payload,
+    axios({
+      method: 'post',
+      url: "http://localhost:5000/users/signup",
+      data: { ...payload }
     })
-    .then(function (response) {
-      // handle success
-      console.log(response);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    });
   };
 
   return (

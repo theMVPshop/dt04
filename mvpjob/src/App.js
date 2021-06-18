@@ -20,8 +20,8 @@ const App = () => {
     title: "",
     location: ""
   });
-  const [jobTitle, setJobTitle] = useState("");
   const [jobLocation, setLocation] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
 
   var JQUERYconvertRSS;
   var normalizedJobs = [];
@@ -71,18 +71,16 @@ const App = () => {
 
       //create search params string
       if(searchParams.title){
-        console.log("TITLE!", searchParams.title)
         searchArray.push(`q=${searchParams.title}`)
       }
       if(searchParams.location){
-        console.log("location!", searchParams.location)
         searchArray.push(`l=${searchParams.location}`)
       }
       if (searchArray.length > 1) {
         searchArray = searchArray.join('&')
-        console.log(searchArray)
+        // console.log(searchArray)
       }
-
+  
     JQUERYconvertRSS({
           FeedUrl:`https://rss.indeed.com/rss?${searchArray}`,
           MaxCount: 120,
@@ -122,19 +120,17 @@ const App = () => {
 
       //create search params string
       if(searchParams.title){
-        console.log("TITLE!", searchParams.title)
-        searchArray.push(`q=${searchParams.title}`)
+        searchArray.push(`PositionTitle=${searchParams.title}`)
       }
       if(searchParams.location){
-        console.log("location!", searchParams.location)
-        searchArray.push(`l=${searchParams.location}`)
+        searchArray.push(`LocationName=${searchParams.location}`)
       }
       if (searchArray.length > 1) {
         searchArray = searchArray.join('&')
-        console.log(searchArray)
+        console.log("USA Search Array", searchArray)
       }
 
-    axios.get('http://localhost:5000/search')
+    axios.get(`http://localhost:5000/search/${searchArray}`)
     .then((res) => {
       let results = res.data
       results.forEach( function (job) { 
@@ -151,15 +147,15 @@ const App = () => {
   }
 
 
-
   const fetchAllJobs = () => {
-    // Promise.all([
+      setIndeed([])
+      setUSA([])
+      setSearchParams({title: jobTitle, location: jobLocation})
+
       fetchIndeedAsJson()
       fetchUSAJobs()
       console.log("Indeed Jobs", indeedJobs)
       console.log("USA Jobs", usaJobs)
-
-      // ])
   }
 
 

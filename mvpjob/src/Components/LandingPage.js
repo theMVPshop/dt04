@@ -20,12 +20,13 @@ const LandingPage = (props)=> {
   const handleChange = () => {
     setJobTitle(jobTitleInput.current.value)
     setLocation(jobLocationInput.current.value)
-    console.log(jobLocation, jobTitle)
+    setSearchParams({title: jobTitle, location: jobLocation})
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setSearchParams({title: jobTitle, location: jobLocation})
+    // setSearchParams({title: jobTitle, location: jobLocation})
     console.log(searchParams)
     fetchAllJobs()
     
@@ -158,36 +159,38 @@ export default LandingPage;
     // }
 
 
-    {/* <div className="jobs-landing-bar-container mb-3">
-              <span className="p-3">
-                <Link to="/jobs/saved-jobs">
-                  {this.state.savedJobsCount} Saved Jobs
-                </Link>
-              </span>
-              <span className="pad-3-pc">
-                <Link to="/jobs/applied-jobs">
-                  {this.state.appliedJobsCount} Applied Jobs
-                </Link>
-              </span>
-              <span className="pad-3-pc">Career Interests</span>
-              <span className="pad-3-pc"> Salary</span>
-              <span className="pad-3-pc">Looking for talent?</span>
-              <span className="pad-3-pc">
-                <button className="btn linkedin-post-job" type="submit">
-                  Post a Job
-                </button>
-              </span>
-            </div> */}
+  //  <div className="jobs-landing-bar-container mb-3">
+  //             <span className="p-3">
+  //               <Link to="/jobs/saved-jobs">
+  //                 {this.state.savedJobsCount} Saved Jobs
+  //               </Link>
+  //             </span>
+  //             <span className="pad-3-pc">
+  //               <Link to="/jobs/applied-jobs">
+  //                 {this.state.appliedJobsCount} Applied Jobs
+  //               </Link>
+  //             </span>
+  //             <span className="pad-3-pc">Career Interests</span>
+  //             <span className="pad-3-pc"> Salary</span>
+  //             <span className="pad-3-pc">Looking for talent?</span>
+  //             <span className="pad-3-pc">
+  //               <button className="btn linkedin-post-job" type="submit">
+  //                 Post a Job
+  //               </button>
+  //             </span>
+  //           </div> */}
 
 
-                      {/* <div className="album py-5 bg-light">
-            <div className="container">
-              <div>
-                <p>
-                  <b>Jobs you may be interested in</b>
-                </p>
-              </div>
+  //                    <div className="album py-5 bg-light">
+  //           <div className="container">
+  //             <div>
+  //               <p>
+  //                 <b>Jobs you may be interested in</b>
+  //               </p>
+  //         {/* added JobResults component */}
+  //         // <JobResults />
+  //           </div>
 
-              <div className="row">{interestedJobs}</div>
-            </div>
-          </div> */}
+  //             <div className="row">{interestedJobs}</div>
+  //           </div>
+  //         </div> 
