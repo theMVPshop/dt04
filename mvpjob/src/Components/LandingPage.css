@@ -15,10 +15,3 @@
     right: 50%;
     transform: translate(-50%, -50%);
     }
-
-
-    body {
-        background-image: url("../Images/jonathan-borba-hl6uG9cHW5A-unsplash.svg.jpg");
-        image-orientation: center;
-        justify-content: center;
-      }
