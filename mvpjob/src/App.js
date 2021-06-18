@@ -164,26 +164,7 @@ const App = () => {
       <Navigation />
       <Router>
         <Switch>
-<<<<<<< HEAD
           <Route exact path="/landingpage" component={landingPage}></Route>
-=======
- aboutjs
-          <Route exact path="/landingpage" component={LandingPage}></Route>
-
-          <Route exact path="/" render={(props) => 
-            <LandingPage 
-              indeedJobs={indeedJobs} 
-              usaJobs={usaJobs} 
-              searchParams={searchParams} 
-              setSearchParams={setSearchParams}
-              jobTitle={jobTitle} 
-              setJobTitle={setJobTitle}
-              jobLocation={jobLocation} 
-              setLocation={setLocation}
-              fetchAllJobs={fetchAllJobs}/>}
-            />
- main
->>>>>>> eca5c0f4ef71b22ee687f21b6c79495634ea905d
           <Route exact path="/about" component={About}></Route>
           <Route exact path="/login" component={Login}></Route>      
           <Route exact path="/SignUp" component={SignUp}></Route>
