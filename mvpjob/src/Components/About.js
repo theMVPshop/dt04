@@ -1,11 +1,11 @@
 import React from "react";
-import Images from "../Images//Users/gretasepulveda/Documents/Mvp Shop/dt04/mvpjob/src/Images/jonathan-borba-hl6uG9cHW5A-unsplash.png"
+import Images from "../Images/Users/gretasepulveda/Documents/Mvp Shop/dt04/mvpjo"
 
 
 const About = () => {
   return (
     <div className="about">
-    <Images />
+    <Images /> <img src>/Users/gretasepulveda/Documents/Mvp Shop/dt04/mvpjob/src/Images/AvatarMakerAustin.svg</img>
     <h2>Welcome to the Medical Assistant Program, your number one source for searching a job in your field. We're dedicated to giving you the very best of searching for a new role in the Medical Assistance field, with a focus on your dream Medical Assistance job.
 
 
