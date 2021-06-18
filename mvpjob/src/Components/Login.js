@@ -8,25 +8,20 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const payload = { email, password };
-    axios
-      .get("http://localhost:3000/users/login", {
-        ...payload,
-      }).then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
+    console.log(payload)
+    
+      axios({
+        method: 'post',
+        url: "http://localhost:5000/users/login",
+        data: { ...payload }
+      })      
   }
 
   return (
