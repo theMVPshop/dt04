@@ -18,7 +18,7 @@ const Resume = () => {
     const payload = { ...resume };
     console.log(payload);
     axios
-      .post("http://localhost:3000/experience", {
+      .post("http://localhost:5000/experience", {
         ...payload,
       })
       .then(function (response) {
