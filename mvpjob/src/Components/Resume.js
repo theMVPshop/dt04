@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const axios = require('axios');
+const axios = require("axios");
 
 const Resume = () => {
   const [resume, setResume] = useState({
@@ -17,9 +17,16 @@ const Resume = () => {
     e.preventDefault();
     const payload = { ...resume };
     console.log(payload);
-    axios.post('http://localhost:3000/experience', {
-      ...payload
-    })
+    axios
+      .post("http://localhost:5000/experience", {
+        ...payload,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (

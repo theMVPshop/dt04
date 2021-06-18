@@ -5,9 +5,12 @@ const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const experienceRouter = require("./routes/experience");
 const usersRouter = require("./routes/users");
+const searchRouter = require("./routes/search");
+const cors = require("cors")
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
+
 
 //establishing database connection
 const dbURI =
@@ -24,13 +27,18 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors({ origin: 'http://localhost:3000' , credentials :  true}));
+
 
 app.use("/users", usersRouter);
 app.use("/experience", experienceRouter);
+app.use("/search", searchRouter)
 
 app.get("/", (req, res) => {
   res.send("Welcome to our server");
 });
+
+
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../mvpjob/build")));

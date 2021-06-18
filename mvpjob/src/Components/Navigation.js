@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Nav, NavDropdown, Navbar, NavItem } from "react-bootstrap";
-
+import { Nav,  Navbar, NavItem } from "react-bootstrap";
+// import Button from "react-bootstrap/Button";
+import PopUp from "./PopUp";
 const Navigation = () => {
   return (
     <Navbar expand="lg" sticky="top">
@@ -17,10 +18,13 @@ const Navigation = () => {
             <Nav.Link href="/about">About</Nav.Link>
           </NavItem>
           <NavItem>
-            <Nav.Link href="/login">Login</Nav.Link>
-          </NavItem>
-          <NavItem>
             <Nav.Link href="/SignUp">Sign Up</Nav.Link>
+          </NavItem>
+        
+          <NavItem>
+          
+              <PopUp className="nav-button"/>
+           
           </NavItem>
         </Nav>
       </Navbar.Collapse>

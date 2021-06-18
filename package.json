@@ -5,7 +5,7 @@
   "engines": {
     "node": "14.x"
   },
-  "proxy": "http://localhost:3000",
+
   "scripts": {
     "server": "node ./server/app.js",
     "client": "npm start --prefix mvpjob",
@@ -17,7 +17,8 @@
     "@react-pdf/renderer": "^2.0.13",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",

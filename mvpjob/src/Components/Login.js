@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Navigation from "./Navigation";
+const axios = require("axios");
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -11,13 +12,20 @@ function Login() {
     return email.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    const payload = { email, password };
+    console.log(payload)
+    
+      axios({
+        method: 'post',
+        url: "http://localhost:5000/users/login",
+        data: { ...payload }
+      })      
   }
 
   return (
     <div>
-
       <div className="Login">
         <Form onSubmit={handleSubmit}>
           <h4>Sign In</h4>
@@ -44,8 +52,8 @@ function Login() {
             Sign In
           </Button>
           <p className="signuptext">
-              New to the App? <a href="/signUp">Sign up</a>
-            </p>
+            New to the App? <a href="/signUp">Sign up</a>
+          </p>
         </Form>
       </div>
     </div>
