@@ -18,9 +18,14 @@ const LandingPage = (props)=> {
   let jobLocationInput = React.createRef();
 
   const handleChange = () => {
+  //   setJobTitle(function(prevState, props){
+  //     return {jobTitle: jobTitleInput.current.value}
+  //  })
+  //   setJobTitle((e) => {jobTitleInput.current.value})
     setJobTitle(jobTitleInput.current.value)
     setLocation(jobLocationInput.current.value)
     setSearchParams({title: jobTitle, location: jobLocation})
+    console.log("SEARCH: ", searchParams, "Title:", jobTitle)
   };
 
 
