@@ -1,16 +1,29 @@
 import React from "react";
-import Images from "../Images";
+import Claire from "../Images";
+import Austin from "../Images";
+import Keith from "../Images";
+import Connor from "../Images";  
+import Greta from "../Images";
+
+
+<div className="container">       
+<img src={Claire} alt="Claire"/>
+<img src={Austin} alt="Austin"/>
+<img src={Keith}  alt="Keith"/>
+<img src={Connor} alt="Connor"/>
+<img src={Greta} alt ="Greta"/>
+</div>
+
+        
 
 
 
 const About = () => {
   return (
     <div className="about">
-    <Images /> 
-    <img src>/Users/gretasepulveda/Documents/Mvp Shop/dt04/mvpjob/src/Images/AvatarMakerAustin.svg</img>
-    <img src>/Users/gretasepulveda/Documents/Mvp Shop/dt04/mvpjob/src/Images/AvatarMakerAustin.svg</img>
-    <img src>/Users/gretasepulveda/Documents/Mvp Shop/dt04/mvpjob/src/Images/AvatarMaker (3).svg</img>
-    <img src>/Users/gretasepulveda/Documents/Mvp Shop/dt04/mvpjob/src/Images/AvatarMaker1Claire.svg</img>
+    
+  
+
    
    <h2>Welcome to the Medical Assistant Program, your number one source for searching a job in your field. We're dedicated to giving you the very best when looking for your new role in the Medical Assistance field, with a focus on your dream Medical Assistance job.
 
