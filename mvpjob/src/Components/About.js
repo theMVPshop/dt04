@@ -1,4 +1,3 @@
-
 import React from "react";
 import Claire from "../Images";
 import Austin from "../Images";
