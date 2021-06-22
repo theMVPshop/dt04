@@ -20,8 +20,6 @@ const App = () => {
     title: "",
     location: ""
   });
-  const [jobLocation, setLocation] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
 
   var JQUERYconvertRSS;
   var normalizedJobs = [];
@@ -120,6 +118,7 @@ const App = () => {
 
       //create search params string
       if(searchParams.title){
+        console.log(searchParams.title.split(' ').join("+"))
         searchArray.push(`PositionTitle=${searchParams.title}`)
       }
       if(searchParams.location){
@@ -150,12 +149,11 @@ const App = () => {
   const fetchAllJobs = () => {
       setIndeed([])
       setUSA([])
-      setSearchParams({title: jobTitle, location: jobLocation})
 
       fetchIndeedAsJson()
       fetchUSAJobs()
-      console.log("Indeed Jobs", indeedJobs)
-      console.log("USA Jobs", usaJobs)
+      console.log(usaJobs)
+
   }
 
 
@@ -170,11 +168,7 @@ const App = () => {
               usaJobs={usaJobs} 
               searchParams={searchParams} 
               setSearchParams={setSearchParams}
-              jobTitle={jobTitle} 
-              setJobTitle={setJobTitle}
-              jobLocation={jobLocation} 
-              setLocation={setLocation}
-              fetchAllJobs={fetchAllJobs}/>}
+              fetchAllJobs={fetchAllJobs} />}
             />
           <Route exact path="/about" component={About}></Route>
           <Route exact path="/login" component={Login}></Route>      
