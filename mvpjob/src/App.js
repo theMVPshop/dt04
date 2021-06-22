@@ -175,7 +175,7 @@ const App = () => {
           <Route exact path="/SignUp" component={SignUp}></Route>
           <Route exact path="/resume" component={Resume}></Route>
           <Route exact path="/popup" component={PopUp}></Route>
-
+         
         </Switch>
       </Router>
     </Fragment>
