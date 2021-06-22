@@ -9,9 +9,7 @@ const axios = require("axios");
 function Login({ userRef, setUserRef }) {
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  //need to pass this hook from parent component
-  //const [userRef, setUserRef] = useState('')
+  const [password, setPassword] = useState("")
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -27,7 +25,7 @@ function Login({ userRef, setUserRef }) {
         method: 'get',
         url: "http://localhost:5000/api/users/login",
         data: { ...payload }
-      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
+      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err))
   }
 
   const [show, setShow] = useState(false);
