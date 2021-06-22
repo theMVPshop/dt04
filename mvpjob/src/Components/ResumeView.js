@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 const axios = require("axios");
 
-const ResumeView = () => {
+const ResumeView = ({ userRef, setUserRef }) => {
     const [resume, setResume] = useState({ });
     
       useEffect(() => {
         const fetchData = async () => {
-          const results = await axios("http://localhost:5000/experience")
+          const results = await axios("http://localhost:5000/api/experience")
           
           setResume(results)
         }

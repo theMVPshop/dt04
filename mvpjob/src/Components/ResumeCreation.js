@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const axios = require("axios");
 
-const ResumeCreation = () => {
+const ResumeCreation = ({ userRef, setUserRef }) => {
   const [resume, setResume] = useState({
     company: "",
     position: "",
@@ -18,7 +18,7 @@ const ResumeCreation = () => {
     const payload = { ...resume };
     console.log(payload);
     axios
-      .post("http://localhost:5000/experience", {
+      .post("http://localhost:5000/api/experience", {
         ...payload, userRef
       })
       .then(function (response) {
