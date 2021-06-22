@@ -66,7 +66,7 @@ function Login() {
                       />
                     </Form.Group>
                   </div>
-                  <Button
+                  <Button onClick={handleClose}
                     block
                     size="lg"
                     type="submit"
