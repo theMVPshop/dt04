@@ -1,5 +1,5 @@
 
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +15,6 @@ import ResumeCreation from "./Components/ResumeCreation";
 import ResumeView from "./Components/ResumeView";
 import Navigation from "./Components/Navigation";
 import "./App.css";
-import PopUp from "./Components/PopUp";
 import cookie from "cookie";
 import jQuery from 'jquery'
 import axios from 'axios'
@@ -187,7 +186,6 @@ const App = () => {
         <Switch>
           <ProtectedRoute path="/resumecreation" component={ResumeCreation} />
           <ProtectedRoute path="/resumeview" component={ResumeView} />
-          <Route exact path="/" component={LandingPage}></Route>
           <Route exact path="/" render={(props) => 
             <LandingPage 
               indeedJobs={indeedJobs} 
@@ -199,7 +197,6 @@ const App = () => {
           <Route exact path="/about" component={About}></Route>
           <Route exact path="/login" component={Login}></Route>      
           <Route exact path="/SignUp" component={SignUp}></Route>
-          <Route exact path="/resume" component={Resume}></Route>
          
 
         </Switch>
