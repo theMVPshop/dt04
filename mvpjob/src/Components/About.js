@@ -5,14 +5,13 @@ import Keith from "../Images";
 import Connor from "../Images";  
 import Greta from "../Images";
 
-
-<div className="container">       
+<Div>
 <img src={Claire} alt="Claire"/>
 <img src={Austin} alt="Austin"/>
 <img src={Keith}  alt="Keith"/>
 <img src={Connor} alt="Connor"/>
 <img src={Greta} alt ="Greta"/>
-</div>
+</Div>
 
         
 
