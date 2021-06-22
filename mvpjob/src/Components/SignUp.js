@@ -31,6 +31,14 @@ const SignUp = (props) => {
     console.log(payload);
     axios.post("http://localhost:3000/users/signup", {
       ...payload,
+    })
+    .then(function (response) {
+      // handle success
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
     });
   };
 
@@ -43,7 +51,7 @@ const SignUp = (props) => {
             <Form.Group size="lg" controlId="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
-                autonFocus
+                // autoonFocus
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -51,10 +59,10 @@ const SignUp = (props) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                autonFocus
+               
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -62,37 +70,37 @@ const SignUp = (props) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="firstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control
-                autonFocus
+                
                 type="firstName"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="lastName">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
-                autonFocus
+                
                 type="lastName"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="phoneNumber">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
-                autonFocus
+             
                 type="phoneNumber"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="zipcode">
               <Form.Label>Zip Code</Form.Label>
               <Form.Control
                 autonFocus
@@ -102,7 +110,7 @@ const SignUp = (props) => {
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="city">
               <Form.Label>City</Form.Label>
               <Form.Control
                 autonFocus
@@ -112,10 +120,10 @@ const SignUp = (props) => {
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group size="lg" controlId="email">
+            <Form.Group size="lg" controlId="State">
               <Form.Label>State</Form.Label>
               <Form.Control
-                autonFocus
+            
                 type="State"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
