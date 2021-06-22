@@ -29,29 +29,27 @@ const addExperience = async (req, res) => {
   let doc = req.body
   const newDoc = Object.assign(doc, {email: cookies.email})
   try {
-    
     const userExperience = await Experience.create(newDoc);
-    res.status(201).json(userExperience);
+    res.sendStatus(201).json(userExperience);
   } catch (err) {
-    // return handleError(err)
-    console.log(newDoc)
     const errors = handleError(err);
-    res.status(400).json({ errors });
+    res.sendStatus(400).json({ errors });
   }
 };
 
 const viewExperience = async (req, res) => {
   const { cookies} = req
+  const email = cookies.email
  try {
-  const expDoc = await Experience.find({ email: `${cookies.email}` }, function (err, docs) {
-    res.status(201).json(docs);
- })
+  const expDoc = await Experience.find({ email })
+  res.sendStatus(200).json(expDoc)
  
  console.log("Fetching User Job Experience");
  } catch (err) {
-      // return handleError(err)
+      
+      console.log(expDoc)
       const errors = handleError(err);
-      res.status(400).json({ errors });
+      res.sendStatus(400).json({ errors });
  }
 };
 

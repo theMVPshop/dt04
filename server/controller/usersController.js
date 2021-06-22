@@ -36,6 +36,8 @@ const handleErrors = (err) => {
   return err;
 };
 
+const maxAge = 3 * 24 * 60 * 60;
+
 module.exports.signup_get = async (req, res) => {
   res.render("signup");
 };
@@ -51,17 +53,7 @@ module.exports.signup_post = async (req, res) => {
     city,
     state,
   } = req.body;
-  console.log(
-    "in Post request ",
-    email,
-    password,
-    firstName,
-    lastName,
-    phoneNumber,
-    zipcode,
-    city,
-    state
-  );
+  
   try {
     const user = await User.create({
       email,
@@ -73,31 +65,34 @@ module.exports.signup_post = async (req, res) => {
       city,
       state,
     });
-    console.log(user)
-    res.cookie("email", email, { httpOnly: true });
-    res.send(201).json({ user: user.email });
+    res.cookie("email", email, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.sendStatus(201).json({ user: user.email });
   } catch (err) {
-    //const errors = handelErrors(err);
+    console.log(" this is the err", err)
     const errors = handleErrors(err);
-    res.status(400).json({ errors });
+    res.sendStatus(400).json({ errors });
   }
 };
 
-module.exports.login_get = async (req, res) => {};
-
-module.exports.login_post = async (req, res) => {
+module.exports.login_get = async (req, res) => {
   const { email, password } = req.body;
-  console.log("in Post request ", email, password);
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).catch((error) => {
+      console.error(error);
+    });
+    console.log(user)
     if (user) {
-      res.cookie("email", email, { httpOnly: true });
-      res.send(200).json({ user: user.email });
+      res.sendStatus(200).json({ userRef: user._id });
     }
   } catch (err) {
+    console.log(" this is the err", err)
     const errors = handleErrors(err);
-    res.status(400).json({ errors });
+    res.sendStatus(400).json({ errors });
   }
+};
+
+module.exports.login_post = async (req, res) => {
+ 
 };
 
 module.exports.login_put = async (req, res) => {};
