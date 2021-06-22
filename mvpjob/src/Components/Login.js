@@ -7,26 +7,23 @@ const axios = require("axios");
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [userRef, setUserRef] = useState('')
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const payload = { email, password };
-    axios
-      .get("http://localhost:3000/users/login", {
-        ...payload,
-      }).then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
+    document.cookie = "loggedIn=true;max-age=60*1000";
+    console.log(payload)
+    
+      axios({
+        method: 'get',
+        url: "http://localhost:5000/users/login",
+        data: { ...payload }
+      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err))
   }
 
   const [show, setShow] = useState(false);
