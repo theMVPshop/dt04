@@ -4,10 +4,14 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 const axios = require("axios");
 
-function Login() {
+
+
+function Login({ userRef, setUserRef }) {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userRef, setUserRef] = useState('')
+  //need to pass this hook from parent component
+  //const [userRef, setUserRef] = useState('')
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -21,9 +25,9 @@ function Login() {
     
       axios({
         method: 'get',
-        url: "http://localhost:5000/users/login",
+        url: "http://localhost:5000/api/users/login",
         data: { ...payload }
-      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err))
+      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
   }
 
   const [show, setShow] = useState(false);

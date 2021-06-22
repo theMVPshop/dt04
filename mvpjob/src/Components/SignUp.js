@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 const axios = require("axios");
 
-const SignUp = (props) => {
+const SignUp = ({ userRef, setUserRef }) => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -31,7 +31,7 @@ const SignUp = (props) => {
     console.log(payload);
     axios({
       method: 'post',
-      url: "http://localhost:5000/users/signup",
+      url: "http://localhost:5000/api/users/signup",
       data: { ...payload }
     })
   };
