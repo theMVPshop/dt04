@@ -14,6 +14,16 @@ const SignUp = (props) => {
   const [city, setCity] = useState("")
   const [state, setState] = useState("")
 
+  // const [user, setUser] = useState({
+  //   email: "",
+  //   password: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   phoneNumber: "",
+  //   zipcode: "",
+  //   city: "",
+  //   state: "",
+  // });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -93,8 +103,8 @@ const SignUp = (props) => {
             <Form.Group size="lg" controlId="zipcode">
               <Form.Label>Zip Code</Form.Label>
               <Form.Control
-         
-                type="zipcode"
+                autonFocus
+                type="zipCode"
                 value={zipcode}
                 onChange={(e) => setZipcode(e.target.value)}
                 required
@@ -103,8 +113,8 @@ const SignUp = (props) => {
             <Form.Group size="lg" controlId="city">
               <Form.Label>City</Form.Label>
               <Form.Control
-       
-                type="city"
+                autonFocus
+                type="City"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 required

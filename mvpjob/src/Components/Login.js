@@ -8,6 +8,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
@@ -15,12 +16,10 @@ function Login() {
   function handleSubmit(event) {
     event.preventDefault();
     const payload = { email, password };
-    console.log(payload)
     axios
       .get("http://localhost:3000/users/login", {
         ...payload,
-      })
-      .then(function (response) {
+      }).then(function (response) {
         // handle success
         console.log(response);
       })

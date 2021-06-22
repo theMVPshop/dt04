@@ -51,8 +51,10 @@
 
 .Login p.signuptext {
   justify-content: center;
-  margin: 40px;
-  width: 240px;
+  margin: auto;
+  padding: 0px 0;
+  height: 100%;
+  width: 20%;
 }
 
 .signin {
@@ -148,6 +150,7 @@ header,
   background-size: cover;
 }
 
+  -o-background-size: cover;
 
 @media (min-width: 994px) and (max-width: 1398px) {
   .Login form{
