@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import JobResults from "./JobResults"
 
@@ -10,29 +7,21 @@ const LandingPage = (props)=> {
         usaJobs, 
         searchParams, 
         setSearchParams, 
-        jobTitle, 
-        setJobTitle, 
-        jobLocation, 
-        setLocation, 
         fetchAllJobs} = props
 
-  
-  let jobTitleInput = React.createRef();
-  let jobLocationInput = React.createRef();
 
-  const handleChange = () => {
-    setJobTitle(jobTitleInput.current.value)
-    setLocation(jobLocationInput.current.value)
-    setSearchParams({title: jobTitle, location: jobLocation})
+  const handleChange = (e) => {
+    const newState = { ...searchParams }
+    newState[e.target.name] = e.target.value
+    setSearchParams(newState)
+    console.log(searchParams)
   };
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // setSearchParams({title: jobTitle, location: jobLocation})
     console.log(searchParams)
     fetchAllJobs()
-    
   }
   
    
@@ -41,17 +30,17 @@ const LandingPage = (props)=> {
         <div className="jobs-landing-header-container pad-top-1-pc pb-3">
           <form onSubmit={handleSubmit}>
             <input
-              ref={jobTitleInput}
               type="text"
-              value={jobTitle}
+              value={searchParams.title}
+              name="title"
               onChange={handleChange}
               placeholder="Search Jobs"
             ></input>
             &nbsp;&nbsp;
             <input
-              ref={jobLocationInput}
               type="text"
-              value={jobLocation}
+              value={searchParams.location}
+              name="location"
               onChange={handleChange}
               placeholder="Search Location"
             ></input>
@@ -197,4 +186,3 @@ export default LandingPage;
   //             <div className="row">{interestedJobs}</div>
   //           </div>
   //         </div> 
-            main
