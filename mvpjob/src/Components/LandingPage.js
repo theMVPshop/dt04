@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import JobResults from "./JobResults"
 
@@ -194,3 +197,4 @@ export default LandingPage;
   //             <div className="row">{interestedJobs}</div>
   //           </div>
   //         </div> 
+            main
