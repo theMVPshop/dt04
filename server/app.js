@@ -34,7 +34,7 @@ app.use("/users", usersRouter);
 app.use("/experience", experienceRouter);
 app.use("/search", searchRouter)
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Welcome to our server");
 });
 

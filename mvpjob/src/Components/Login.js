@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 const axios = require("axios");
 
 
+
 function Login({ userRef, setUserRef }) {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //need to pass this hook from parent component
@@ -27,39 +30,61 @@ function Login({ userRef, setUserRef }) {
       }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
   }
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <div>
-      <div className="Login">
-        <Form onSubmit={handleSubmit}>
-          <h4>Sign In</h4>
-          <div className="Username">
-            <Form.Group size="lg" controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                autoFocus
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group size="lg" controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-          </div>
-          <Button block size="lg" type="submit" disabled={!validateForm()}>
-            Sign In
-          </Button>
-          <p className="signuptext">
-            New to the App? <a href="/signUp">Sign up</a>
-          </p>
-        </Form>
+    <>
+      <Button variant="" onClick={handleShow}>
+        Sign In
+      </Button>
+      <div className="modal-background">
+        <Modal size="lg" show={show} onHide={handleClose}>
+          <Modal.Body>
+            <div>
+              <div className="Login">
+                <Form onSubmit={handleSubmit}>
+                  <h4>Sign In</h4>
+                  <div className="Username">
+                    <Form.Group size="lg" controlId="email">
+                      <Form.Label>Email</Form.Label>
+                      <Form.Control
+                        autofocus
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </Form.Group>
+                    <Form.Group size="lg" controlId="password">
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                    </Form.Group>
+                  </div>
+                  <Button onClick={handleClose}
+                    block
+                    size="lg"
+                    type="submit"
+                    disabled={!validateForm()}
+                  >
+                    Sign In
+                  </Button>
+                  <p className="signuptext">
+                    New to the App? <a href="/signUp">Sign up</a>
+                  </p>
+                </Form>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
       </div>
-    </div>
+    </>
   );
 }
+
 export default Login;

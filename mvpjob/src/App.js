@@ -1,5 +1,5 @@
 
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +15,6 @@ import ResumeCreation from "./Components/ResumeCreation";
 import ResumeView from "./Components/ResumeView";
 import Navigation from "./Components/Navigation";
 import "./App.css";
-import PopUp from "./Components/PopUp";
 import cookie from "cookie";
 import jQuery from 'jquery'
 import axios from 'axios'
@@ -186,15 +185,18 @@ const App = () => {
       <Navigation />
       <Router>
         <Switch>
+
           <Route exact path="/" render={(props) =>
             <LandingPage
               indeedJobs={indeedJobs}
               usaJobs={usaJobs}
               searchParams={searchParams}
+
               setSearchParams={setSearchParams}
               fetchAllJobs={fetchAllJobs} />}
           />
           <Route exact path="/about" component={About}></Route>
+
           <Route exact path="/login" render={() =>
             <Login
               userRef={userRef}
@@ -216,6 +218,7 @@ const App = () => {
               setUserRef={setUserRef} />}
           />
           <Route exact path="/popup" component={PopUp}></Route>
+
         </Switch>
       </Router>
     </Fragment>

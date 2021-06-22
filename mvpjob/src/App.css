@@ -9,10 +9,8 @@
 .Login {
   justify-content: center;
   margin: auto;
-  /* padding: 150px 0; */
   height: 100%;
   background-color: none;
-  /* width: 40%; */
 }
 
 .Login form {
@@ -53,46 +51,60 @@
 
 .Login p.signuptext {
   justify-content: center;
-  margin: 40px;
-  width: 240px;
+  margin: auto;
+  padding: 0px 0;
+  height: 100%;
+  width: 20%;
 }
 
 .signin {
   text-size-adjust: 25px;
 }
 
+.resume {
+  justify-content: center;
+  margin: auto;
+  padding: 100px 0;
+  height: 100%;
+  width: 20%;
+
+}
+
 .nav-button {
   border-radius: 25px important!;
 }
-.nav-item button.btn.btn{
- font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
- color:rgba(0,0,0,.5) ; 
-margin-top: 1px;
+.nav-item button.btn.btn {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 1px;
 }
 
-.nav-item button.btn.btn:hover{
-color: black;
+.nav-item button.btn.btn:hover {
+  color: black;
 }
 
-MODAL STYLING
-.modal-dialog.modal-lg{
+MODAL STYLING 
+
+.modal-dialog.modal-lg {
   background-color: none;
 }
 
-.modal-background{
+.modal-background {
   background-color: none;
 }
 
-.div.modal-content{
+.div.modal-content {
   background-color: none;
   border: none;
 }
 
-/* .modal-lg, .modal-xl {
-  /* max-width: 38%; */
-/* } */
 
-
+.modal-lg,
+.modal-xl {
+  max-width: 38%;
+}
 
 body {
   background-image: linear-gradient(130deg, #6250a6, #59fad2);
@@ -119,49 +131,48 @@ header,
 }
 
 html,
-
-
 body,
-
-
 header,
-
+#intro {
+  height: 100%;
+}
 
 #intro {
+  background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")
+    no-repeat center center fixed;
 
+  -webkit-background-size: cover;
 
-    height: 100%;
+  -moz-background-size: cover;
 
+  -o-background-size: cover;
 
+  background-size: cover;
+}
+
+  -o-background-size: cover;
+
+@media (min-width: 994px) and (max-width: 1398px) {
+  .Login form{
+      padding: 5px 20px 20px 20px;
+  }
 }
 
 
- 
+@media  (min-width: 400px) and (max-width: 766px)  {
+  
+    .Login form {
+      max-width: 400px;
+      height: 500px;;
+      padding: 10px;
+    }
 
-
-#intro {
-
-
-    background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
-
-
-    -webkit-background-size: cover;
-
-
-    -moz-background-size: cover;
-
-
-    -o-background-size: cover;
-
-
-    background-size: cover;
-
-
-}
-
-
- 
-
-
- 
+    .Signup {
+      justify-content: center;
+      margin: auto;
+      padding: 0px 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
 
