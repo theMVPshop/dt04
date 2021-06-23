@@ -6,7 +6,7 @@ import Connor from "../Images/Connor.png";
 import Greta from "../Images/Greta.png";
 
 
-
+<img src={require('../Images/OurLogo.png')}  alt="Logo"/>
 
 const About = () => {
   return (
