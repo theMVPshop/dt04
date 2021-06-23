@@ -5,17 +5,10 @@ import Keith from "../Images/Keith.png";
 import Connor from "../Images/Connor.png";  
 import Greta from "../Images/Greta.png";
 
-class NavBar extends Component {
-  render() {
-    return (
-      <nav className="nav" style={nbStyle}>
-        <div className="container"></div>
-<img src={require('../Images/OurLogo.png')}  alt="OurLogo"/>
+  
+<img src={require('./Images/OurLogo.png')}  alt="Logo"/>
 
-      </nav>
-    );
-    }
-  }
+      
 const About = () => {
   return (
     <div className="about">
