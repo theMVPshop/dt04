@@ -23,11 +23,11 @@ function Login({ userRef, setUserRef }) {
     document.cookie = "loggedIn=true;max-age=60*1000";
     console.log(payload)
     
-      axios({
-        method: 'get',
-        url: "http://localhost:5000/api/users/login",
-        data: { ...payload }
-      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
+  //     axios({
+  //       method: 'get',
+  //       url: "http://localhost:5000/api/users/login",
+  //       data: { ...payload }
+  //     }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
   }
 
   const [show, setShow] = useState(false);

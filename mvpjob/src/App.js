@@ -152,7 +152,7 @@ const App = () => {
       console.log("USA Search Array", searchArray)
     }
 
-    axios.get(`http://localhost:5000/search/${searchArray}`)
+    axios.get(`/search/${searchArray}`)
       .then((res) => {
         let results = res.data
         results.forEach(function (job) {
@@ -217,7 +217,7 @@ const App = () => {
               userRef={userRef}
               setUserRef={setUserRef} />}
           />
-          <Route exact path="/popup" component={PopUp}></Route>
+          {/* <Route exact path="/popup" component={PopUp}></Route> */}
 
         </Switch>
       </Router>

@@ -9,7 +9,7 @@ const searchRouter = require("./routes/search");
 const cors = require("cors")
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 
 //establishing database connection
@@ -27,24 +27,24 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3000' , credentials :  true}));
+// app.use(cors({ origin: 'http://localhost:3000' , credentials :  true}));
+app.use(cors())
 
 
 app.use("/users", usersRouter);
 app.use("/experience", experienceRouter);
 app.use("/search", searchRouter)
 
-app.get("/api", (req, res) => {
-  res.send("Welcome to our server");
-});
-
-
-
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../mvpjob/build")));
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, './mvpjob/build', 'index.html'));
+});
+
+
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname + "/../mvpjob/build/index.html"));
 });
 
