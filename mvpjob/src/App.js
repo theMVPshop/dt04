@@ -1,27 +1,48 @@
+
 import React, { Fragment, useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
 import About from "./Components/About";
 import LandingPage from "./Components/LandingPage";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
-import Resume from "./Components/Resume";
+import ResumeCreation from "./Components/ResumeCreation";
+import ResumeView from "./Components/ResumeView";
 import Navigation from "./Components/Navigation";
 import "./App.css";
-import PopUp from "./Components/PopUp";
+import cookie from "cookie";
 import jQuery from 'jquery'
 import axios from 'axios'
 
 
+const checkAuth = () => {
+  const cookies = cookie.parse(document.cookie);
+  return cookies["loggedIn"] ? true : false;
+};
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        checkAuth() ? <Component {...props} /> : <Redirect to="/login" />
+      }
+    />
+  );
+};
 
 const App = () => {
+  const [userRef, setUserRef] = useState()
   const [indeedJobs, setIndeed] = useState([])
   const [usaJobs, setUSA] = useState([])
   const [searchParams, setSearchParams] = useState({
     title: "",
     location: ""
   });
-  const [jobLocation, setLocation] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
 
   var JQUERYconvertRSS;
   var normalizedJobs = [];
@@ -69,41 +90,41 @@ const App = () => {
   const fetchIndeedAsJson = () => {
     let searchArray = []
 
-      //create search params string
-      if(searchParams.title){
-        searchArray.push(`q=${searchParams.title}`)
-      }
-      if(searchParams.location){
-        searchArray.push(`l=${searchParams.location}`)
-      }
-      if (searchArray.length > 1) {
-        searchArray = searchArray.join('&')
-        // console.log(searchArray)
-      }
-  
+    //create search params string
+    if (searchParams.title) {
+      searchArray.push(`q=${searchParams.title}`)
+    }
+    if (searchParams.location) {
+      searchArray.push(`l=${searchParams.location}`)
+    }
+    if (searchArray.length > 1) {
+      searchArray = searchArray.join('&')
+      // console.log(searchArray)
+    }
+
     JQUERYconvertRSS({
-          FeedUrl:`https://rss.indeed.com/rss?${searchArray}`,
-          MaxCount: 120,
-        })
+      FeedUrl: `https://rss.indeed.com/rss?${searchArray}`,
+      MaxCount: 120,
+    })
   }
 
-  
+
   const normalizeIndeedResults = (array) => {
-    array.forEach( function (job) { 
-        
+    array.forEach(function (job) {
+
       //update job title
-        job.title = job.title.split("-"); //seperates the job title into job title, company name and location.
-        if (job.title.length > 3) {
-          job.title.splice(1,1) //Some job titles had an extra category in this position. This removes it if it does. 
-        }
-        //reassigns to correct label
-        job.positionTitle = job.title[0]
-        job.companyName = job.title[1]
-        job.location = job.title[2]
+      job.title = job.title.split("-"); //seperates the job title into job title, company name and location.
+      if (job.title.length > 3) {
+        job.title.splice(1, 1) //Some job titles had an extra category in this position. This removes it if it does. 
+      }
+      //reassigns to correct label
+      job.positionTitle = job.title[0]
+      job.companyName = job.title[1]
+      job.location = job.title[2]
 
       //remove unnecessary info from the parsed job description
-        job.description = job.description.split("<br>"); 
-        job.description = job.description.shift()
+      job.description = job.description.split("<br>");
+      job.description = job.description.shift()
 
 
       //pushes to new array with edited job info
@@ -118,44 +139,44 @@ const App = () => {
     let tempArray = []
     let searchArray = []
 
-      //create search params string
-      if(searchParams.title){
-        searchArray.push(`PositionTitle=${searchParams.title}`)
-      }
-      if(searchParams.location){
-        searchArray.push(`LocationName=${searchParams.location}`)
-      }
-      if (searchArray.length > 1) {
-        searchArray = searchArray.join('&')
-        console.log("USA Search Array", searchArray)
-      }
+    //create search params string
+    if (searchParams.title) {
+      console.log(searchParams.title.split(' ').join("+"))
+      searchArray.push(`PositionTitle=${searchParams.title}`)
+    }
+    if (searchParams.location) {
+      searchArray.push(`LocationName=${searchParams.location}`)
+    }
+    if (searchArray.length > 1) {
+      searchArray = searchArray.join('&')
+      console.log("USA Search Array", searchArray)
+    }
 
     axios.get(`http://localhost:5000/search/${searchArray}`)
-    .then((res) => {
-      let results = res.data
-      results.forEach( function (job) { 
-        job = job.MatchedObjectDescriptor    // sets results to object with needed data
+      .then((res) => {
+        let results = res.data
+        results.forEach(function (job) {
+          job = job.MatchedObjectDescriptor    // sets results to object with needed data
 
-      tempArray.push(job)      //pushes edited job info to temporary array
-    })
-    //sets the result to State
-    setUSA(tempArray)
+          tempArray.push(job)      //pushes edited job info to temporary array
+        })
+        //sets the result to State
+        setUSA(tempArray)
 
-    }, (error) => {
-      console.log(error);
-    });
+      }, (error) => {
+        console.log(error);
+      });
   }
 
 
   const fetchAllJobs = () => {
-      setIndeed([])
-      setUSA([])
-      setSearchParams({title: jobTitle, location: jobLocation})
+    setIndeed([])
+    setUSA([])
 
-      fetchIndeedAsJson()
-      fetchUSAJobs()
-      console.log("Indeed Jobs", indeedJobs)
-      console.log("USA Jobs", usaJobs)
+    fetchIndeedAsJson()
+    fetchUSAJobs()
+    console.log(usaJobs)
+
   }
 
 
@@ -164,13 +185,40 @@ const App = () => {
       <Navigation />
       <Router>
         <Switch>
-          <Route exact path="/landingpage" component={landingPage}></Route>
+
+          <Route exact path="/" render={(props) =>
+            <LandingPage
+              indeedJobs={indeedJobs}
+              usaJobs={usaJobs}
+              searchParams={searchParams}
+
+              setSearchParams={setSearchParams}
+              fetchAllJobs={fetchAllJobs} />}
+          />
           <Route exact path="/about" component={About}></Route>
-          <Route exact path="/login" component={Login}></Route>      
-          <Route exact path="/SignUp" component={SignUp}></Route>
-          <Route exact path="/resume" component={Resume}></Route>
+
+          <Route exact path="/login" render={() =>
+            <Login
+              userRef={userRef}
+              setUserRef={setUserRef} />}
+          />
+          <Route exact path="/signUp" render={() =>
+            <SignUp
+              userRef={userRef}
+              setUserRef={setUserRef} />}
+          />
+          <ProtectedRoute exact path="/resumecreation" render={() =>
+            <ResumeCreation
+              userRef={userRef}
+              setUserRef={setUserRef} />}
+          />
+          <ProtectedRoute exact path="/resumeview" render={() =>
+            <ResumeView
+              userRef={userRef}
+              setUserRef={setUserRef} />}
+          />
           <Route exact path="/popup" component={PopUp}></Route>
-         
+
         </Switch>
       </Router>
     </Fragment>

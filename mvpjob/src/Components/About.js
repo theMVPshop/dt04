@@ -1,26 +1,23 @@
 import React from "react";
-import Claire from "../Images";
-import Austin from "../Images";
-import Keith from "../Images";
-import Connor from "../Images";  
-import Greta from "../Images";
+import Claire from "../Images/Claire.png";
+import Austin from "../Images/Austin.png";
+import Keith from "../Images/Keith.png";
+import Connor from "../Images/Connor.png";  
+import Greta from "../Images/Greta.png";
 
-<Div>
-<img src={Claire} alt="Claire"/>
-<img src={Austin} alt="Austin"/>
-<img src={Keith}  alt="Keith"/>
-<img src={Connor} alt="Connor"/>
-<img src={Greta} alt ="Greta"/>
-</Div>
-
-        
 
 
 
 const About = () => {
   return (
     <div className="about">
-
+      <div>
+        <img src={Claire} alt="Claire"/>
+        <img src={Austin} alt="Austin"/>
+        <img src={Keith}  alt="Keith"/>
+        <img src={Connor} alt="Connor"/>
+        <img src={Greta} alt ="Greta"/>
+      </div>
   
 
    
