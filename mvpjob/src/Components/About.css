@@ -18,7 +18,14 @@
 
 
     body {
-        background-image: url("../Images/jonathan-borba-hl6uG9cHW5A-unsplash.svg.jpg");
+        background-image: url("../Images/jonathan-borba-hl6uG9cHW5A-unsplash.png");
         image-orientation: center;
         justify-content: center;
+      }
+
+      .Logo {
+      justify-content: left;
+      align-content: left;
+      align-items: left;
+
       }
