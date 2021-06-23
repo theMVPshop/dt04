@@ -29,4 +29,5 @@
       align-content: left;
       align-items: left;
       height: 40vmin;
+      animation: App-logo-spin infinite 20s linear;
       }
