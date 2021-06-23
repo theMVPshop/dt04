@@ -23,14 +23,9 @@ const experienceSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter your job responsibilities and skills"],
   },
-  email: {
-    type: String,
-    required: [true, "Please enter an email"],
-    lowercase: true,
-    validate: [isEmail, "Please enter a valid email"],
-  },
+  userId: [{type: mongoose.Schema.Types._id, ref: 'User'}],
 });
 
-const Experience = mongoose.model("experience", experienceSchema);
+const Experience = mongoose.model("Experience", experienceSchema);
 
 module.exports = Experience;

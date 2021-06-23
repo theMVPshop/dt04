@@ -4,29 +4,30 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 const axios = require("axios");
 
-function Login() {
+
+
+function Login({ userRef, setUserRef }) {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  //need to pass this hook from parent component
+  //const [userRef, setUserRef] = useState('')
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const payload = { email, password };
-    axios
-      .get("http://localhost:3000/users/login", {
-        ...payload,
-      }).then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
+    document.cookie = "loggedIn=true;max-age=60*1000";
+    console.log(payload)
+    
+      axios({
+        method: 'get',
+        url: "http://localhost:5000/api/users/login",
+        data: { ...payload }
+      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
   }
 
   const [show, setShow] = useState(false);

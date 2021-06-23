@@ -3,8 +3,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 const axios = require("axios");
 
-const ResumeCreation = () => {
-
+const ResumeCreation = ({ userRef, setUserRef }) => {
+  const [resume, setResume] = useState({
+    company: "",
+    position: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+  });
 
   const [company,setCompany] = useState("")
   const [position,setPosition] = useState("")
@@ -12,6 +18,13 @@ const ResumeCreation = () => {
   const [endDate,setEndDate] = useState("")
   const [description,setDesctiption] = useState("")
 
+  // const [resume, setResume] = useState({
+  //   company: "",
+  //   position: "",
+  //   startDate: "",
+  //   endDate: "",
+  //   description: "",
+  // });
 
 
 
@@ -23,7 +36,7 @@ const ResumeCreation = () => {
     const payload = { company, position, startDate, endDate, description };
     console.log(payload);
     axios
-      .post("http://localhost:5000/experience", {
+      .post("http://localhost:5000/api/experience", {
         ...payload, userRef
       })
       .then(function (response) {
