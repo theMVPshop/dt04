@@ -35,16 +35,16 @@ const ResumeCreation = ({ userRef, setUserRef }) => {
     e.preventDefault();
     const payload = { company, position, startDate, endDate, description };
     console.log(payload);
-    axios
-      .post("http://localhost:5000/api/experience", {
-        ...payload, userRef
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    // axios
+    //   .post("http://localhost:5000/api/experience", {
+    //     ...payload, userRef
+    //   })
+    //   .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
   };
 
   return (

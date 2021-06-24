@@ -22,8 +22,7 @@ const experienceSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, "Please enter your job responsibilities and skills"],
-  },
-  userId: [{type: mongoose.Schema.Types._id, ref: 'User'}],
+  }
 });
 
 const Experience = mongoose.model("Experience", experienceSchema);
