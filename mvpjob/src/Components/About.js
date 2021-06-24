@@ -4,14 +4,15 @@ import Austin from "../Images/Austin.png";
 import Keith from "../Images/Keith.png";
 import Connor from "../Images/Connor.png";  
 import Greta from "../Images/Greta.png";
+import Logo from './Images/OurLogo.png'
 
   
-<img src={require('./Images/OurLogo.png')}  alt="Logo"/>
 
       
 const About = () => {
   return (
     <div className="about">
+      <img src={Logo}  alt="Logo"/>
       <div>
         <img src={Claire} alt="Claire"/>
         <img src={Austin} alt="Austin"/>
