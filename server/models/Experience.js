@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const { isEmail } = require("validator");
-
 
 const experienceSchema = new mongoose.Schema({
   company: {
@@ -23,7 +21,10 @@ const experienceSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter your job responsibilities and skills"],
   },
-  userId: [{type: mongoose.Schema.Types._id, ref: 'User'}],
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 
 const Experience = mongoose.model("Experience", experienceSchema);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-const axios = require("axios");
+import axios from './axios'
 
 const SignUp = ({ userRef, setUserRef }) => {
 
@@ -14,26 +14,15 @@ const SignUp = ({ userRef, setUserRef }) => {
   const [city, setCity] = useState("")
   const [state, setState] = useState("")
 
-  // const [user, setUser] = useState({
-  //   email: "",
-  //   password: "",
-  //   firstName: "",
-  //   lastName: "",
-  //   phoneNumber: "",
-  //   zipcode: "",
-  //   city: "",
-  //   state: "",
-  // });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = { email, password, firstName, lastName, phoneNumber, zipcode, city, state };
     console.log(payload);
-    axios({
-      method: 'post',
-      url: "http://localhost:5000/api/users/signup",
-      data: { ...payload }
-    })
+    axios.post('/users/signup', payload).then(res => { 
+      console.log(res) 
+      console.log(res.data) 
+    }).catch(err => console.log(err))
   };
 
   return (
@@ -49,14 +38,14 @@ const SignUp = ({ userRef, setUserRef }) => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required  
+                required
               ></Form.Control>
             </Form.Group>
 
             <Form.Group size="lg" controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
-               
+
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -67,7 +56,7 @@ const SignUp = ({ userRef, setUserRef }) => {
             <Form.Group size="lg" controlId="firstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control
-                
+
                 type="firstName"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -77,7 +66,7 @@ const SignUp = ({ userRef, setUserRef }) => {
             <Form.Group size="lg" controlId="lastName">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
-                
+
                 type="lastName"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
@@ -87,7 +76,7 @@ const SignUp = ({ userRef, setUserRef }) => {
             <Form.Group size="lg" controlId="phoneNumber">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
-             
+
                 type="phoneNumber"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
@@ -117,7 +106,7 @@ const SignUp = ({ userRef, setUserRef }) => {
             <Form.Group size="lg" controlId="State">
               <Form.Label>State</Form.Label>
               <Form.Control
-            
+
                 type="State"
                 value={state}
                 onChange={(e) => setState(e.target.value)}

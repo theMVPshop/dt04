@@ -1,4 +1,3 @@
-
 import React, { Fragment, useState } from "react";
 import {
   BrowserRouter as Router,
@@ -24,16 +23,7 @@ const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
   return cookies["loggedIn"] ? true : false;
 };
-const ProtectedRoute = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        checkAuth() ? <Component {...props} /> : <Redirect to="/login" />
-      }
-    />
-  );
-};
+
 
 const App = () => {
   const [userRef, setUserRef] = useState()
@@ -152,7 +142,7 @@ const App = () => {
       console.log("USA Search Array", searchArray)
     }
 
-    axios.get(`http://localhost:5000/search/${searchArray}`)
+    axios.get(`http://localhost:5000/api/search/${searchArray}`)
       .then((res) => {
         let results = res.data
         results.forEach(function (job) {
@@ -179,6 +169,17 @@ const App = () => {
 
   }
 
+  const ProtectedRoute = ({ component: Component, ...rest }) => {
+    return (
+      <Route
+        {...rest}
+        render={(props) =>
+          checkAuth() ? <Component {...props} userRef={userRef}
+          setUserRef={setUserRef}/> : <Redirect to="/login" />
+        }
+      />
+    );
+  };
 
   return (
     <Fragment>
@@ -207,17 +208,8 @@ const App = () => {
               userRef={userRef}
               setUserRef={setUserRef} />}
           />
-          <ProtectedRoute exact path="/resumecreation" render={() =>
-            <ResumeCreation
-              userRef={userRef}
-              setUserRef={setUserRef} />}
-          />
-          <ProtectedRoute exact path="/resumeview" render={() =>
-            <ResumeView
-              userRef={userRef}
-              setUserRef={setUserRef} />}
-          />
-          <Route exact path="/popup" component={PopUp}></Route>
+          <ProtectedRoute exact path="/resumecreation" component={ResumeCreation} />
+          <ProtectedRoute exact path="/resumeview" component={ResumeView} />
 
         </Switch>
       </Router>

@@ -4,32 +4,13 @@ import Button from "react-bootstrap/Button";
 const axios = require("axios");
 
 const ResumeCreation = ({ userRef, setUserRef }) => {
-  const [resume, setResume] = useState({
-    company: "",
-    position: "",
-    startDate: "",
-    endDate: "",
-    description: "",
-  });
 
-  const [company,setCompany] = useState("")
-  const [position,setPosition] = useState("")
-  const [startDate,setStartDate] = useState("")
-  const [endDate,setEndDate] = useState("")
-  const [description,setDesctiption] = useState("")
+  const [company, setCompany] = useState("")
+  const [position, setPosition] = useState("")
+  const [startDate, setStartDate] = useState("")
+  const [endDate, setEndDate] = useState("")
+  const [description, setDesctiption] = useState("")
 
-  // const [resume, setResume] = useState({
-  //   company: "",
-  //   position: "",
-  //   startDate: "",
-  //   endDate: "",
-  //   description: "",
-  // });
-
-
-
-  // const textChange = (e) =>
-  //   setResume({ ...resume, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();

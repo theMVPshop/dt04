@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-const axios = require("axios");
+import axios from './axios'
 
 
 
@@ -20,14 +20,14 @@ function Login({ userRef, setUserRef }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const payload = { email, password };
-    document.cookie = "loggedIn=true;max-age=60*1000";
-    console.log(payload)
     
-      axios({
-        method: 'get',
-        url: "http://localhost:5000/api/users/login",
-        data: { ...payload }
-      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
+    console.log(payload)
+
+    axios.get("users/login").then(res => {
+      console.log(res)
+      console.log(res.data)
+      document.cookie = "loggedIn=true";
+    }).catch(err => console.log(err)) // need to pass a prop down to use hook)
   }
 
   const [show, setShow] = useState(false);

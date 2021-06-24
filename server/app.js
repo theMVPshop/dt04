@@ -1,4 +1,3 @@
-const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -30,9 +29,9 @@ app.use(cookieParser());
 app.use(cors({ origin: 'http://localhost:3000' , credentials :  true}));
 
 
-app.use("/users", usersRouter);
-app.use("/experience", experienceRouter);
-app.use("/search", searchRouter)
+app.use("/api/users", usersRouter);
+app.use("/api/experience", experienceRouter);
+app.use("/api/search", searchRouter)
 
 app.get("/api", (req, res) => {
   res.send("Welcome to our server");

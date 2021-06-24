@@ -38,16 +38,16 @@ const addExperience = async (req, res) => {
 };
 
 const viewExperience = async (req, res) => {
-  const { cookies} = req
-  const email = cookies.email
+  const { userRef } = req.body;
+  console.log(userRef)
  try {
-  const expDoc = await Experience.find({ email })
-  res.sendStatus(200).json(expDoc)
- 
- console.log("Fetching User Job Experience");
+  const expDoc = await Experience.find({ userRef })
+  if(expDoc){
+    console.log(expDoc)
+    res.sendStatus(200).json(expDoc)
+  }
  } catch (err) {
-      
-      console.log(expDoc)
+
       const errors = handleError(err);
       res.sendStatus(400).json({ errors });
  }
