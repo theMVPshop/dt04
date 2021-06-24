@@ -4,7 +4,7 @@ import Austin from "../Images/Austin.png";
 import Keith from "../Images/Keith.png";
 import Connor from "../Images/Connor.png";  
 import Greta from "../Images/Greta.png";
-import Logo from './Images/OurLogo.png'
+import Logo from '../Images/OurLogo.png'
 
   
 
