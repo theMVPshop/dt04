@@ -42,11 +42,11 @@ app.use(cors({ origin: 'http://localhost:3000' , credentials :  true}));
 // });
 
 
-app.use("/users", usersRouter);
-app.use("/experience", experienceRouter);
-app.use("/search", searchRouter)
+app.use("/api/users", usersRouter);
+app.use("/api/experience", experienceRouter);
+app.use("/api/search", searchRouter)
 
-app.get("/", (req, res) => {
+app.get("api/", (req, res) => {
   res.send("Welcome to our server");
 });
 

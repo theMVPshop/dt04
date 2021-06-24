@@ -152,7 +152,7 @@ const App = () => {
       console.log("USA Search Array", searchArray)
     }
 
-    axios.get(`http://localhost:5000/search/${searchArray}`)
+    axios.get(`http://localhost:5000/api/search/${searchArray}`)
       .then((res) => {
         let results = res.data
         results.forEach(function (job) {
