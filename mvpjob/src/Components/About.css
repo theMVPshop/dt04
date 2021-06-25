@@ -1,4 +1,4 @@
-.center {
+.about {
     text-align: center;
     align-items: center;
     align-self: center;
@@ -41,7 +41,7 @@
         }
       }
 
-      .Claire { 
+      .Gallery { 
         align-content: left;
         color: blueviolet;
         border: 1px solid black;
@@ -50,4 +50,7 @@
         padding-right: 30px;
         padding-bottom: 50px;
         padding-left: 80px;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         }
