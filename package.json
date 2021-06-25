@@ -9,7 +9,7 @@
     "server": "node ./server/app.js",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd mvpjob && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "@react-pdf/renderer": "^2.0.13",
