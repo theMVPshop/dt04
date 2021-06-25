@@ -8,7 +8,7 @@ import Greta from "../Images/Greta.png";   alt=Greta
   
 function App() {
   return (
-    <div className="App">
+    <div className="Logo">
       <img src={require('..Images/OurLogo.png')} />
     </div>
   );
