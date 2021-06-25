@@ -160,11 +160,13 @@ const App = () => {
 
           tempArray.push(job)      //pushes edited job info to temporary array
         })
+        console.log("Fetching USA Jobs")
+
         //sets the result to State
         setUSA(tempArray)
 
       }, (error) => {
-        console.log(error);
+        console.log("Error Fetching USA Jobs: ", error);
       });
   }
 
@@ -175,8 +177,6 @@ const App = () => {
 
     fetchIndeedAsJson()
     fetchUSAJobs()
-    console.log(usaJobs)
-
   }
 
 
