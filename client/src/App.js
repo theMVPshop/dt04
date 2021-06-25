@@ -141,7 +141,7 @@ const App = () => {
 
     //create search params string
     if (searchParams.title) {
-      console.log(searchParams.title.split(' ').join("+"))
+      // console.log(searchParams.title.split(' ').join("+"))
       searchArray.push(`PositionTitle=${searchParams.title}`)
     }
     if (searchParams.location) {
@@ -149,10 +149,10 @@ const App = () => {
     }
     if (searchArray.length > 1) {
       searchArray = searchArray.join('&')
-      console.log("USA Search Array", searchArray)
+      // console.log("USA Search Array", searchArray)
     }
 
-    axios.get(`http://localhost:5000/api/search/${searchArray}`)
+    axios.get(`/api/search/${searchArray}`)
       .then((res) => {
         let results = res.data
         results.forEach(function (job) {
