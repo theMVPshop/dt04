@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
-// const cors = require("cors")
+const cors = require("cors")
 
 const experienceRouter = require("./routes/experience");
 const usersRouter = require("./routes/users");
@@ -28,7 +28,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(cors({ origin: 'http://localhost:3000' , credentials :  true}));
+app.use(cors({ origin: 'https://medical-job-search.herokuapp.com' , credentials :  true}));
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "/client/build")));
