@@ -35,7 +35,7 @@ app.use("/api/experience", experienceRouter);
 app.use("/api/search", searchRouter)
 
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, "../mvpjob/build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 
 app.get("api/", (req, res) => {
@@ -45,7 +45,7 @@ app.get("api/", (req, res) => {
 
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/../mvpjob/build/index.html"));
+  res.sendFile(path.join(__dirname + "/../client/build/index.html"));
 });
 
 module.exports = app;
