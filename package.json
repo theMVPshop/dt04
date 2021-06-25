@@ -12,7 +12,6 @@
     "heroku-postbuild": "cd mvpjob && npm install && npm run build"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
     "@react-pdf/renderer": "^2.0.13",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",

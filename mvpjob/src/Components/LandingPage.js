@@ -14,13 +14,12 @@ const LandingPage = (props)=> {
     const newState = { ...searchParams }
     newState[e.target.name] = e.target.value
     setSearchParams(newState)
-    console.log(searchParams)
   };
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(searchParams)
+    // console.log(searchParams)
     fetchAllJobs()
   }
   
