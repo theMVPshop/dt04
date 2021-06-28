@@ -16,10 +16,13 @@
   }
 
       .Logo {
-      justify-content: left;
-      align-content: top;
-      align-items: left;
-      height: 40vmin;
+        justify-content: left;
+        align-content: top;
+        align-items: left;
+        position: top;
+        top: 8px;
+        left: 16px;
+        font-size: 18px;
       }
 
       .Gallery { 
