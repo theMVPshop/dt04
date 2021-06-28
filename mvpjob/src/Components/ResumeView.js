@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
-const axios = require("axios");
+import axios from 'axios'
 
 const ResumeView = ({ userRef, setUserRef }) => {
     const [resume, setResume] = useState({ });
     
       useEffect(() => {
-        const fetchData = async () => {
-          const results = await axios("http://localhost:5000/api/experience")
+        async function fetchData() {
+          const request = await axios.get('http://localhost:5000/api/expierence')
+          console.log(request)
           
-          setResume(results)
         }
         fetchData()
-      })
+      }, [resume])
 
       return (
         <div >
-          <h3>hello{ console.log(resume) }</h3>
+          <h3>hello{ console.log(resume), console.log(userRef)}</h3>
         </div>
       )
 }

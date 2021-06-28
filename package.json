@@ -6,7 +6,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "server": "node ./server/app.js",
+    "server": "nodemon ./server/app.js",
     "client": "npm start --prefix mvpjob",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd mvpjob && npm install && npm run build"

@@ -1,4 +1,3 @@
-const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -28,6 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors({ origin: 'http://localhost:3000' , credentials :  true}));
+
 // app.use(cors())
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "https://localhost:3000"); // update to match the domain you will make the request from
@@ -42,11 +42,13 @@ app.use(cors({ origin: 'http://localhost:3000' , credentials :  true}));
 // });
 
 
+
 app.use("/api/users", usersRouter);
 app.use("/api/experience", experienceRouter);
 app.use("/api/search", searchRouter)
 
 app.get("api/", (req, res) => {
+
   res.send("Welcome to our server");
 });
 
