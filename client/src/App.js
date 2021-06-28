@@ -1,4 +1,3 @@
-
 import React, { Fragment, useState } from "react";
 import {
   BrowserRouter as Router,
@@ -24,19 +23,10 @@ const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
   return cookies["loggedIn"] ? true : false;
 };
-const ProtectedRoute = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        checkAuth() ? <Component {...props} /> : <Redirect to="/login" />
-      }
-    />
-  );
-};
+
 
 const App = () => {
-  const [userRef, setUserRef] = useState()
+  const [userRef, setUserRef] = useState('')
   const [indeedJobs, setIndeed] = useState([])
   const [usaJobs, setUSA] = useState([])
   const [searchParams, setSearchParams] = useState({
@@ -141,7 +131,7 @@ const App = () => {
 
     //create search params string
     if (searchParams.title) {
-      console.log(searchParams.title.split(' ').join("+"))
+      // console.log(searchParams.title.split(' ').join("+"))
       searchArray.push(`PositionTitle=${searchParams.title}`)
     }
     if (searchParams.location) {
@@ -149,10 +139,10 @@ const App = () => {
     }
     if (searchArray.length > 1) {
       searchArray = searchArray.join('&')
-      console.log("USA Search Array", searchArray)
+      // console.log("USA Search Array", searchArray)
     }
 
-    axios.get(`http://localhost:5000/api/search/${searchArray}`)
+    axios.get(`/api/search/${searchArray}`)
       .then((res) => {
         let results = res.data
         results.forEach(function (job) {
@@ -160,11 +150,13 @@ const App = () => {
 
           tempArray.push(job)      //pushes edited job info to temporary array
         })
+        console.log("Fetching USA Jobs")
+
         //sets the result to State
         setUSA(tempArray)
 
       }, (error) => {
-        console.log(error);
+        console.log("Error Fetching USA Jobs: ", error);
       });
   }
 
@@ -175,10 +167,19 @@ const App = () => {
 
     fetchIndeedAsJson()
     fetchUSAJobs()
-    console.log(usaJobs)
-
   }
 
+  const ProtectedRoute = ({ component: Component, ...rest }) => {
+    return (
+      <Route
+        {...rest}
+        render={(props) =>
+          checkAuth() ? <Component {...props} userRef={userRef}
+          setUserRef={setUserRef} /> : <Redirect to="/login" />
+        }
+      />
+    );
+  };
 
   return (
     <Fragment>
@@ -207,16 +208,9 @@ const App = () => {
               userRef={userRef}
               setUserRef={setUserRef} />}
           />
-          <ProtectedRoute exact path="/resumecreation" render={() =>
-            <ResumeCreation
-              userRef={userRef}
-              setUserRef={setUserRef} />}
-          />
-          <ProtectedRoute exact path="/resumeview" render={() =>
-            <ResumeView
-              userRef={userRef}
-              setUserRef={setUserRef} />}
-          />
+
+          <ProtectedRoute exact path="/resumecreation" component={ResumeCreation} />
+          <ProtectedRoute exact path="/resumeview" component={ResumeView} />
 
 
         </Switch>
