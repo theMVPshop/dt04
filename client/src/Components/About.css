@@ -18,18 +18,13 @@
     }
 
 
-    body {
-        background-image: url("../Images/jonathan-borba-hl6uG9cHW5A-unsplash.png");
-        image-orientation: center;
-        justify-content: center;
-      }
+  
 
       .Logo {
       justify-content: left;
       align-content: top;
       align-items: left;
       height: 40vmin;
-      animation: App-logo-spin infinite 20s linear;
       }
 
       @keyframes App-logo-spin {
@@ -55,4 +50,13 @@
         grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         }
 
-    
+        .Img {
+          Max-width: 200px;
+          Max-height: 200px
+        }
+        .h2 {
+          font-family: 'Yellowtail', cursive;
+
+        }
+
+     
