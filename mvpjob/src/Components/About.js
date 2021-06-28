@@ -1,17 +1,19 @@
 import React from "react";
-import Claire from "../Images/Claire.png";
-import Austin from "../Images/Austin.png";
-import Keith from "../Images/Keith.png";
-import Connor from "../Images/Connor.png";  
-import Greta from "../Images/Greta.png";
+import Claire from "../Images/Claire.png"; alt=Claire
+import Austin from "../Images/Austin.png"; alt=Austin
+import Keith from "../Images/Keith.png";   alt=Keith
+import Connor from "../Images/Connor.png"; alt=Connor
+import Greta from "../Images/Greta.png";   alt=Greta
 
-
-
-
-const About = () => {
+  
+function App() {
   return (
-    <div className="about">
-      <div>
+    <div className="Logo">
+      <img src={require('..Images/OurLogo.png')} />
+    </div>
+  );
+}
+      <div class ="Gallery">
         <img src={Claire} alt="Claire"/>
         <img src={Austin} alt="Austin"/>
         <img src={Keith}  alt="Keith"/>
@@ -19,10 +21,11 @@ const About = () => {
         <img src={Greta} alt ="Greta"/>
       </div>
   
-
+      const about = () => { 
+  return (
+    <div className="about">
    
-   <h2>Welcome to the Medical Assistant Program, your number one source for searching a job in your field. We're dedicated to giving you the very best when looking for your new role in the Medical Assistance field, with a focus on your dream Medical Assistance job.
-
+<h2>Welcome to the Medical Assistant Program, your number one source for searching a job in your field. We're dedicated to giving you the very best when looking for your new role in the Medical Assistance field, with a focus on your dream Medical Assistance job.
 
 
 Founded in 2021 by Claire Sheek, Austin Skrobarczyk, Connor Yates, Keith Kritselis, and Greta Sepulveda.  Medical Assistant Job Search has come a long way from it's beginnings in Austin, Texas. When we the founders first started out, our passion for Medical Job Assistance it drove us to action we quit our day jobs, did tons of research, so that Medical Assistance Job Search can offer you competitive Medical Assistance position. We now serve clients all over Central Texas and are thrilled that we're able to turn our passion into our own website.

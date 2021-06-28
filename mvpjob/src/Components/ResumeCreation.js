@@ -25,6 +25,7 @@ const ResumeCreation = ({ userRef, setUserRef }) => {
       }, (error) => {
         console.log(error);
       })
+
   };
 
   return (

@@ -1,4 +1,4 @@
-.center {
+.about {
     text-align: center;
     align-items: center;
     align-self: center;
@@ -14,11 +14,45 @@
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%);
+    background-color: #0c49c5;
     }
 
 
     body {
-        background-image: url("../Images/jonathan-borba-hl6uG9cHW5A-unsplash.svg.jpg");
+        background-image: url("../Images/jonathan-borba-hl6uG9cHW5A-unsplash.png");
         image-orientation: center;
         justify-content: center;
       }
+
+      .Logo {
+      justify-content: left;
+      align-content: top;
+      align-items: left;
+      height: 40vmin;
+      animation: App-logo-spin infinite 20s linear;
+      }
+
+      @keyframes App-logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .Gallery { 
+        align-content: left;
+        color: rgb(43, 186, 226);
+        border: 1px solid black;
+        background-color: lightblue;
+        padding-top: 50px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        }
+
+    

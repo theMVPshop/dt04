@@ -38,6 +38,13 @@ function Login({ userRef, setUserRef }) {
       console.log(error)
     })// need to pass a prop down to use hook)
     
+
+      // axios({
+      //   method: 'get',
+      //   url: "http://localhost:5000/api/users/login",
+      //   data: { ...payload }
+      // }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
+
   }
 
   const [show, setShow] = useState(false);

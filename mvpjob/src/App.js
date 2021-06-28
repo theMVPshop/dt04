@@ -208,8 +208,10 @@ const App = () => {
               userRef={userRef}
               setUserRef={setUserRef} />}
           />
+
           <ProtectedRoute exact path="/resumecreation" component={ResumeCreation} />
           <ProtectedRoute exact path="/resumeview" component={ResumeView} />
+
 
         </Switch>
       </Router>
