@@ -141,7 +141,7 @@ const App = () => {
 
     //create search params string
     if (searchParams.title) {
-      console.log(searchParams.title.split(' ').join("+"))
+      // console.log(searchParams.title.split(' ').join("+"))
       searchArray.push(`PositionTitle=${searchParams.title}`)
     }
     if (searchParams.location) {
@@ -149,10 +149,10 @@ const App = () => {
     }
     if (searchArray.length > 1) {
       searchArray = searchArray.join('&')
-      console.log("USA Search Array", searchArray)
+      // console.log("USA Search Array", searchArray)
     }
 
-    axios.get(`http://localhost:5000/search/${searchArray}`)
+    axios.get(`/api/search/${searchArray}`)
       .then((res) => {
         let results = res.data
         results.forEach(function (job) {
@@ -160,11 +160,13 @@ const App = () => {
 
           tempArray.push(job)      //pushes edited job info to temporary array
         })
+        console.log("Fetching USA Jobs")
+
         //sets the result to State
         setUSA(tempArray)
 
       }, (error) => {
-        console.log(error);
+        console.log("Error Fetching USA Jobs: ", error);
       });
   }
 
@@ -175,8 +177,6 @@ const App = () => {
 
     fetchIndeedAsJson()
     fetchUSAJobs()
-    console.log(usaJobs)
-
   }
 
 
@@ -217,7 +217,7 @@ const App = () => {
               userRef={userRef}
               setUserRef={setUserRef} />}
           />
-          <Route exact path="/popup" component={PopUp}></Route>
+          {/* <Route exact path="/popup" component={PopUp}></Route> */}
 
         </Switch>
       </Router>
