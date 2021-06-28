@@ -65,8 +65,8 @@ module.exports.signup_post = async (req, res) => {
       city,
       state,
     });
-    res.cookie("email", email, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.sendStatus(201).json({ user: user.email });
+    console.log(user)
+    res.sendStatus(201).json({ userRef: user._id });
   } catch (err) {
     console.log(" this is the err", err)
     const errors = handleErrors(err);
@@ -75,24 +75,25 @@ module.exports.signup_post = async (req, res) => {
 };
 
 module.exports.login_get = async (req, res) => {
-  const { email, password } = req.body;
+
+};
+
+module.exports.login_post = async (req, res) => {
+  const { email } = req.body;
+  console.log(req.body)
+  console.log(email)
   try {
-    const user = await User.findOne({ email }).catch((error) => {
-      console.error(error);
-    });
-    console.log(user)
+    const user = await User.findOne({ email });
+    const userId = user._id
+    console.log(user, 'userID :', userId)
     if (user) {
-      res.sendStatus(200).json({ userRef: user._id });
+      res.json({ userRef: userId})
     }
   } catch (err) {
     console.log(" this is the err", err)
     const errors = handleErrors(err);
     res.sendStatus(400).json({ errors });
   }
-};
-
-module.exports.login_post = async (req, res) => {
- 
 };
 
 module.exports.login_put = async (req, res) => {};

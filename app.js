@@ -33,6 +33,7 @@ app.use(cors({ origin: 'https://localhost:3000' , credentials :  true}));
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "/client/build")));
 
+
 app.use("/api/users", usersRouter);
 app.use("/api/experience", experienceRouter);
 app.use("/api/search", searchRouter)
@@ -44,6 +45,7 @@ app.get("*", (req, res) => {
 });
 
 app.get("api/", (req, res) => {
+
   res.send("Welcome to our server");
 });
 
