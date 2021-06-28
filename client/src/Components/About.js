@@ -6,6 +6,9 @@ import Connor from "../Images/Connor.png";
 import Greta from "../Images/Greta.png";  
 
   
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+</style>
 
 const About = () => { 
 
