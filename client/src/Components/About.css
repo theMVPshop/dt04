@@ -13,12 +13,7 @@
     position: absolute;
     left: 50%;
     right: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #0c49c5;
-    }
-
-
-  
+  }
 
       .Logo {
       justify-content: left;
