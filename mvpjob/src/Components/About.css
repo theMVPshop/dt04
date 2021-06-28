@@ -1,4 +1,4 @@
-.center {
+.about {
     text-align: center;
     align-items: center;
     align-self: center;
@@ -26,7 +26,7 @@
 
       .Logo {
       justify-content: left;
-      align-content: left;
+      align-content: top;
       align-items: left;
       height: 40vmin;
       animation: App-logo-spin infinite 20s linear;
@@ -41,13 +41,18 @@
         }
       }
 
-      .Claire { 
+      .Gallery { 
         align-content: left;
-        color: blueviolet;
+        color: rgb(43, 186, 226);
         border: 1px solid black;
         background-color: lightblue;
         padding-top: 50px;
         padding-right: 30px;
         padding-bottom: 50px;
         padding-left: 80px;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         }
+
+    

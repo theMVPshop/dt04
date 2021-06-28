@@ -1,4 +1,4 @@
-.center {
+.gallery {
     text-align: center;
     align-items: center;
     align-self: center;
@@ -16,12 +16,6 @@
     transform: translate(-50%, -50%);
     }
 
-    .gallery { 
-
-    justify-content: right;
-    justify-self: right;
-    position: absolute;
-
-    }
+   
 
 

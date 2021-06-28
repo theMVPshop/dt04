@@ -217,7 +217,7 @@ const App = () => {
               userRef={userRef}
               setUserRef={setUserRef} />}
           />
-          {/* <Route exact path="/popup" component={PopUp}></Route> */}
+
 
         </Switch>
       </Router>
