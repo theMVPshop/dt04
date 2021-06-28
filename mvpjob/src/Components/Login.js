@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import axios from './axios'
+import axios from 'axios'
 
 
 
@@ -19,15 +19,25 @@ function Login({ userRef, setUserRef }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const payload = { email, password };
+    const newEmail = email
+    let userId
+    const setId = setUserRef()
     
-    console.log(payload)
+    //console.log(newEmail)
 
-    axios.get("users/login").then(res => {
-      console.log(res)
-      console.log(res.data)
-      document.cookie = "loggedIn=true";
-    }).catch(err => console.log(err)) // need to pass a prop down to use hook)
+    axios.post('http://localhost:5000/api/users/login', {
+    email: newEmail 
+    }).then(res => {
+      userId = res.data.userRef
+      console.log(userId)
+      setId(userId)
+      //issue i think im having here is understanding how recursion is effecting setUserRef which is saying isnt a function.
+      //document.cookie = "loggedIn=true";
+    },(error) => {
+      console.log('err ', newEmail)
+      console.log(error)
+    })// need to pass a prop down to use hook)
+    
   }
 
   const [show, setShow] = useState(false);

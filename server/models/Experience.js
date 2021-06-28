@@ -21,7 +21,7 @@ const experienceSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter your job responsibilities and skills"],
   },
-  userId: {
+  userRef: {
     type: String,
     required: true,
   },

@@ -26,7 +26,7 @@ const checkAuth = () => {
 
 
 const App = () => {
-  const [userRef, setUserRef] = useState()
+  const [userRef, setUserRef] = useState('')
   const [indeedJobs, setIndeed] = useState([])
   const [usaJobs, setUSA] = useState([])
   const [searchParams, setSearchParams] = useState({
@@ -175,7 +175,7 @@ const App = () => {
         {...rest}
         render={(props) =>
           checkAuth() ? <Component {...props} userRef={userRef}
-          setUserRef={setUserRef}/> : <Redirect to="/login" />
+          setUserRef={setUserRef} /> : <Redirect to="/login" />
         }
       />
     );

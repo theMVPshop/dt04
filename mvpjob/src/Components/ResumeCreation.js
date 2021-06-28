@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-const axios = require("axios");
+import axios from 'axios'
 
 const ResumeCreation = ({ userRef, setUserRef }) => {
 
@@ -14,18 +14,17 @@ const ResumeCreation = ({ userRef, setUserRef }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { company, position, startDate, endDate, description };
+    const payload = { company, position, startDate, endDate, description, userRef };
     console.log(payload);
     axios
       .post("http://localhost:5000/api/experience", {
-        ...payload, userRef
+        ...payload
       })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
+      .then(res => {
+        console.log(res);
+      }, (error) => {
         console.log(error);
-      });
+      })
   };
 
   return (

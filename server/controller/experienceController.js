@@ -25,12 +25,13 @@ const handleError = (err) => {
 };
 
 const addExperience = async (req, res) => {
-  const { cookies} = req
+  const { userRef } = req.body;
   let doc = req.body
-  const newDoc = Object.assign(doc, {email: cookies.email})
+  /**const newDoc = Object.assign(doc, {userRef: userRef}) */
+  console.log(doc)
   try {
-    const userExperience = await Experience.create(newDoc);
-    res.sendStatus(201).json(userExperience);
+    const userExperience = await Experience.create(doc);
+    res.json(userExperience);
   } catch (err) {
     const errors = handleError(err);
     res.sendStatus(400).json({ errors });
@@ -44,7 +45,7 @@ const viewExperience = async (req, res) => {
   const expDoc = await Experience.find({ userRef })
   if(expDoc){
     console.log(expDoc)
-    res.sendStatus(200).json(expDoc)
+    res.json(expDoc)
   }
  } catch (err) {
 
