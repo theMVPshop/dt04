@@ -5,7 +5,7 @@ import JobResults from "./JobResults"
 
 const LandingPage = ()=> {
 
-  
+
 
   
 
@@ -178,9 +178,34 @@ const LandingPage = ()=> {
       // </div>
     );
     }
-
-
-
+<section>
+        <article>Social Media   
+          <p> 
+          Twitter- @MedicalAssistantJobSearch
+          Facebook-FB.com/MedicalAssistantJobSearch 
+          Instagram @Medical Assistance Job Search
+          Youtube Youtube.com/MedicalAssistantJobSearch
+          </p>
+        </article>
+        <article> 
+          OFFICE INFO
+          <p>Medical Job Search Location 
+          1356 Congress Avenue
+          Austin, Texas 78701
+          (512) 343-0001 (office)
+          
+        </p>
+        </article>
+        <article>
+        CONTACT
+        <p> Name </p>
+        <input>  </input>
+        <p>Message</p>
+        <input> </input>
+        </article>
+      </section>
+  
+  
 
 export default LandingPage;
 

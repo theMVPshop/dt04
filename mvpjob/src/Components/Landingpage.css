@@ -1,0 +1,32 @@
+body {
+    width: 100%;
+    margin:  auto;
+    display:block; 
+}
+main {
+    margin: 0;
+    height: 450px;
+    color: blue;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 40px;
+}
+
+section {
+    display: flex;
+    height: 324px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: orange; 
+    margin-top: 20px;
+
+}
+@media (max-width: 640px){
+    section { 
+        flex-direction: column;
+    }
+
+}
