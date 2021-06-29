@@ -41,10 +41,12 @@
         grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         }
 
-        .Img {
-          Max-width: 200px;
-          Max-height: 200px;
-        }
+        .img {
+          max-height: 150px;
+          max-width: 200px;
+          
+          }
+        
         .h2 {
           font-family: 'Yellowtail', cursive;
 
