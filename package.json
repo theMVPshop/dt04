@@ -5,18 +5,18 @@
   "engines": {
     "node": "14.x"
   },
-
   "scripts": {
-    "server": "node ./server/app.js",
-    "client": "npm start --prefix mvpjob",
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd mvpjob && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
     "@react-pdf/renderer": "^2.0.13",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "cookie": "^0.4.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -30,6 +30,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
-    "concurrently": "^6.2.0"
+    "concurrently": "^6.2.0",
+    "file-loader": "^6.2.0"
   }
 }
