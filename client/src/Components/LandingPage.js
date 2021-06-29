@@ -17,9 +17,6 @@ const LandingPage = (props)=> {
   };
 
 
-<<<<<<< HEAD:mvpjob/src/Components/LandingPage.js
-
-=======
   const handleSubmit = (e) => {
     e.preventDefault()
     // console.log(searchParams)
@@ -59,7 +56,6 @@ const LandingPage = (props)=> {
           <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
         </div>
       </div>
->>>>>>> main:client/src/Components/LandingPage.js
 
     );
     }
@@ -153,113 +149,6 @@ export default LandingPage;
     //   this.props.saveAppliedobsToStore(this.state.appliedJobs);
     // }
 
-<<<<<<< HEAD:mvpjob/src/Components/LandingPage.js
-   
-    return (
-      <div>
-        
-        
-        <div className="jobs-landing-header-container pad-top-1-pc pb-3">
-          <form>
-            <input
-              type="text"
-              onChange={handleJobTitle}
-              className="jobs"
-              placeholder="Search Jobs"
-            ></input>
-            &nbsp;&nbsp;
-            <input
-              type="text"
-              onChange={handleLocation}
-              className="location"
-              placeholder="Search Location"
-            ></input>
-            &nbsp;&nbsp;
-            <button
-              // onClick={searchResultsHandler}
-              className="btn btn-outline-default white-outline btn-md searchbox-submit"
-              type="button"
-            >
-              Search
-            </button>
-          </form>
-        </div>
-        <div className="jobs-landing-main-bg">
-          <div className="row mt-3 pull-center-1 pull-center-2">
-            {/* <div className="jobs-landing-bar-container mb-3">
-              <span className="p-3">
-                <Link to="/jobs/saved-jobs">
-                  {this.state.savedJobsCount} Saved Jobs
-                </Link>
-              </span>
-              <span className="pad-3-pc">
-                <Link to="/jobs/applied-jobs">
-                  {this.state.appliedJobsCount} Applied Jobs
-                </Link>
-              </span>
-              <span className="pad-3-pc">Career Interests</span>
-              <span className="pad-3-pc"> Salary</span>
-              <span className="pad-3-pc">Looking for talent?</span>
-              <span className="pad-3-pc">
-                <button className="btn linkedin-post-job" type="submit">
-                  Post a Job
-                </button>
-              </span>
-            </div> */}
-          </div>
-
-          {/* added JobResults component */}
-          <JobResults />
-
-          {/* <div className="album py-5 bg-light">
-            <div className="container">
-              <div>
-                <p>
-                  <b>Jobs you may be interested in</b>
-                </p>
-              </div>
-
-              <div className="row">{interestedJobs}</div>
-            </div>
-          </div> */}
-        </div>
-      </div>
-
-      // </div>
-    );
-    }
-<section>
-        <article>Social Media   
-          <p> 
-          Twitter- @MedicalAssistantJobSearch
-          Facebook-FB.com/MedicalAssistantJobSearch 
-          Instagram @Medical Assistance Job Search
-          Youtube Youtube.com/MedicalAssistantJobSearch
-          </p>
-        </article>
-        <article> 
-          OFFICE INFO
-          <p>Medical Job Search Location 
-          1356 Congress Avenue
-          Austin, Texas 78701
-          (512) 343-0001 (office)
-          
-        </p>
-        </article>
-        <article>
-        CONTACT
-        <p> Name </p>
-        <input>  </input>
-        <p>Message</p>
-        <input> </input>
-        </article>
-      </section>
-  
-  
-
-export default LandingPage;
-=======
->>>>>>> main:client/src/Components/LandingPage.js
 
   //  <div className="jobs-landing-bar-container mb-3">
   //             <span className="p-3">
