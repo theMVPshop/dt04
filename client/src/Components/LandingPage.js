@@ -19,14 +19,22 @@ const LandingPage = (props)=> {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // console.log(searchParams)
-    fetchAllJobs()
+    if(searchParams.title === ""){
+      alert("Please Enter Job Title")
+    }    
+    else if(searchParams.location === ""){
+      alert("Please Enter Job Location")
+    } 
+    else {
+      // console.log(searchParams)
+      fetchAllJobs()
+    }
   }
   
    
     return (
       <div>
-        <div className="jobs-landing-header-container pad-top-1-pc pb-3">
+        <div className="jobSearch">
           <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -35,7 +43,6 @@ const LandingPage = (props)=> {
               onChange={handleChange}
               placeholder="Search Jobs"
             ></input>
-            &nbsp;&nbsp;
             <input
               type="text"
               value={searchParams.location}
@@ -43,7 +50,6 @@ const LandingPage = (props)=> {
               onChange={handleChange}
               placeholder="Search Location"
             ></input>
-            &nbsp;&nbsp;
             <button
               className="btn btn-outline-default white-outline btn-md searchbox-submit"
               type="submit"
@@ -55,6 +61,32 @@ const LandingPage = (props)=> {
         <div className="jobs-landing-main-bg">
           <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
         </div>
+        <section>
+        <article>Social Media   
+          <p> 
+          Twitter- @MedicalAssistantJobSearch
+          Facebook-FB.com/MedicalAssistantJobSearch 
+          Instagram @Medical Assistance Job Search
+          Youtube Youtube.com/MedicalAssistantJobSearch
+          </p>
+        </article>
+        <article> 
+          OFFICE INFO
+          <p>Medical Job Search Location 
+          1356 Congress Avenue
+          Austin, Texas 78701
+          (512) 343-0001 (office)
+
+        </p>
+        </article>
+        <article>
+        CONTACT
+        <p> Name </p>
+        <input></input>
+        <p>Message</p>
+        <input></input>
+        </article>
+      </section>
       </div>
 
     );
