@@ -4,7 +4,7 @@ import Austin from "../Images/Austin.png";
 import Keith from "../Images/Keith.png";   
 import Connor from "../Images/Connor.png"; 
 import Greta from "../Images/Greta.png";  
-
+ 
   
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
@@ -15,7 +15,7 @@ const About = () => {
   return (
     <div className="about">
       <div className="Logo">
-        {/* <img src={require('..Images/OurLogo.png')} /> */}
+         <img src={require('..Images/OurLogo.png')} /> 
       </div>
        <div class ="Gallery">
          <img src={Claire} alt="Claire"/>
