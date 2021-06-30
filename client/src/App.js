@@ -1,5 +1,4 @@
-
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,25 +23,20 @@ const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
   return cookies["loggedIn"] ? true : false;
 };
-const ProtectedRoute = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        checkAuth() ? <Component {...props} /> : <Redirect to="/login" />
-      }
-    />
-  );
-};
+
 
 const App = () => {
-  const [userRef, setUserRef] = useState()
+  const [userId, setUserId] = useState()
   const [indeedJobs, setIndeed] = useState([])
   const [usaJobs, setUSA] = useState([])
   const [searchParams, setSearchParams] = useState({
     title: "",
     location: ""
   });
+
+  useEffect(() => {
+    console.log("app userRef :", userId)
+  }, [userId])
 
   var JQUERYconvertRSS;
   var normalizedJobs = [];
@@ -141,7 +135,7 @@ const App = () => {
 
     //create search params string
     if (searchParams.title) {
-      console.log(searchParams.title.split(' ').join("+"))
+      // console.log(searchParams.title.split(' ').join("+"))
       searchArray.push(`PositionTitle=${searchParams.title}`)
     }
     if (searchParams.location) {
@@ -149,10 +143,10 @@ const App = () => {
     }
     if (searchArray.length > 1) {
       searchArray = searchArray.join('&')
-      console.log("USA Search Array", searchArray)
+      // console.log("USA Search Array", searchArray)
     }
 
-    axios.get(`http://localhost:5000/search/${searchArray}`)
+    axios.get(`/api/search/${searchArray}`)
       .then((res) => {
         let results = res.data
         results.forEach(function (job) {
@@ -160,11 +154,13 @@ const App = () => {
 
           tempArray.push(job)      //pushes edited job info to temporary array
         })
+        console.log("Fetching USA Jobs")
+
         //sets the result to State
         setUSA(tempArray)
 
       }, (error) => {
-        console.log(error);
+        console.log("Error Fetching USA Jobs: ", error);
       });
   }
 
@@ -175,15 +171,24 @@ const App = () => {
 
     fetchIndeedAsJson()
     fetchUSAJobs()
-    console.log(usaJobs)
-
   }
 
+  const ProtectedRoute = ({ component: Component, ...rest }) => {
+    return (
+      <Route
+        {...rest}
+        render={(props) =>
+          checkAuth() ? <Component {...props} user={userId}
+            setUser={userId => setUserId(userId)} /> : <Redirect to="/login" />
+        }
+      />
+    );
+  };
 
   return (
     <Fragment>
-      <Navigation />
       <Router>
+        <Navigation user={userId} setUser={userId => setUserId(userId)} />
         <Switch>
 
           <Route exact path="/" render={(props) =>
@@ -199,25 +204,18 @@ const App = () => {
 
           <Route exact path="/login" render={() =>
             <Login
-              userRef={userRef}
-              setUserRef={setUserRef} />}
+              user={userId}
+              setUser={userId => setUserId(userId)} />}
           />
           <Route exact path="/signUp" render={() =>
             <SignUp
-              userRef={userRef}
-              setUserRef={setUserRef} />}
+              user={userId}
+              setUser={userId => setUserId(userId)} />}
           />
-          <ProtectedRoute exact path="/resumecreation" render={() =>
-            <ResumeCreation
-              userRef={userRef}
-              setUserRef={setUserRef} />}
-          />
-          <ProtectedRoute exact path="/resumeview" render={() =>
-            <ResumeView
-              userRef={userRef}
-              setUserRef={setUserRef} />}
-          />
-          <Route exact path="/popup" component={PopUp}></Route>
+
+          <ProtectedRoute exact path="/resumecreation" component={ResumeCreation} />
+          <ProtectedRoute exact path="/resumeview" component={ResumeView} />
+
 
         </Switch>
       </Router>

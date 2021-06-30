@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-const axios = require("axios");
+import axios from 'axios'
 
 
 
-function Login({ userRef, setUserRef }) {
+function Login({ user, setUser }) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   //need to pass this hook from parent component
   //const [userRef, setUserRef] = useState('')
 
@@ -19,15 +20,16 @@ function Login({ userRef, setUserRef }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const payload = { email, password };
-    document.cookie = "loggedIn=true;max-age=60*1000";
-    console.log(payload)
+    axios.post('/api/users/login', {
+    email 
+    }).then(res => {
+       setUser(res.data.userRef)
+       document.cookie = "loggedIn=true";
+      console.log("res :", res)
+    },(error) => {
+      console.log('err :', error)
+    })
     
-      axios({
-        method: 'get',
-        url: "http://localhost:5000/api/users/login",
-        data: { ...payload }
-      }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
   }
 
   const [show, setShow] = useState(false);

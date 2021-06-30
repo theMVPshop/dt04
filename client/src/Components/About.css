@@ -1,0 +1,57 @@
+.about {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    justify-self: center;
+    justify-content: center;
+    place-items: center;
+    vertical-align: middle;
+    line-height: 100%;
+    margin:auto;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+  }
+
+      .Logo {
+      justify-content: left;
+      align-content: top;
+      align-items: left;
+      height: 40vmin;
+      }
+
+      @keyframes App-logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .Gallery { 
+        align-content: left;
+        color: rgb(43, 186, 226);
+        border: 1px solid black;
+        background-color: lightblue;
+        padding-top: 50px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        }
+
+        .Img {
+          Max-width: 200px;
+          Max-height: 200px
+        }
+        .h2 {
+          font-family: 'Yellowtail', cursive;
+
+        }
+
+     
