@@ -21,15 +21,13 @@ const Navigation = (props) => {
           <NavItem>
             <Nav.Link as={Link}
               to={{
-                pathname: '/signup',
-                state: { user: props.user, setUser: props.setUser },
+                pathname: '/signup', user: props.user, setUser: props.setUser
               }}>Sign Up</Nav.Link>
           </NavItem>
           <NavItem>
             <Nav.Link as={Link}
             to={{
-              pathname: '/resumeview',
-              state: { user: props.user, setUser: props.setUser},
+              pathname: '/resumeview', user: props.user, setUser: props.setUser,
             }}>Resume</Nav.Link>
           </NavItem>
         <NavItem>
