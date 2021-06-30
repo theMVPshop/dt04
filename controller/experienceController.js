@@ -39,8 +39,9 @@ const addExperience = async (req, res) => {
 };
 
 const viewExperience = async (req, res) => {
-  const { userRef } = req.body;
-  console.log(userRef)
+  console.log(" req. params: ", req.params)
+  const { userRef } = req.params.expParams;
+  
  try {
   const expDoc = await Experience.find({ userRef })
   if(expDoc){
