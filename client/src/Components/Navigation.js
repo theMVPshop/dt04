@@ -27,7 +27,7 @@ const Navigation = (props) => {
           <NavItem>
             <Nav.Link as={Link}
             to={{
-              pathname: '/resumeview', user: props.user, setUser: props.setUser,
+              pathname: '/resumeview', user: props.user
             }}>Resume</Nav.Link>
           </NavItem>
         <NavItem>

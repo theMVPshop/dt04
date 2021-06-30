@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from 'axios'
 
-const ResumeCreation = ({ userRef, setUserRef }) => {
+const ResumeCreation = ({ user, setUser }) => {
 
   const [company, setCompany] = useState("")
   const [position, setPosition] = useState("")
@@ -14,7 +14,7 @@ const ResumeCreation = ({ userRef, setUserRef }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { company, position, startDate, endDate, description, userRef };
+    const payload = { company, position, startDate, endDate, description, user };
     console.log(payload);
     axios
       .post("/api/experience", {
