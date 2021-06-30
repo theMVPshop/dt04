@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from 'axios'
 
-const SignUp = ({ userRef, setUserRef }) => {
+const SignUp = ({ user, setUser }) => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
