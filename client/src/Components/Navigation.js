@@ -11,7 +11,7 @@ const Navigation = (props) => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav justify-content-left>
+        <Nav>
           <NavItem>
             <Nav.Link href="/">Landing</Nav.Link>
           </NavItem>
