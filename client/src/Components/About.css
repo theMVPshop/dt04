@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
 
+
 .about {
     text-align: center;
     align-items: center;
@@ -48,7 +49,9 @@
         
         .h2 {
           font-family: 'Yellowtail', cursive;
-
+          font-display: center;
+          align-content: center;
+          justify-content: center;
         }
 
      
