@@ -17,7 +17,7 @@ const ResumeCreation = ({ userRef, setUserRef }) => {
     const payload = { company, position, startDate, endDate, description, userRef };
     console.log(payload);
     axios
-      .post("http://localhost:5000/api/experience", {
+      .post("/api/experience", {
         ...payload
       })
       .then(res => {

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,13 +26,17 @@ const checkAuth = () => {
 
 
 const App = () => {
-  const [userRef, setUserRef] = useState('')
+  const [userId, setUserId] = useState()
   const [indeedJobs, setIndeed] = useState([])
   const [usaJobs, setUSA] = useState([])
   const [searchParams, setSearchParams] = useState({
     title: "",
     location: ""
   });
+
+  useEffect(() => {
+    console.log("app userRef :", userId)
+  }, [userId])
 
   var JQUERYconvertRSS;
   var normalizedJobs = [];
@@ -174,8 +178,7 @@ const App = () => {
       <Route
         {...rest}
         render={(props) =>
-          checkAuth() ? <Component {...props} userRef={userRef}
-          setUserRef={setUserRef} /> : <Redirect to="/login" />
+          checkAuth() ? <Component {...props} /> : <Redirect to="/login" />
         }
       />
     );
@@ -183,8 +186,8 @@ const App = () => {
 
   return (
     <Fragment>
-      <Navigation />
       <Router>
+        <Navigation user={userId} setUser={userId => setUserId(userId)} />
         <Switch>
 
           <Route exact path="/" render={(props) =>
@@ -200,13 +203,11 @@ const App = () => {
 
           <Route exact path="/login" render={() =>
             <Login
-              userRef={userRef}
-              setUserRef={setUserRef} />}
+              />}
           />
           <Route exact path="/signUp" render={() =>
             <SignUp
-              userRef={userRef}
-              setUserRef={setUserRef} />}
+               />}
           />
 
           <ProtectedRoute exact path="/resumecreation" component={ResumeCreation} />

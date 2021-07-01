@@ -6,10 +6,11 @@ import axios from 'axios'
 
 
 
-function Login({ userRef, setUserRef }) {
+function Login({ user, setUser }) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   //need to pass this hook from parent component
   //const [userRef, setUserRef] = useState('')
 
@@ -19,32 +20,16 @@ function Login({ userRef, setUserRef }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newEmail = email
-    let userId
-    const setId = setUserRef()
-    
-    //console.log(newEmail)
-
-    axios.post('http://localhost:5000/api/users/login', {
-    email: newEmail 
+    axios.post('/api/users/login', {
+    email 
     }).then(res => {
-      userId = res.data.userRef
-      console.log(userId)
-      setId(userId)
-      //issue i think im having here is understanding how recursion is effecting setUserRef which is saying isnt a function.
-      //document.cookie = "loggedIn=true";
+       setUser(res.data.userRef)
+       document.cookie = "loggedIn=true";
+      console.log("res :", res)
     },(error) => {
-      console.log('err ', newEmail)
-      console.log(error)
-    })// need to pass a prop down to use hook)
+      console.log('err :', error)
+    })
     
-
-      // axios({
-      //   method: 'get',
-      //   url: "http://localhost:5000/api/users/login",
-      //   data: { ...payload }
-      // }).then(res => setUserRef(res.userRef)).catch(err => console.log(err) // need to pass a prop down to use hook)
-
   }
 
   const [show, setShow] = useState(false);

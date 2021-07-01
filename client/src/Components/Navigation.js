@@ -1,8 +1,9 @@
 import React from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import Login from "./Login";
-const Navigation = () => {
+const Navigation = (props) => {
   return (
     <Navbar expand="lg" sticky="top">
       <Navbar.Brand href="/" className="App-logo">
@@ -18,13 +19,19 @@ const Navigation = () => {
             <Nav.Link href="/about">About</Nav.Link>
           </NavItem>
           <NavItem>
-            <Nav.Link href="/SignUp">Sign Up</Nav.Link>
+            <Nav.Link as={Link}
+              to={{
+                pathname: '/signup', user: props.user, setUser: props.setUser
+              }}>Sign Up</Nav.Link>
           </NavItem>
           <NavItem>
-            <Nav.Link href="/resume">Resume</Nav.Link>
+            <Nav.Link as={Link}
+            to={{
+              pathname: '/resumeview', user: props.user, setUser: props.setUser,
+            }}>Resume</Nav.Link>
           </NavItem>
         <NavItem>
-            <Login className="nav-button" />
+            <Login className="nav-button" user={props.user} setUser={userId => props.setUser(userId)} />
           </NavItem>
         </Nav>
       </Navbar.Collapse>

@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors({ origin: 'https://medical-job-search.herokuapp.com' , credentials :  true}));
-app.use(cors({ origin: 'https://localhost:3000' , credentials :  true}));
+app.use(cors({ origin: 'https://localhost:3000/*' , credentials :  true}));
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "/client/build")));
