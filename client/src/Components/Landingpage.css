@@ -20,10 +20,31 @@ section {
     height: 324px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: orange; 
-    margin-top: 20px;
+    /* background-color: orange;  */
+    margin-top: 20px;   
+    position: fixed;
+    bottom: 0;
 
 }
+
+form{
+    text-align:center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    /* flex-wrap: wrap; */
+    border-radius: 25px;
+    padding:5px;
+    width:80px
+    
+}
+
+footer.contact{
+   display: inline; 
+}
+
+
+
 @media (max-width: 640px){
     section { 
         flex-direction: column;

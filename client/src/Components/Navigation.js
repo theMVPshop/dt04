@@ -11,7 +11,7 @@ const Navigation = (props) => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav justify-content-left>
+        <Nav>
           <NavItem>
             <Nav.Link href="/">Landing</Nav.Link>
           </NavItem>
@@ -21,15 +21,13 @@ const Navigation = (props) => {
           <NavItem>
             <Nav.Link as={Link}
               to={{
-                pathname: '/signup',
-                state: { user: props.user, setUser: props.setUser },
+                pathname: '/signup', user: props.user, setUser: props.setUser
               }}>Sign Up</Nav.Link>
           </NavItem>
           <NavItem>
             <Nav.Link as={Link}
             to={{
-              pathname: '/resumeview',
-              state: { user: props.user, setUser: props.setUser},
+              pathname: '/resumeview', user: props.user
             }}>Resume</Nav.Link>
           </NavItem>
         <NavItem>
