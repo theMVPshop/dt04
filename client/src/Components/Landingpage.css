@@ -21,7 +21,9 @@ section {
     flex-direction: row;
     justify-content: space-between;
     /* background-color: orange;  */
-    margin-top: 20px;
+    margin-top: 20px;   
+    position: fixed;
+    bottom: 0;
 
 }
 
@@ -37,10 +39,11 @@ form{
     
 }
 
-section{ 
-    position: fixed;
-    bottom: 0
+footer.contact{
+   display: inline; 
 }
+
+
 
 @media (max-width: 640px){
     section { 
