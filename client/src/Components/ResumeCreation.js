@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from 'axios'
 
-const ResumeCreation = ({ userRef, setUserRef }) => {
+const ResumeCreation = ({ user, setUser }) => {
 
   const [company, setCompany] = useState("")
   const [position, setPosition] = useState("")
@@ -14,7 +14,7 @@ const ResumeCreation = ({ userRef, setUserRef }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { company, position, startDate, endDate, description, userRef };
+    const payload = { company, position, startDate, endDate, description, user };
     console.log(payload);
     axios
       .post("/api/experience", {
@@ -101,71 +101,5 @@ const ResumeCreation = ({ userRef, setUserRef }) => {
     
   );
 };
-
-// export default Resume;
-
-
-
-//  <form onSubmit={handleSubmit}>
-//         <h2>Resume</h2>
-//         <label htmlFor="company">Company</label>
-//         <input
-//           type="text"
-//           name="company"
-//           required
-//           value={resume.company}
-//           onChange={textChange}
-//         />
-//         <div class="companyError"></div>
-
-//         <label htmlFor="position">Position</label>
-//         <input
-//           type="text"
-//           name="position"
-//           required
-//           value={resume.position}
-//           onChange={textChange}
-//         />
-//         <div class="positionError"></div>
-
-//         <label htmlFor="startDate">Start Date</label>
-//         <input
-//           type="text"
-//           name="startDate"
-//           required
-//           value={resume.startDate}
-//           onChange={textChange}
-//         />
-//         <div class="startDateError"></div>
-
-//         <label htmlFor="description">End Date</label>
-//         <input
-//           type="text"
-//           name="endDate"
-//           required
-//           value={resume.endDate}
-//           onChange={textChange}
-//         />
-//         <div class="endDateError"></div>
-
-//         <label htmlFor="description">Description</label>
-//         <input
-//           type="text"
-//           name="description"
-//           required
-//           value={resume.description}
-//           onChange={textChange}
-//         />
-//         <div class="descriptionError"></div>
-
-//         <input
-//           type="submit"
-//           value="Submit"
-//           className="btn btn-primary btn-block"
-//         />
-//       </form>
-//     </div>
-//   );
-// };
 
 export default ResumeCreation

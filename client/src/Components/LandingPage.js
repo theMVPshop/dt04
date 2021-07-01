@@ -1,5 +1,6 @@
 import React from "react";
 import JobResults from "./JobResults"
+import "./Landingpage.css"
 
 
 const LandingPage = (props)=> {
@@ -61,12 +62,12 @@ const LandingPage = (props)=> {
         <div className="jobs-landing-main-bg">
           <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
         </div>
-        <section>
+        <section id="footer" >
         <article>Social Media   
           <p> 
           Twitter- @MedicalAssistantJobSearch
           Facebook-FB.com/MedicalAssistantJobSearch 
-          Instagram @Medical Assistance Job Search
+          Instagram @Medical AssistanceJob Search
           Youtube Youtube.com/MedicalAssistantJobSearch
           </p>
         </article>
@@ -79,7 +80,7 @@ const LandingPage = (props)=> {
 
         </p>
         </article>
-        <article>
+        <article id ="contact">
         CONTACT
         <p> Name </p>
         <input></input>

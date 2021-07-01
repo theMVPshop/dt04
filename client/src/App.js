@@ -35,7 +35,7 @@ const App = () => {
   });
 
   useEffect(() => {
-    console.log("app userRef :", userId)
+    console.log("app userId :", userId)
   }, [userId])
 
   var JQUERYconvertRSS;
@@ -178,7 +178,7 @@ const App = () => {
       <Route
         {...rest}
         render={(props) =>
-          checkAuth() ? <Component {...props} /> : <Redirect to="/login" />
+          checkAuth() ? <Component {...props} user={userId} setUser={userId => setUserId(userId)} /> : <Redirect to="/login" />
         }
       />
     );
@@ -203,10 +203,12 @@ const App = () => {
 
           <Route exact path="/login" render={() =>
             <Login
+            user={userId} setUser={userId => setUserId(userId)}
               />}
           />
           <Route exact path="/signUp" render={() =>
             <SignUp
+            user={userId} setUser={userId => setUserId(userId)}
                />}
           />
 
