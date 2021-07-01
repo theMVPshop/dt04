@@ -16,13 +16,12 @@
     margin:auto;
     position: absolute;
     font-family: 'Yellowtail', cursive;
-    /* left: 50%;
-    right: 50%; */
+   
   }
 
       .Logo {
         justify-content: left;
-        align-content: top;
+        align-content: left;
         align-items: left;
         position: top;
         top: 8px;
