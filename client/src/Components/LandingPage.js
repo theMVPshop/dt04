@@ -36,7 +36,7 @@ const LandingPage = (props)=> {
     return (
       <div>
         <div className="jobSearch">
-          <form onSubmit={handleSubmit}>
+          <form id="landingform" onSubmit={handleSubmit}>
             <input
               type="text"
               value={searchParams.title}
