@@ -15,7 +15,7 @@ main {
     font-size: 40px;
 }
 
-section {
+#footer {
     display: flex;
     height: 324px;
     flex-direction: row;
@@ -27,20 +27,19 @@ section {
 
 }
 
-form{
+#landingform{
     text-align:center;
     justify-content: center;
     margin: auto;
     display: flex;
-    /* flex-wrap: wrap; */
-    border-radius: 25px;
     padding:5px;
     width:80px
     
 }
-
-footer.contact{
-   display: inline; 
+#contact{
+   
+   flex-direction: row;
+   margin-top: 20px;
 }
 
 
