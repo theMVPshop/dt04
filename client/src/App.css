@@ -150,7 +150,7 @@ header,
   background-size: cover;
 }
 
-  -o-background-size: cover;
+
 
 @media (min-width: 994px) and (max-width: 1398px) {
   .Login form{
