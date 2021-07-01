@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+
+
 .about {
     text-align: center;
     align-items: center;
@@ -16,24 +20,17 @@
   }
 
       .Logo {
-      justify-content: left;
-      align-content: top;
-      align-items: left;
-      height: 40vmin;
-      }
-
-      @keyframes App-logo-spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
+        justify-content: left;
+        align-content: top;
+        align-items: left;
+        position: top;
+        top: 8px;
+        left: 16px;
+        font-size: 18px;
       }
 
       .Gallery { 
         align-content: left;
-        color: rgb(43, 186, 226);
         border: 1px solid black;
         background-color: lightblue;
         padding-top: 50px;
@@ -45,13 +42,16 @@
         grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         }
 
-        .Img {
-          Max-width: 200px;
-          Max-height: 200px
-        }
+        .img {
+          max-height: 150px;
+          max-width: 200px;
+          }
+        
         .h2 {
           font-family: 'Yellowtail', cursive;
-
+          font-display: center;
+          align-content: center;
+          justify-content: center;
         }
 
      
