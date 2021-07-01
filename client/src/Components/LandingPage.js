@@ -80,14 +80,14 @@ const LandingPage = (props)=> {
 
         </p>
         </article>
-        <article id ="contact">
+      </section>
+        <form id ="contact">
         CONTACT
         <p> Name </p>
         <input></input>
         <p>Message</p>
         <input></input>
-        </article>
-      </section>
+        </form>
       </div>
 
     );
