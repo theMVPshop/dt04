@@ -15,8 +15,9 @@
     line-height: 100%;
     margin:auto;
     position: absolute;
-    left: 50%;
-    right: 50%;
+    font-family: 'Yellowtail', cursive;
+    /* left: 50%;
+    right: 50%; */
   }
 
       .Logo {
@@ -42,7 +43,7 @@
         grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         }
 
-        .img {
+        img {
           max-height: 150px;
           max-width: 200px;
           }
