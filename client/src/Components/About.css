@@ -45,6 +45,7 @@
         img {
           max-height: 150px;
           max-width: 200px;
+          align-content: left;
           }
         
         .h2 {
