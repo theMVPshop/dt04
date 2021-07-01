@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
 
-const ResumeView = ({ user, setUser }) => {
+const ResumeView = (props) => {
     const [resume, setResume] = useState({ });
-      
       useEffect(() => {
-        async function fetchData() {
-          console.log("userRef ", user)
-          const request = await axios.get(`/api/expierence/${user}`)
-          console.log("request ", request)
-        }
-        fetchData()
-      }, [])
+          console.log('helloWorld')
+          axios.get(`/api/expierence/${props.user}`).then(res => console.log("res view: ", res.data)).catch(err => console.log(err))
+      }, [props.user])
 
       return (
         <div >
-          <h3>hello{ console.log(resume), console.log(user)}</h3>
+          <h3>hello{ console.log(resume), console.log("props :", props.user)}</h3>
         </div>
       )
 }
