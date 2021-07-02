@@ -5,7 +5,7 @@ const ResumeView = (props) => {
     const [resume, setResume] = useState({ });
       useEffect(() => {
           console.log('helloWorld')
-          axios.get(`/api/expierence/${props.user}`).then(res => console.log("res view: ", res.data)).catch(err => console.log(err))
+          axios.get(`/api/expierence/${props.user}`).then(res => console.log("res view: ", res)).catch(err => console.log(err))
       }, [props.user])
 
       return (
