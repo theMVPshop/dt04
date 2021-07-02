@@ -1,9 +1,13 @@
 import React from "react";
-import Claire from "../Images/Claire.png";
-import Austin from "../Images/Austin.png";
-import Keith from "../Images/Keith.png";
-import Connor from "../Images/Connor.png";
-import Greta from "../Images/Greta.png";
+import Claire from "../Images/Claire.png"; 
+import Austin from "../Images/Austin.png"; 
+import Keith from "../Images/Keith.png";   
+import Connor from "../Images/Connor.png"; 
+import Greta from "../Images/Greta.png";  
+import Logo from "../Images/OurLogo.png";
+import "./About.css"
+ 
+  
 
 <style>
   @import
@@ -14,14 +18,7 @@ const About = () => {
   return (
     <div className="about">
       <div className="Logo">
-        {/* <img src={require('..Images/OurLogo.png')} />  */}
-      </div>
-      <div className="Gallery">
-        <img src={Claire} alt="Claire" />
-        <img src={Austin} alt="Austin" />
-        <img src={Keith} alt="Keith" />
-        <img src={Connor} alt="Connor" />
-        <img src={Greta} alt="Greta" />
+         <img src={Logo} alt="Our Logo"/> 
       </div>
 
       <h2>
