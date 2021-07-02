@@ -66,11 +66,11 @@ module.exports.signup_post = async (req, res) => {
       state,
     });
     console.log(user)
-    res.sendStatus(201).json({ userRef: user._id });
+    res.json({ userRef: user._id });
   } catch (err) {
     console.log(" this is the err", err)
     const errors = handleErrors(err);
-    res.sendStatus(400).json({ errors });
+    res.sendStatus(400, errors);
   }
 };
 

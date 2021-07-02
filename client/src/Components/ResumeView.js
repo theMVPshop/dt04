@@ -10,7 +10,7 @@ const ResumeView = (props) => {
 
       return (
         <div >
-          <h3>hello{ console.log(resume), console.log("props :", props.user)}</h3>
+          <h3>Resusme Builder{ console.log(resume), console.log("props :", props.user)}</h3>
         </div>
       )
 }

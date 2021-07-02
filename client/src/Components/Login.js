@@ -21,7 +21,7 @@ function Login({ user, setUser }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post('/api/users/login', {
-    email 
+    email: email 
     }).then(res => {
        setUser(res.data.userRef)
        document.cookie = "loggedIn=true";
@@ -53,7 +53,7 @@ function Login({ user, setUser }) {
                     <Form.Group size="lg" controlId="email">
                       <Form.Label>Email</Form.Label>
                       <Form.Control
-                        autofocus
+                        autoFocus
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
