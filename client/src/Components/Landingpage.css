@@ -17,13 +17,18 @@ main {
 
 #footer {
   display: flex;
-  height: 324px;
-  flex-direction: row;
+  font-size: 10px;
+  /* height: 40px; */
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 20px;
+  margin: 0 0 0 700px;
   position: fixed;
   bottom: 0;
 }
+
+/* #social{
+    margin-left: 20px;
+} */
 
 #landingform {
   text-align: center;
@@ -31,19 +36,85 @@ main {
   margin: auto;
   display: flex;
   padding: 5px;
-  width: 80px;
+  width: 100px;
 }
-#contact {
-  position: fixed;
-  bottom: 0;
-  flex-direction: wrap;
-  margin-top: 20px;
-  display: flex;
+#contactform {
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    
+}
+#contact{
+    margin:0 10px 10px 0;
 }
 
-.btn btn-outline-default white-outline btn-md searchbox-submit{
-        border-radius: 50px;
-        color: blue;
+#name{
+    margin-right: 10px;
+}
+
+#message{
+    margin-right: 10px;
+}
+
+#landingbutton {
+  border-radius: 10px;
+  background-color: #007bff;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-family: inherit;
+  font: 400 13.3333px Arial;
+  padding: 0.5rem 1rem;
+  border-color: transparent;
+  color: white;
+  margin: 200px 0px 0px 10px;
+}
+
+#whatsearch {
+  display: block;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin:200px 0px 0px 10px;
+}
+
+#wheresearch {
+  display: block;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin: 200px 0px 0px 10px;
+}
+
+#what {
+  margin: 205px 0px 0px 10px;
+}
+
+#where {
+  margin: 205px 0px 0px 10px;
 }
 
 @media (max-width: 640px) {

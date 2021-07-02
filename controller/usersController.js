@@ -53,7 +53,7 @@ module.exports.signup_post = async (req, res) => {
     city,
     state,
   } = req.body;
-  
+
   try {
     const user = await User.create({
       email,
@@ -65,32 +65,30 @@ module.exports.signup_post = async (req, res) => {
       city,
       state,
     });
-    console.log(user)
+    console.log(user);
     res.sendStatus(201).json({ userRef: user._id });
   } catch (err) {
-    console.log(" this is the err", err)
+    console.log(" this is the err", err);
     const errors = handleErrors(err);
     res.sendStatus(400).json({ errors });
   }
 };
 
-module.exports.login_get = async (req, res) => {
-
-};
+module.exports.login_get = async (req, res) => {};
 
 module.exports.login_post = async (req, res) => {
   const { email } = req.body;
-  console.log(req.body)
-  console.log(email)
+  console.log(req.body);
+  console.log(email);
   try {
     const user = await User.findOne({ email });
-    const userId = user._id
-    console.log(user, 'userID :', userId)
+    const userId = user._id;
+    console.log(user, "userID :", userId);
     if (user) {
-      res.json({ userRef: userId})
+      res.json({ userRef: userId });
     }
   } catch (err) {
-    console.log(" this is the err", err)
+    console.log(" this is the err", err);
     const errors = handleErrors(err);
     res.sendStatus(400).json({ errors });
   }

@@ -15,28 +15,26 @@ import ResumeView from "./Components/ResumeView";
 import Navigation from "./Components/Navigation";
 import "./App.css";
 import cookie from "cookie";
-import jQuery from 'jquery'
-import axios from 'axios'
-
+import jQuery from "jquery";
+import axios from "axios";
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
   return cookies["loggedIn"] ? true : false;
 };
 
-
 const App = () => {
-  const [userId, setUserId] = useState()
-  const [indeedJobs, setIndeed] = useState([])
-  const [usaJobs, setUSA] = useState([])
+  const [userId, setUserId] = useState();
+  const [indeedJobs, setIndeed] = useState([]);
+  const [usaJobs, setUSA] = useState([]);
   const [searchParams, setSearchParams] = useState({
     title: "",
-    location: ""
+    location: "",
   });
 
   useEffect(() => {
-    console.log("app userId :", userId)
-  }, [userId])
+    console.log("app userId :", userId);
+  }, [userId]);
 
   var JQUERYconvertRSS;
   var normalizedJobs = [];
@@ -74,7 +72,7 @@ const App = () => {
         success: function (result) {
           $("#" + id).empty();
           if (result.data === null) return;
-          normalizeIndeedResults(result.data) //cleans up parsed data
+          normalizeIndeedResults(result.data); //cleans up parsed data
           setIndeed(normalizedJobs); //sets results to state
         },
       });
@@ -82,103 +80,108 @@ const App = () => {
   })(jQuery);
 
   const fetchIndeedAsJson = () => {
-    let searchArray = []
+    let searchArray = [];
 
     //create search params string
     if (searchParams.title) {
-      searchArray.push(`q=${searchParams.title}`)
+      searchArray.push(`q=${searchParams.title}`);
     }
     if (searchParams.location) {
-      searchArray.push(`l=${searchParams.location}`)
+      searchArray.push(`l=${searchParams.location}`);
     }
     if (searchArray.length > 1) {
-      searchArray = searchArray.join('&')
+      searchArray = searchArray.join("&");
       // console.log(searchArray)
     }
 
     JQUERYconvertRSS({
       FeedUrl: `https://rss.indeed.com/rss?${searchArray}`,
       MaxCount: 120,
-    })
-  }
-
+    });
+  };
 
   const normalizeIndeedResults = (array) => {
     array.forEach(function (job) {
-
       //update job title
       job.title = job.title.split("-"); //seperates the job title into job title, company name and location.
       if (job.title.length > 3) {
-        job.title.splice(1, 1) //Some job titles had an extra category in this position. This removes it if it does. 
+        job.title.splice(1, 1); //Some job titles had an extra category in this position. This removes it if it does.
       }
       //reassigns to correct label
-      job.positionTitle = job.title[0]
-      job.companyName = job.title[1]
-      job.location = job.title[2]
+      job.positionTitle = job.title[0];
+      job.companyName = job.title[1];
+      job.location = job.title[2];
 
       //remove unnecessary info from the parsed job description
       job.description = job.description.split("<br>");
-      job.description = job.description.shift()
-
+      job.description = job.description.shift();
 
       //pushes to new array with edited job info
-      normalizedJobs.push(job)
-    })
+      normalizedJobs.push(job);
+    });
     // console.log("normalized indeed jobs", normalizedJobs)
-    return normalizedJobs
-  }
+    return normalizedJobs;
+  };
 
   //fetch USAJobs
   const fetchUSAJobs = async () => {
-    let tempArray = []
-    let searchArray = []
+    let tempArray = [];
+    let searchArray = [];
 
     //create search params string
     if (searchParams.title) {
       // console.log(searchParams.title.split(' ').join("+"))
-      searchArray.push(`PositionTitle=${searchParams.title}`)
+      searchArray.push(`PositionTitle=${searchParams.title}`);
     }
     if (searchParams.location) {
-      searchArray.push(`LocationName=${searchParams.location}`)
+      searchArray.push(`LocationName=${searchParams.location}`);
     }
     if (searchArray.length > 1) {
-      searchArray = searchArray.join('&')
+      searchArray = searchArray.join("&");
       // console.log("USA Search Array", searchArray)
     }
 
-    axios.get(`/api/search/${searchArray}`)
-      .then((res) => {
-        let results = res.data
+    axios.get(`/api/search/${searchArray}`).then(
+      (res) => {
+        let results = res.data;
         results.forEach(function (job) {
-          job = job.MatchedObjectDescriptor    // sets results to object with needed data
+          job = job.MatchedObjectDescriptor; // sets results to object with needed data
 
-          tempArray.push(job)      //pushes edited job info to temporary array
-        })
-        console.log("Fetching USA Jobs")
+          tempArray.push(job); //pushes edited job info to temporary array
+        });
+        console.log("Fetching USA Jobs");
 
         //sets the result to State
-        setUSA(tempArray)
-
-      }, (error) => {
+        setUSA(tempArray);
+      },
+      (error) => {
         console.log("Error Fetching USA Jobs: ", error);
-      });
-  }
-
+      }
+    );
+  };
 
   const fetchAllJobs = () => {
-    setIndeed([])
-    setUSA([])
+    setIndeed([]);
+    setUSA([]);
 
-    fetchIndeedAsJson()
-    fetchUSAJobs()
-  }
+    fetchIndeedAsJson();
+    fetchUSAJobs();
+  };
 
   const ProtectedRoute = ({ component: Component, ...rest }) => {
     return (
       <Route
         {...rest}
         render={(props) =>
-          checkAuth() ? <Component {...props} user={userId} setUser={userId => setUserId(userId)} /> : <Redirect to="/login" />
+          checkAuth() ? (
+            <Component
+              {...props}
+              user={userId}
+              setUser={(userId) => setUserId(userId)}
+            />
+          ) : (
+            <Redirect to="/login" />
+          )
         }
       />
     );
@@ -187,35 +190,44 @@ const App = () => {
   return (
     <Fragment>
       <Router>
-        <Navigation user={userId} setUser={userId => setUserId(userId)} />
+        <Navigation user={userId} setUser={(userId) => setUserId(userId)} />
         <Switch>
-
-          <Route exact path="/" render={(props) =>
-            <LandingPage
-              indeedJobs={indeedJobs}
-              usaJobs={usaJobs}
-              searchParams={searchParams}
-
-              setSearchParams={setSearchParams}
-              fetchAllJobs={fetchAllJobs} />}
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <LandingPage
+                indeedJobs={indeedJobs}
+                usaJobs={usaJobs}
+                searchParams={searchParams}
+                setSearchParams={setSearchParams}
+                fetchAllJobs={fetchAllJobs}
+              />
+            )}
           />
           <Route exact path="/about" component={About}></Route>
 
-          <Route exact path="/login" render={() =>
-            <Login
-            user={userId} setUser={userId => setUserId(userId)}
-              />}
+          <Route
+            exact
+            path="/login"
+            render={() => (
+              <Login user={userId} setUser={(userId) => setUserId(userId)} />
+            )}
           />
-          <Route exact path="/signUp" render={() =>
-            <SignUp
-            user={userId} setUser={userId => setUserId(userId)}
-               />}
+          <Route
+            exact
+            path="/signUp"
+            render={() => (
+              <SignUp user={userId} setUser={(userId) => setUserId(userId)} />
+            )}
           />
 
-          <ProtectedRoute exact path="/resumecreation" component={ResumeCreation} />
+          <ProtectedRoute
+            exact
+            path="/resumecreation"
+            component={ResumeCreation}
+          />
           <ProtectedRoute exact path="/resumeview" component={ResumeView} />
-
-
         </Switch>
       </Router>
     </Fragment>

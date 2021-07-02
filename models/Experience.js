@@ -20,7 +20,6 @@ const experienceSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, "Please enter your job responsibilities and skills"],
-
   },
   userRef: {
     type: String,
