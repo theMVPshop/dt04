@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
 
 
 
@@ -16,43 +17,51 @@
     margin:auto;
     position: absolute;
     font-family: 'Yellowtail', cursive;
-    /* left: 50%;
-    right: 50%; */
+  
+   
   }
 
-      .Logo {
+
+       .OurLogo {
         justify-content: left;
-        align-content: top;
+        align-content: left;
         align-items: left;
-        position: top;
-        top: 8px;
-        left: 16px;
-        font-size: 18px;
+        position: left;
+        text-align: left;
+        display: grid;
+        
+       
       }
 
-      .Gallery { 
-        align-content: left;
-        border: 1px solid black;
-        background-color: lightblue;
-        padding-top: 50px;
-        padding-right: 30px;
-        padding-bottom: 50px;
-        padding-left: 80px;
-        display: grid;
-        overflow: hidden;
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-        }
+
+.Gallery {
+  align-content: left;
+  border: 1px solid black;
+  background-color: lightblue;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
 
         img {
           max-height: 150px;
           max-width: 200px;
+          align-content: left;
           }
         
         .h2 {
-          font-family: 'Yellowtail', cursive;
+          font-family: 'Zen Tokyo Zoo', cursive;
           font-display: center;
           align-content: center;
           justify-content: center;
+          font-size: medium;
+          color: rgb(31, 29, 158);
         }
 
-     
+
+

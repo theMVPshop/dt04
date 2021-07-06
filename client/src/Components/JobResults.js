@@ -8,10 +8,13 @@ const JobResults = (props) => {
   return (
     <div>
       <ul className="gallery">
-        {indeedJobs && indeedJobs.map((job, idx) => (
-          <li key={idx}>
-              <h4>{job.positionTitle}</h4>{"\n"}
-              Company: {job.companyName} Location: {job.location}{"\n"}
+        {indeedJobs &&
+          indeedJobs.map((job, idx) => (
+            <li key={idx}>
+              <h4>{job.positionTitle}</h4>
+              {"\n"}
+              Company: {job.companyName} Location: {job.location}
+              {"\n"}
               <p>Description: {job.description}</p>
               <a href={job.link}>Learn More</a>
               <FavoriteButton job={job} userId={userId}/>
@@ -28,7 +31,7 @@ const JobResults = (props) => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default JobResults
+export default JobResults;
