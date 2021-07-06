@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
 
 
@@ -20,6 +21,7 @@
    
   }
 
+
        .OurLogo {
         justify-content: left;
         align-content: left;
@@ -31,18 +33,20 @@
        
       }
 
-      .Gallery { 
-        align-content: left;
-        border: 1px solid black;
-        background-color: lightblue;
-        padding-top: 50px;
-        padding-right: 30px;
-        padding-bottom: 50px;
-        padding-left: 80px;
-        display: grid;
-        overflow: hidden;
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-        }
+
+.Gallery {
+  align-content: left;
+  border: 1px solid black;
+  background-color: lightblue;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
 
         img {
           max-height: 150px;
@@ -59,4 +63,5 @@
           color: rgb(31, 29, 158);
         }
 
-     
+
+

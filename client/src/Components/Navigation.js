@@ -19,19 +19,34 @@ const Navigation = (props) => {
             <Nav.Link href="/about">About</Nav.Link>
           </NavItem>
           <NavItem>
-            <Nav.Link as={Link}
+            <Nav.Link
+              as={Link}
               to={{
-                pathname: '/signup', user: props.user, setUser: props.setUser
-              }}>Sign Up</Nav.Link>
+                pathname: "/signup",
+                user: props.user,
+                setUser: props.setUser,
+              }}
+            >
+              Sign Up
+            </Nav.Link>
           </NavItem>
           <NavItem>
-            <Nav.Link as={Link}
-            to={{
-              pathname: '/resumeview', user: props.user
-            }}>Resume</Nav.Link>
+            <Nav.Link
+              as={Link}
+              to={{
+                pathname: "/resumeview",
+                user: props.user,
+              }}
+            >
+              Resume
+            </Nav.Link>
           </NavItem>
-        <NavItem>
-            <Login className="nav-button" user={props.user} setUser={userId => props.setUser(userId)} />
+          <NavItem>
+            <Login
+              className="nav-button"
+              user={props.user}
+              setUser={(userId) => props.setUser(userId)}
+            />
           </NavItem>
         </Nav>
       </Navbar.Collapse>

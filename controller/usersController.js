@@ -53,7 +53,7 @@ module.exports.signup_post = async (req, res) => {
     city,
     state,
   } = req.body;
-  
+
   try {
     const user = await User.create({
       email,
@@ -65,14 +65,17 @@ module.exports.signup_post = async (req, res) => {
       city,
       state,
     });
+
     console.log(user)
     res.json({ userRef: user._id });
+
   } catch (err) {
-    console.log(" this is the err", err)
+    console.log(" this is the err", err);
     const errors = handleErrors(err);
     res.sendStatus(400, errors);
   }
 };
+
 
 module.exports.login_get = async (req, res) => {
   try{
@@ -91,11 +94,14 @@ module.exports.login_post = async (req, res) => {
     const user = await User.findOne({ email });
     const userId = user._id
     console.log("userController user: ", user, 'userController userID :', userId)
+
     if (user) {
-      res.json({ userRef: userId})
+      res.json({ userRef: userId });
     }
   } catch (err) {
+
     console.log("this is the err", err)
+
     const errors = handleErrors(err);
     res.sendStatus(400).json({ errors });
   }
