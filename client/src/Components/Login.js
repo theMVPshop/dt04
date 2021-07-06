@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Login.css";
 import axios from "axios";
 
-function Login({ user, setUser }) {
+function Login({ user, setUser, setLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,12 +24,15 @@ function Login({ user, setUser }) {
     }).then(res => {
        setUser(res.data.userRef)
        document.cookie = "loggedIn=true";
-      console.log("Login res :", res)
     },(error) => {
       console.log('Login err :', error)
     })
     
   }
+
+  useEffect(() => {
+
+  }, [user])
 
   const [show, setShow] = useState(false);
 

@@ -1,7 +1,9 @@
-import React from "react";
+import React from "react"
+import FavoriteButton from './FavoriteButton'
 
 const JobResults = (props) => {
-  const { indeedJobs, usaJobs } = props;
+  const {indeedJobs, usaJobs, userId} = props
+
 
   return (
     <div>
@@ -15,20 +17,18 @@ const JobResults = (props) => {
               {"\n"}
               <p>Description: {job.description}</p>
               <a href={job.link}>Learn More</a>
-            </li>
-          ))}
-        {usaJobs &&
-          usaJobs.map((job, idx) => (
-            <li key={idx}>
-              <h4>{job.PositionTitle}</h4>
-              {"\n"}
-              Company: {job.OrganizationName} Location:{" "}
-              {job.PositionLocationDisplay}
-              {"\n"}
+              <FavoriteButton job={job} userId={userId}/>
+          </li>
+        ))}
+          {usaJobs && usaJobs.map((job, idx) => (
+          <li key={idx}>
+              <h4>{job.PositionTitle}</h4>{"\n"}
+              Company: {job.OrganizationName} Location: {job.PositionLocationDisplay}{"\n"}
               <p>Description: {job.UserArea.Details.JobSummary}</p>
               <a href={job.PositionURI}>Learn More</a>
-            </li>
-          ))}
+              <FavoriteButton job={job} userId={userId}/>
+          </li>
+        ))}
       </ul>
     </div>
   );
