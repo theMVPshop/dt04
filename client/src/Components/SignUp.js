@@ -27,13 +27,11 @@ const SignUp = ({ user, setUser }) => {
       state,
     };
     console.log(payload);
-    axios
-      .post("/api/users/signup", payload)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
+
+    axios.post('/api/users/signup', {...payload}).then(res => { 
+      console.log("signup res: ", res) 
+      console.log("signup res.data: ",res.data) 
+    }).catch(err => console.log(err))
   };
 
   return (

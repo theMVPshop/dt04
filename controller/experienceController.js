@@ -41,18 +41,19 @@ const addExperience = async (req, res) => {
 const viewExperience = async (req, res) => {
   console.log(" req. params: ", req.params);
   const user = req.params.expParams;
-  console.log("backend user: ", user);
-  //  try {
-  //   const expDoc = await Experience.find({ userRef: user })
-  //   if(expDoc){
-  //     // console.log(expDoc)
-  //     res.json(expDoc)
-  //   }
-  //  } catch (err) {
 
-  //       const errors = handleError(err);
-  //       res.sendStatus(400).json({ errors });
-  //  }
+  console.log("backend user: ", user)
+ try {
+  const expDoc = await Experience.find({ userRef: user })
+  if(expDoc){
+    // console.log(expDoc)
+    res.json(expDoc)
+  }
+ } catch (err) {
+
+      const errors = handleError(err);
+      res.json({ errors });
+ }
 };
 
 module.exports = { addExperience, viewExperience };
