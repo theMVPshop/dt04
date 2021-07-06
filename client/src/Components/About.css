@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
 
-
-
 .about {
     text-align: center;
     align-items: center;
@@ -15,7 +13,7 @@
     line-height: 100%;
     margin:auto;
     position: absolute;
-    font-family: 'Yellowtail', cursive;
+    
   
    
   }
@@ -46,17 +44,35 @@
 
         img {
           max-height: 150px;
-          max-width: 200px;
-          align-content: left;
+          max-width: 150px;
+          align-content: top;
+          text-align: left;
+          float: left;
+          position: relative;
+          margin: 10px 15px 15px 10px;
+
           }
         
-        .h2 {
+        p {
           font-family: 'Zen Tokyo Zoo', cursive;
           font-display: center;
           align-content: center;
           justify-content: center;
-          font-size: medium;
-          color: rgb(31, 29, 158);
+          font-size: 19px;
+          padding: 5px;
+          box-sizing: border-box;
+          text-align: justify;
+             
         }
 
-     
+        .bg-div {
+          overflow: hidden;
+       }
+       nav {
+           float: right;
+       }
+
+       
+   h1 {
+    font-family: 'Zen Tokyo Zoo', cursive;
+   }
