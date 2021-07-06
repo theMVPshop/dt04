@@ -34,6 +34,10 @@ const userSchema = new mongoose.Schema({
   state: {
     type: String,
   },
+  saved: {
+    type: Array,
+    default: ''
+  }
   
   //create a timestamp when they first create a user and anytime they log in.
 }, { timestamps: true });

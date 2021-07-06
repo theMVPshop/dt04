@@ -1,8 +1,8 @@
 import React from "react"
-
+import FavoriteButton from './FavoriteButton'
 
 const JobResults = (props) => {
-  const {indeedJobs, usaJobs} = props
+  const {indeedJobs, usaJobs, userId} = props
 
 
   return (
@@ -14,6 +14,7 @@ const JobResults = (props) => {
               Company: {job.companyName} Location: {job.location}{"\n"}
               <p>Description: {job.description}</p>
               <a href={job.link}>Learn More</a>
+              <FavoriteButton job={job} userId={userId}/>
           </li>
         ))}
           {usaJobs && usaJobs.map((job, idx) => (
@@ -22,6 +23,7 @@ const JobResults = (props) => {
               Company: {job.OrganizationName} Location: {job.PositionLocationDisplay}{"\n"}
               <p>Description: {job.UserArea.Details.JobSummary}</p>
               <a href={job.PositionURI}>Learn More</a>
+              <FavoriteButton job={job} userId={userId}/>
           </li>
         ))}
       </ul>
