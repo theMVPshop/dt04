@@ -21,9 +21,9 @@ const ResumeCreation = ({ user, setUser }) => {
         ...payload
       })
       .then(res => {
-        console.log(res);
+        console.log("resumeCreatioin response: ", res);
       }, (error) => {
-        console.log(error);
+        console.log("resumeCreation err: ", error);
       })
 
   };
