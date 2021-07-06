@@ -1,15 +1,15 @@
 import React from "react";
-import JobResults from "./JobResults";
-import "./Landingpage.css";
+import JobResults from "./JobResults"
+import "./Landingpage.css"
 
-const LandingPage = (props) => {
-  const {
-    indeedJobs,
-    usaJobs,
-    searchParams,
-    setSearchParams,
-    fetchAllJobs,
-  } = props;
+
+const LandingPage = (props)=> {
+  const {indeedJobs,  
+        usaJobs, 
+        searchParams, 
+        setSearchParams, 
+        fetchAllJobs,
+        userId} = props
 
   const handleChange = (e) => {
     const newState = { ...searchParams };

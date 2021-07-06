@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Login.css";
 import axios from "axios";
 
-function Login({ user, setUser }) {
+function Login({ user, setUser, setLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,21 +18,21 @@ function Login({ user, setUser }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .post("/api/users/login", {
-        email,
-      })
-      .then(
-        (res) => {
-          setUser(res.data.userRef);
-          document.cookie = "loggedIn=true";
-          console.log("res :", res);
-        },
-        (error) => {
-          console.log("err :", error);
-        }
-      );
-  };
+
+    axios.post('/api/users/login', {
+    email: email 
+    }).then(res => {
+       setUser(res.data.userRef)
+       document.cookie = "loggedIn=true";
+    },(error) => {
+      console.log('Login err :', error)
+    })
+    
+  }
+
+  useEffect(() => {
+
+  }, [user])
 
   const [show, setShow] = useState(false);
 
@@ -55,7 +55,7 @@ function Login({ user, setUser }) {
                     <Form.Group size="lg" controlId="email">
                       <Form.Label>Email</Form.Label>
                       <Form.Control
-                        autofocus
+                        autoFocus
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
