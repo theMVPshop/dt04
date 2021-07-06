@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import axios from 'axios'
-
-
+import "./Login.css";
+import axios from "axios";
 
 function Login({ user, setUser }) {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,14 +18,15 @@ function Login({ user, setUser }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     axios.post('/api/users/login', {
-    email 
+    email: email 
     }).then(res => {
        setUser(res.data.userRef)
        document.cookie = "loggedIn=true";
-      console.log("res :", res)
+      console.log("Login res :", res)
     },(error) => {
-      console.log('err :', error)
+      console.log('Login err :', error)
     })
     
   }
@@ -53,7 +52,7 @@ function Login({ user, setUser }) {
                     <Form.Group size="lg" controlId="email">
                       <Form.Label>Email</Form.Label>
                       <Form.Control
-                        autofocus
+                        autoFocus
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -68,7 +67,8 @@ function Login({ user, setUser }) {
                       />
                     </Form.Group>
                   </div>
-                  <Button onClick={handleClose}
+                  <Button
+                    onClick={handleClose}
                     block
                     size="lg"
                     type="submit"
