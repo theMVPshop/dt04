@@ -53,7 +53,7 @@ module.exports.signup_post = async (req, res) => {
     city,
     state,
   } = req.body;
-  
+
   try {
     const user = await User.create({
       email,
@@ -65,35 +65,73 @@ module.exports.signup_post = async (req, res) => {
       city,
       state,
     });
+
     console.log(user)
-    res.sendStatus(201).json({ userRef: user._id });
+    res.json({ userRef: user._id });
+
   } catch (err) {
-    console.log(" this is the err", err)
+    console.log(" this is the err", err);
     const errors = handleErrors(err);
-    res.sendStatus(400).json({ errors });
+    res.sendStatus(400, errors);
   }
 };
 
-module.exports.login_get = async (req, res) => {
 
+module.exports.login_get = async (req, res) => {
+  try{
+    console.log("backend user get success")
+  }
+  catch (err) {
+    console.log("backend user get failure: ", err)
+  }
 };
 
 module.exports.login_post = async (req, res) => {
   const { email } = req.body;
-  console.log(req.body)
-  console.log(email)
+  console.log("userController req.body: ", req.body)
+  console.log("userController email: ", email)
   try {
     const user = await User.findOne({ email });
     const userId = user._id
-    console.log(user, 'userID :', userId)
+    console.log("userController user: ", user, 'userController userID :', userId)
+
     if (user) {
-      res.json({ userRef: userId})
+      res.json({ userRef: userId });
     }
   } catch (err) {
-    console.log(" this is the err", err)
+
+    console.log("this is the err", err)
+
     const errors = handleErrors(err);
     res.sendStatus(400).json({ errors });
   }
 };
 
 module.exports.login_put = async (req, res) => {};
+
+
+module.exports.favorite_update = async (req, res) => {
+  const job = req.body.job
+  const user = await User.findOne(req.body.user_id)
+  User.findByIdAndUpdate(user._id,
+    { "$push": { "saved": job } },
+    { "new": true, "upsert": true },
+    function (err, user) {
+        if (err) throw err;
+        console.log(user);
+    }
+  );
+};
+
+module.exports.favorite_get = async (req, res) => {
+  console.log(req.params)
+  const { user_id } = req.params.userId
+  try {
+    const user = await User.findOne({user_id})
+          console.log("saved jobs", user.saved);
+          res.json(user.saved)
+   } catch (err) {
+    console.log(" this is the err", err)
+  }
+
+}

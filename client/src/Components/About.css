@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
 
 .about {
     text-align: center;
@@ -15,43 +14,71 @@
     line-height: 100%;
     margin:auto;
     position: absolute;
-    left: 50%;
-    right: 50%;
+    
+  
+   
   }
 
-      .Logo {
+
+       .OurLogo {
         justify-content: left;
-        align-content: top;
+        align-content: left;
         align-items: left;
-        position: top;
-        top: 8px;
-        left: 16px;
-        font-size: 18px;
+        position: left;
+        text-align: left;
+        display: grid;
+        
+       
       }
 
-      .Gallery { 
-        align-content: left;
-        border: 1px solid black;
-        background-color: lightblue;
-        padding-top: 50px;
-        padding-right: 30px;
-        padding-bottom: 50px;
-        padding-left: 80px;
-        display: grid;
-        overflow: hidden;
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-        }
 
-        .img {
+.Gallery {
+  align-content: left;
+  border: 1px solid black;
+  background-color: lightblue;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+
+        img {
           max-height: 150px;
-          max-width: 200px;
+          max-width: 150px;
+          align-content: top;
+          text-align: left;
+          float: left;
+          position: relative;
+          margin: 10px 15px 15px 10px;
+
           }
         
-        .h2 {
-          font-family: 'Yellowtail', cursive;
+        p {
+          font-family: 'Zen Tokyo Zoo', cursive;
           font-display: center;
           align-content: center;
           justify-content: center;
+          font-size: 19px;
+          padding: 5px;
+          box-sizing: border-box;
+          text-align: justify;
+             
         }
 
-     
+
+        .bg-div {
+          overflow: hidden;
+       }
+       nav {
+           float: right;
+       }
+
+       
+   h1 {
+    font-family: 'Zen Tokyo Zoo', cursive;
+   }
+

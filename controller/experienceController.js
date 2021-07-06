@@ -26,9 +26,9 @@ const handleError = (err) => {
 
 const addExperience = async (req, res) => {
   const { user } = req.body;
-  let doc = req.body
+  let doc = req.body;
   /**const newDoc = Object.assign(doc, {userRef: userRef}) */
-  console.log(doc)
+  console.log(doc);
   try {
     const userExperience = await Experience.create(doc);
     res.json(userExperience);
@@ -39,20 +39,21 @@ const addExperience = async (req, res) => {
 };
 
 const viewExperience = async (req, res) => {
-  console.log(" req. params: ", req.params)
+  console.log(" req. params: ", req.params);
   const user = req.params.expParams;
-  console.log("backend user: ", user)
-//  try {
-//   const expDoc = await Experience.find({ userRef: user })
-//   if(expDoc){
-//     // console.log(expDoc)
-//     res.json(expDoc)
-//   }
-//  } catch (err) {
 
-//       const errors = handleError(err);
-//       res.sendStatus(400).json({ errors });
-//  }
+  console.log("backend user: ", user)
+ try {
+  const expDoc = await Experience.find({ userRef: user })
+  if(expDoc){
+    // console.log(expDoc)
+    res.json(expDoc)
+  }
+ } catch (err) {
+
+      const errors = handleError(err);
+      res.json({ errors });
+ }
 };
 
 module.exports = { addExperience, viewExperience };
