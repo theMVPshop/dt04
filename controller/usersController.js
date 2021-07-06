@@ -75,22 +75,27 @@ module.exports.signup_post = async (req, res) => {
 };
 
 module.exports.login_get = async (req, res) => {
-
+  try{
+    console.log("backend user get success")
+  }
+  catch (err) {
+    console.log("backend user get failure: ", err)
+  }
 };
 
 module.exports.login_post = async (req, res) => {
   const { email } = req.body;
-  console.log(req.body)
-  console.log(email)
+  console.log("userController req.body: ", req.body)
+  console.log("userController email: ", email)
   try {
     const user = await User.findOne({ email });
     const userId = user._id
-    console.log(user, 'userID :', userId)
+    console.log("userController user: ", user, 'userController userID :', userId)
     if (user) {
       res.json({ userRef: userId})
     }
   } catch (err) {
-    console.log(" this is the err", err)
+    console.log("this is the err", err)
     const errors = handleErrors(err);
     res.sendStatus(400).json({ errors });
   }

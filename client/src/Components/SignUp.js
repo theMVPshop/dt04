@@ -20,8 +20,8 @@ const SignUp = ({ user, setUser }) => {
     const payload = { email, password, firstName, lastName, phoneNumber, zipcode, city, state };
     console.log(payload);
     axios.post('/api/users/signup', {...payload}).then(res => { 
-      console.log(res) 
-      console.log(res.data) 
+      console.log("signup res: ", res) 
+      console.log("signup res.data: ",res.data) 
     }).catch(err => console.log(err))
   };
 

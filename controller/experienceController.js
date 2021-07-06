@@ -51,7 +51,7 @@ const viewExperience = async (req, res) => {
  } catch (err) {
 
       const errors = handleError(err);
-      res.sendStatus(400).json({ errors });
+      res.json({ errors });
  }
 };
 
