@@ -9,7 +9,8 @@ const LandingPage = (props)=> {
         searchParams, 
         setSearchParams, 
         fetchAllJobs,
-        userId} = props
+        userId,
+        login} = props
 
   const handleChange = (e) => {
     const newState = { ...searchParams };
@@ -57,7 +58,7 @@ const LandingPage = (props)=> {
         </form>
       </div>
       <div className="jobs-landing-main-bg">
-        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
+        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login}/>
       </div>
       <section id="businfo">
         <article id="info">
