@@ -176,5 +176,13 @@ header,
       height: 100%;
       width: 100%;
     }
-  }
+      .Navbar {
+        Display: flex;
+        Flex-direction: row;
+        Justify-content: space-between;
+        Align-items: space-between;
+    }
+    
+  
 
+  }
