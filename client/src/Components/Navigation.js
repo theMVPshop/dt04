@@ -2,8 +2,15 @@ import React from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-
+import Logo from "../Images/OurLogo.png";
 import Login from "./Login";
+
+
+<div className="Logo">
+<img src={Logo} alt="Our Logo"/> 
+</div>
+
+
 const Navigation = (props) => {
 
   const handleLogout = () => {
@@ -12,9 +19,8 @@ const Navigation = (props) => {
 
   return (
     <Navbar expand="lg" sticky="top">
-      <Navbar.Brand href="/" className="App-logo">
-        Medical
-      </Navbar.Brand>
+      <Navbar.Brand href="/" className="Navbar">
+        </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         {props.login === false ? (

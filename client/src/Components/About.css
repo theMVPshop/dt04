@@ -22,11 +22,12 @@
 
        .OurLogo {
         justify-content: left;
-        align-content: left;
+        align-content: space-between;
         align-items: left;
         position: left;
         text-align: left;
         display: grid;
+        justify-content: space-between;
         
        
       }
@@ -60,14 +61,14 @@
         p {
           font-family: 'Zen Tokyo Zoo', cursive;
           font-display: center;
-          align-content: center;
+          align-content: middle;
           justify-content: center;
           font-size: 19px;
           padding: 5px;
           box-sizing: border-box;
-          text-align: justify;
-             
-        }
+          text-align: middle;
+          font:white;
+}
 
 
         .bg-div {
