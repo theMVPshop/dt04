@@ -15,10 +15,10 @@
     margin:auto;
     position: absolute;
     color:white;
-  
-   
   }
-
+body {
+  color:white;
+}
 
        .OurLogo {
         justify-content: left;
