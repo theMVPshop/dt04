@@ -6,68 +6,12 @@
   color: #61dafb;
 }
 
-.Login {
-  justify-content: center;
-  margin: auto;
-  height: 100%;
-  background-color: none;
-}
-
-.Login form {
-  padding: 15px;
-  border: solid;
-  border-radius: 25px;
-  justify-content: center;
-  margin: auto;
-  max-width: 320px;
-  height: 600px;
-  background-image: linear-gradient(130deg, #6250a6, #59fad2);
-}
-
-.Username {
-  padding: 19px;
-  margin-top: 50px;
-}
-.Signup {
-  justify-content: center;
-  margin: auto;
-  padding: 0px 0;
-  height: 100%;
-  width: 20%;
-}
-
-.Signup h4 {
-  justify-content: center;
-  margin: auto;
-  padding: 0 0 15px 65px;
-}
-
-.Login button {
-  margin: auto;
-  width: 250px;
-  justify-content: center;
-  border-radius: 50px;
-}
-
-.Login p.signuptext {
-  justify-content: center;
-  margin: auto;
-  padding: 0px 0;
-  height: 100%;
-  width: 20%;
-}
-
-.signin {
-  text-size-adjust: 25px;
-}
-
 .resume {
   justify-content: center;
   margin: auto;
   padding: 100px 0;
   height: 100%;
   width: 20%;
-
 }
 
 .nav-button {
@@ -85,9 +29,7 @@
   color: black;
 }
 
-MODAL STYLING 
-
-.modal-dialog.modal-lg {
+MODAL STYLING .modal-dialog.modal-lg {
   background-color: none;
 }
 
@@ -100,7 +42,6 @@ MODAL STYLING
   border: none;
 }
 
-
 .modal-lg,
 .modal-xl {
   max-width: 38%;
@@ -108,6 +49,7 @@ MODAL STYLING
 
 body {
   background-image: linear-gradient(130deg, #6250a6, #59fad2);
+  background-attachment: fixed;
 }
 
 html,
@@ -148,41 +90,28 @@ header,
   -o-background-size: cover;
 
   background-size: cover;
-  
+
   -o-background-size: cover;
 }
-
-
 
 @media (min-width: 994px) and (max-width: 1398px) {
-  .Login form{
-      padding: 5px 20px 20px 20px;
+  .Login form {
+    padding: 5px 20px 20px 20px;
   }
 }
 
-
-@media  (min-width: 400px) and (max-width: 766px)  {
-  
-    .Login form {
-      max-width: 400px;
-      height: 500px;;
-      padding: 10px;
-    }
-
-    .Signup {
-      justify-content: center;
-      margin: auto;
-      padding: 0px 0;
-      height: 100%;
-      width: 100%;
-    }
-      .Navbar {
-        Display: flex;
-        Flex-direction: row;
-        Justify-content: space-between;
-        Align-items: space-between;
-    }
-    
-  
-
+@media (min-width: 400px) and (max-width: 766px) {
+  .Login form {
+    max-width: 400px;
+    height: 500px;
+    padding: 10px;
   }
+
+  .Signup {
+    justify-content: center;
+    margin: auto;
+    padding: 0px 0;
+    height: 100%;
+    width: 100%;
+  }
+}

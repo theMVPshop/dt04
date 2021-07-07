@@ -1,27 +1,36 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import axios from 'axios'
+import "./SignUp.css";
+import axios from "axios";
 
 const SignUp = ({ user, setUser }) => {
-
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [zipcode, setZipcode] = useState("")
-  const [city, setCity] = useState("")
-  const [state, setState] = useState("")
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { email, password, firstName, lastName, phoneNumber, zipcode, city, state };
+    const payload = {
+      email,
+      password,
+      firstName,
+      lastName,
+      phoneNumber,
+      zipcode,
+      city,
+      state,
+    };
     console.log(payload);
-    axios.post('/api/users/signup', payload).then(res => { 
-      console.log(res) 
-      console.log(res.data) 
+
+    axios.post('/api/users/signup', {...payload}).then(res => { 
+      console.log("signup res: ", res) 
+      console.log("signup res.data: ",res.data) 
     }).catch(err => console.log(err))
   };
 
@@ -45,7 +54,6 @@ const SignUp = ({ user, setUser }) => {
             <Form.Group size="lg" controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
-
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -56,7 +64,6 @@ const SignUp = ({ user, setUser }) => {
             <Form.Group size="lg" controlId="firstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control
-
                 type="firstName"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -66,7 +73,6 @@ const SignUp = ({ user, setUser }) => {
             <Form.Group size="lg" controlId="lastName">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
-
                 type="lastName"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
@@ -76,7 +82,6 @@ const SignUp = ({ user, setUser }) => {
             <Form.Group size="lg" controlId="phoneNumber">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
-
                 type="phoneNumber"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
@@ -106,7 +111,6 @@ const SignUp = ({ user, setUser }) => {
             <Form.Group size="lg" controlId="State">
               <Form.Label>State</Form.Label>
               <Form.Control
-
                 type="State"
                 value={state}
                 onChange={(e) => setState(e.target.value)}

@@ -9,15 +9,23 @@ import "./About.css"
  
   
 
-const About = () => { 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+</style>;
 
+const About = () => {
   return (
     <div className="about">
       <div className="Logo">
          <img src={Logo} alt="Our Logo"/> 
       </div>
+
       <body>
         <h1> About the team </h1>
+
+
+
 
       <p>Welcome to the Medical Assistant Program, your number one source for searching a job in your field. We're dedicated to giving you the very best when looking for your new role in the Medical Assistance field, with a focus on your dream Medical Assistance job.
 
@@ -43,9 +51,9 @@ All the best,
 
 
 
-    </div>
 
-)};
+    </div>
+  );
+};
 
 export default About;
-
