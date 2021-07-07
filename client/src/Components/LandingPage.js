@@ -60,6 +60,7 @@ const LandingPage = (props)=> {
       <div className="jobs-landing-main-bg">
         <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login} userId={userId}/>
       </div>
+      <div id="contactSection">
       <section id="businfo">
         <article id="info">
           OFFICE INFO
@@ -68,7 +69,7 @@ const LandingPage = (props)=> {
             (512) 343-0001 (office)
           </p>
         </article>
-        <article id ="social">
+        <article id="social">
           Social Media
           <p>
             Twitter- @MedicalAssistantJobSearch
@@ -78,15 +79,16 @@ const LandingPage = (props)=> {
         </article>
       </section>
       <div id="contactform">
-      <form >
-       <div id="contact">Contact Us!</div>
-        <p id="name"> Name </p>
-        <input></input>
-        <p id="message">Message</p>
-        <input></input>
-      </form>
+        <form>
+          <div id="contact">Contact Us!</div>
+          <p id="name"> Name </p>
+          <input></input>
+          <p id="message">Message</p>
+          <input></input>
+        </form>
       </div>
     </div>
+      </div>
   );
 };
 

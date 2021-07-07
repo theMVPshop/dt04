@@ -2,8 +2,9 @@ import React, { useEffect }from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-
+import Logo from "../Images/OurLogo.png";
 import Login from "./Login";
+
 const Navigation = (props) => {
 
   const handleLogout = () => {
@@ -21,7 +22,9 @@ const Navigation = (props) => {
     <Navbar expand="lg" sticky="top" className="NavBar">
       <div className="leftSide">
         <Navbar.Brand href="/" className="App-logo">
-          Medical
+          <div className="Logo">
+            <img src={Logo} alt="Our Logo"/> 
+          </div>
         </Navbar.Brand>
       </div>
       <div className='rightSide'>
