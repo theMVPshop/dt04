@@ -58,7 +58,7 @@ const LandingPage = (props)=> {
         </form>
       </div>
       <div className="jobs-landing-main-bg">
-        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login}/>
+        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login} userId={userId}/>
       </div>
       <section id="businfo">
         <article id="info">

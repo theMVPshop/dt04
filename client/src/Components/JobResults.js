@@ -3,7 +3,7 @@ import FavoriteButton from './FavoriteButton'
 
 const JobResults = (props) => {
   const {indeedJobs, usaJobs, userId, login} = props
-
+  // console.log("job results user: ", userId)
 
   return (
     <div>
