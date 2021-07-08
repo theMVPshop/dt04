@@ -25,30 +25,10 @@ const Navigation = (props) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           {props.login === false ? (
             <Nav>
-              <NavItem>
-                <Nav.Link as={Link}
-                  to={{
-                    pathname: '/', user: props.user, login: props.login
-                  }}>Landing</Nav.Link>
-              </NavItem>
-              <NavItem>
-                <Nav.Link as={Link}
-                  to={{
-                    pathname: '/about', user: props.user, login: props.login
-                  }}>About</Nav.Link>
-              </NavItem>
-              <NavItem>
-                <Nav.Link as={Link}
-                  to={{
-                    pathname: '/signup', user: props.user, setUser: props.setUser
-                  }}>Sign Up</Nav.Link>
-              </NavItem>
             <NavItem>
                 <Login className="nav-button" user={props.user} setUser={userId => props.setUser(userId)} setLogin={props.setLogin}/>
               </NavItem>
-            </Nav>
-          ) : (
-            <Nav>
+        
               <NavItem>
               <Nav.Link as={Link}
                   to={{
@@ -67,18 +47,10 @@ const Navigation = (props) => {
                   pathname: '/signup', user: props.user, setUser: props.setUser
                 }}>Sign Up</Nav.Link>
             </NavItem>
-          <NavItem>
-              <Login className="nav-button" user={props.user} setUser={userId => props.setUser(userId)} setLogin={props.setLogin}/>
-            </NavItem>
+     
           </Nav>
         ) : (
           <Nav>
-            <NavItem>
-              <Nav.Link href="/">Landing</Nav.Link>
-            </NavItem>
-            <NavItem>
-              <Nav.Link href="/about">About</Nav.Link>
-            </NavItem>
             <NavItem>
               <Nav.Link as={Link}
               to={{
@@ -97,6 +69,7 @@ const Navigation = (props) => {
           </Nav>
         )}
       </Navbar.Collapse>
+      </div>
     </Navbar>
   );
 };
