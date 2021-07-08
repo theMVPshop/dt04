@@ -14,7 +14,7 @@
   width: 20%;
 }
 
-.NavBar {
+#NavBar {
 min-width: 100%;
 background-color: white;
 box-shadow: 3px 3px 10px #615B5B;
@@ -38,6 +38,7 @@ justify-content: space-between;
 
 div.logout.nav-button{
   height: 40px;
+  cursor: pointer;
   /* margin-top: 5px; */
 }
 
@@ -64,8 +65,8 @@ MODAL STYLING .modal-dialog.modal-lg {
 }
 
 .LogoDiv img {
-  max-height: 75px;
-  max-width: 90px;
+  max-height: 50px;
+  max-width: 50px;
 }
 
 .Logo{
@@ -123,7 +124,7 @@ header,
   .Login form {
     padding: 5px 20px 20px 20px;
   }
-  .navbar-expand-lg{
+  .NavBar{
     justify-content: space-between;
   }
 }
