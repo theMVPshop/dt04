@@ -62,7 +62,7 @@ const Navigation = (props) => {
               }}>Profile</Nav.Link>
             </NavItem>
             <NavItem>
-              <Button onClick={handleLogout}>Logout</Button>
+              <div className="logout nav-button" onClick={handleLogout}>Logout</div>
             </NavItem>
           </Nav>
         )}
