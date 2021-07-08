@@ -1,15 +1,16 @@
 import React from "react";
-import JobResults from "./JobResults"
-import "./Landingpage.css"
+import JobResults from "./JobResults";
+import "./Landingpage.css";
 
-
-const LandingPage = (props)=> {
-  const {indeedJobs,  
-        usaJobs, 
-        searchParams, 
-        setSearchParams, 
-        fetchAllJobs,
-        userId} = props
+const LandingPage = (props) => {
+  const {
+    indeedJobs,
+    usaJobs,
+    searchParams,
+    setSearchParams,
+    fetchAllJobs,
+    userId,
+  } = props;
 
   const handleChange = (e) => {
     const newState = { ...searchParams };
@@ -60,6 +61,9 @@ const LandingPage = (props)=> {
         <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
       </div>
       <div >
+
+      <div id="contactSection">
+
       <section id="businfo">
         <article id="info">
           OFFICE INFO
@@ -85,9 +89,11 @@ const LandingPage = (props)=> {
           <p id="message">Message</p>
           <input></input>
         </form>
-      </div>
+</div>
+
       </div>
     </div>
+      </div>
   );
 };
 

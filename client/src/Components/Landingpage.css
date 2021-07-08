@@ -15,7 +15,6 @@
   font-size: 40px;
 } */
 
-
 /* #social{
     margin-left: 20px;
 } */
@@ -28,32 +27,32 @@
   padding: 5px;
   width: 100px;
 }
+#contactSection {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 1%;
+  margin: auto;
+  justify-content: center;
+  left: 10%;
+  right: 15%;
+}
 #businfo {
-    text-align: center;
-   justify-content: center;
-    margin: auto;
-    display: flex;
-   flex-wrap: wrap; 
-    padding: 5px;
-    position: fixed;
-    bottom: 0;
-    font-size: 10px;
-    
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+  padding-top: 2%;
+  padding-right: 1%;
 }
 
-#contactform{
-    display: flex;
-    flex-wrap: wrap;
-    position: fixed;
-    bottom: 0;
-    justify-content: center;
-    margin: auto;
-    /* text-align: center; */
-
+#contact {
+  margin: 0 5px 5px
+  
 }
-#contact{
-    margin:0 10px 10px 0;
-
+#contactform {
+  padding-bottom: 2%;
 }
 
 #name{
@@ -64,6 +63,7 @@
 #message{
     margin-right: 10px;
     /* flex:50%; */
+
 }
 
 #landingbutton {
@@ -96,7 +96,7 @@
   border: 1px solid #ced4da;
   border-radius: 10px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  margin:200px 0px 0px 10px;
+  margin: 200px 0px 0px 10px;
 }
 
 #wheresearch {

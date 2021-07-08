@@ -19,6 +19,7 @@ import cookie from "cookie";
 import jQuery from "jquery";
 import axios from "axios";
 
+
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
   return cookies["loggedIn"] ? true : false;
