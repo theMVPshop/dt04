@@ -108,3 +108,43 @@ module.exports.login_post = async (req, res) => {
 };
 
 module.exports.login_put = async (req, res) => {};
+
+
+module.exports.favorite_update = async (req, res) => {
+  const job = req.body.job
+  User.findByIdAndUpdate(req.body.user_id,
+    { "$push": { "saved": job } },
+    { "new": true, "upsert": true },
+    function (err, user) {
+        if (err) throw err;
+        console.log(user);
+    }
+  );
+};
+
+module.exports.favorite_delete = async (req, res) => {
+  const job = req.body.job
+  console.log("job to remove: ", job)
+  User.findByIdAndUpdate(req.body.user_id,
+    { },
+    { "$pull": { "saved": job } },
+    function (err, user) {
+      if (err) throw err;
+      // console.log(user);
+      res.json(user.saved)
+    }
+    );
+  };
+  
+  module.exports.favorite_get = async (req, res) => {
+    console.log("first console: ", req.params.userId)
+    const user_id = req.params.userId
+    try {
+      const user = await User.findById(user_id)
+        console.log("user: ", user_id)
+            // console.log("saved jobs", user.saved);
+            res.json(user.saved)
+     } catch (err) {
+      console.log(" this is the err", err)
+    }
+  }

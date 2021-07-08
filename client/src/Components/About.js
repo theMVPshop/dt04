@@ -16,9 +16,6 @@ import "./About.css"
 const About = () => {
   return (
     <div className="about">
-      <div className="Logo">
-         <img src={Logo} alt="Our Logo"/> 
-      </div>
 
       <body>
         <h1> About the team </h1>
