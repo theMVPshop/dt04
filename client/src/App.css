@@ -14,6 +14,14 @@
   width: 20%;
 }
 
+.NavBar {
+min-width: 100%;
+background-color: white;
+box-shadow: 3px 3px 10px #615B5B;
+max-height: 80px;
+justify-content: space-between;
+}
+
 .nav-button {
   border-radius: 25px important!;
 }
@@ -45,6 +53,15 @@ MODAL STYLING .modal-dialog.modal-lg {
 .modal-lg,
 .modal-xl {
   max-width: 38%;
+}
+
+.LogoDiv img {
+  max-height: 75px;
+  max-width: 90px;
+}
+
+.Logo{
+  max-width: 100%;
 }
 
 body {

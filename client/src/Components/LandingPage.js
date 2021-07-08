@@ -61,7 +61,7 @@ const LandingPage = (props)=> {
         <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login} userId={userId}/>
       </div>
       <div id="contactSection">
-      <section id="businfo">
+      <footer id="businfo">
         <article id="info">
           OFFICE INFO
           <p>
@@ -77,7 +77,7 @@ const LandingPage = (props)=> {
             AssistanceJob Search Youtube Youtube.com/MedicalAssistantJobSearch
           </p>
         </article>
-      </section>
+      </footer>
       <div id="contactform">
         <form>
           <div id="contact">Contact Us!</div>

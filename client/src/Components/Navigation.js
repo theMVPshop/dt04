@@ -11,18 +11,11 @@ const Navigation = (props) => {
     props.setLogin(false)
   }
 
-  // .NavBar {
-  //   display: flex;
-  //   flex-direction: Row;
-  //   justify-content: space-between;
-  //   align-items: space-between;
-  // }
-
   return (
     <Navbar expand="lg" sticky="top" className="NavBar">
       <div className="leftSide">
         <Navbar.Brand href="/" className="App-logo">
-          <div className="Logo">
+          <div className="LogoDiv">
             <img src={Logo} alt="Our Logo"/> 
           </div>
         </Navbar.Brand>
