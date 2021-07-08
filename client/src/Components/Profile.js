@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import Login from './Login'
 import ResumeView from './ResumeView'
-import axios from 'axios'
-import SignUp from './SignUp'
+import Axios from 'axios'
 
 const Profile = (props) => {
   const userId = props.user
+  console.log("profile user: ", props.user)
   const [savedJobs, setSaved] = useState()
   const [toggle, setToggle] = useState(false)
 
   const fetchSavedJobs = () => {
-    axios.get(`/api/users/save/${userId}`)
+    Axios.get(`/api/users/saved/${userId}`)
     .then((res) => {
       let results = res.data
       setSaved(results)
@@ -22,6 +22,19 @@ const Profile = (props) => {
   const handleToggle = () => {
     setToggle(!toggle)
     fetchSavedJobs()
+  }
+
+  const removeFavorite = (job) => {
+    console.log(job)
+    Axios.delete(`/api/users/saved/`, {
+      job: job,
+      user_id: userId
+    }).then((res) => {
+      let results = res.data
+      console.log("updatedList: ",results)
+      setSaved(results)
+      // fetchSavedJobs()
+    })
   }
 
   useEffect(() => {
@@ -44,7 +57,7 @@ const Profile = (props) => {
                     Company: {job.companyName} Location: {job.location}{"\n"}
                     <p>Description: {job.description}</p>
                     <a href={job.link}>Learn More</a>
-                    {/* <FavoriteButton job={job} userId={userId}/> */}
+                    <button onClick={() => {removeFavorite(job)}}>Remove</button>
                 </li>
               ))}
             </ul>

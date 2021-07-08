@@ -1,16 +1,16 @@
 import React from "react";
-import JobResults from "./JobResults";
-import "./Landingpage.css";
+import JobResults from "./JobResults"
+import "./Landingpage.css"
 
-const LandingPage = (props) => {
-  const {
-    indeedJobs,
-    usaJobs,
-    searchParams,
-    setSearchParams,
-    fetchAllJobs,
-    userId,
-  } = props;
+
+const LandingPage = (props)=> {
+  const {indeedJobs,  
+        usaJobs, 
+        searchParams, 
+        setSearchParams, 
+        fetchAllJobs,
+        userId,
+        login} = props
 
   const handleChange = (e) => {
     const newState = { ...searchParams };
@@ -58,13 +58,12 @@ const LandingPage = (props) => {
         </form>
       </div>
       <div className="jobs-landing-main-bg">
-        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
+        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login} userId={userId}/>
       </div>
       <div >
 
       <div id="contactSection">
-
-      <section id="businfo">
+      <footer id="businfo">
         <article id="info">
           OFFICE INFO
           <p>
@@ -80,7 +79,7 @@ const LandingPage = (props) => {
             AssistanceJob Search Youtube Youtube.com/MedicalAssistantJobSearch
           </p>
         </article>
-      </section>
+      </footer>
       <div id="contactform">
         <form>
           <div id="contact">Contact Us!</div>

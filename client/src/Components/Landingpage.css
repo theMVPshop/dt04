@@ -19,6 +19,10 @@
     margin-left: 20px;
 } */
 
+.jobSearch{
+  min-height: 80vh;
+}
+
 #landingform {
   text-align: center;
   justify-content: center;
@@ -30,12 +34,13 @@
 #contactSection {
   display: flex;
   flex-direction: row;
-  position: fixed;
   bottom: 1%;
   margin: auto;
   justify-content: center;
   left: 10%;
   right: 15%;
+  background-color: white;
+  padding: 20px;
 }
 #businfo {
   text-align: center;
@@ -45,14 +50,16 @@
   font-size: 10px;
   padding-top: 2%;
   padding-right: 1%;
+  background-color: white;
+  max-width: 60vw;
 }
 
 #contact {
-  margin: 0 5px 5px
-  
+  margin: 0 5px 5px;
 }
 #contactform {
   padding-bottom: 2%;
+  background-color: white;
 }
 
 #name{
