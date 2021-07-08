@@ -60,6 +60,8 @@ const LandingPage = (props)=> {
       <div className="jobs-landing-main-bg">
         <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login} userId={userId}/>
       </div>
+      <div >
+
       <div id="contactSection">
       <footer id="businfo">
         <article id="info">
@@ -86,6 +88,8 @@ const LandingPage = (props)=> {
           <p id="message">Message</p>
           <input></input>
         </form>
+</div>
+
       </div>
     </div>
       </div>

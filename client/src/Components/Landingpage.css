@@ -53,6 +53,7 @@
   background-color: white;
   max-width: 60vw;
 }
+
 #contact {
   margin: 0 5px 5px;
 }
@@ -60,14 +61,16 @@
   padding-bottom: 2%;
   background-color: white;
 }
-#name {
-  margin-right: 10px;
-  flex: 50%;
+
+#name{
+    margin-right: 10px;
+    /* flex: 50%; */
 }
 
-#message {
-  margin-right: 10px;
-  flex: 50%;
+#message{
+    margin-right: 10px;
+    /* flex:50%; */
+
 }
 
 #landingbutton {

@@ -64,22 +64,39 @@ const Navigation = (props) => {
               <NavItem>
                 <Nav.Link as={Link}
                 to={{
-                  pathname: '/resumeview', user: props.user
-                }}>Resume</Nav.Link>
-              </NavItem>
-              <NavItem>
-                <Nav.Link as={Link}
-                to={{
-                  pathname: '/profile', user: props.user
-                }}>Profile</Nav.Link>
-              </NavItem>
-              <NavItem>
-                <Button onClick={handleLogout}>Logout</Button>
-              </NavItem>
-            </Nav>
-          )}
-        </Navbar.Collapse>
-      </div>
+                  pathname: '/signup', user: props.user, setUser: props.setUser
+                }}>Sign Up</Nav.Link>
+            </NavItem>
+          <NavItem>
+              <Login className="nav-button" user={props.user} setUser={userId => props.setUser(userId)} setLogin={props.setLogin}/>
+            </NavItem>
+          </Nav>
+        ) : (
+          <Nav>
+            <NavItem>
+              <Nav.Link href="/">Landing</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <Nav.Link href="/about">About</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <Nav.Link as={Link}
+              to={{
+                pathname: '/resumeview', user: props.user
+              }}>Resume</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <Nav.Link as={Link}
+              to={{
+                pathname: '/profile', user: props.user
+              }}>Profile</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <div className="logout nav-button" onClick={handleLogout}>Logout</div>
+            </NavItem>
+          </Nav>
+        )}
+      </Navbar.Collapse>
     </Navbar>
   );
 };

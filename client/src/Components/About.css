@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
 
 .about {
@@ -46,13 +45,9 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 }
 
-
-
-
-
    img {
    max-height: 250px;
-   max-width: 350px;
+   max-width: 250px;
    align-content: top;
    text-align: left;
    float: left;
@@ -74,11 +69,11 @@ body {
   }
 
 
-        .bg-div {
-          overflow: hidden;
-       }
-       nav {
-           float: right;
+  .bg-div {
+    overflow: hidden;
+   }
+  nav {
+  float: right;
        }
 
        
