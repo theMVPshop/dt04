@@ -23,7 +23,9 @@ function Login({ user, setUser, setLogin }) {
     email: email 
     }).then(res => {
        setUser(res.data.userRef)
+      //  console.log(res.data.userRef)
        document.cookie = "loggedIn=true";
+       setLogin(true)
     },(error) => {
       console.log('Login err :', error)
     })

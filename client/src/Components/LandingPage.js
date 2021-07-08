@@ -9,7 +9,8 @@ const LandingPage = (props)=> {
         searchParams, 
         setSearchParams, 
         fetchAllJobs,
-        userId} = props
+        userId,
+        login} = props
 
   const handleChange = (e) => {
     const newState = { ...searchParams };
@@ -57,9 +58,12 @@ const LandingPage = (props)=> {
         </form>
       </div>
       <div className="jobs-landing-main-bg">
-        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
+        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login} userId={userId}/>
       </div>
-      <section id="businfo">
+      <div >
+
+      <div id="contactSection">
+      <footer id="businfo">
         <article id="info">
           OFFICE INFO
           <p>
@@ -67,7 +71,7 @@ const LandingPage = (props)=> {
             (512) 343-0001 (office)
           </p>
         </article>
-        <article id ="social">
+        <article id="social">
           Social Media
           <p>
             Twitter- @MedicalAssistantJobSearch
@@ -75,17 +79,20 @@ const LandingPage = (props)=> {
             AssistanceJob Search Youtube Youtube.com/MedicalAssistantJobSearch
           </p>
         </article>
-      </section>
+      </footer>
       <div id="contactform">
-      <form >
-       <div id="contact">Contact Us!</div>
-        <p id="name"> Name </p>
-        <input></input>
-        <p id="message">Message</p>
-        <input></input>
-      </form>
+        <form>
+          <div id="contact">Contact Us!</div>
+          <p id="name"> Name </p>
+          <input></input>
+          <p id="message">Message</p>
+          <input></input>
+        </form>
+</div>
+
       </div>
     </div>
+      </div>
   );
 };
 
