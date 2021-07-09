@@ -9,5 +9,21 @@
 .Signup h4 {
   justify-content: center;
   margin: auto;
-  padding: 0 0 15px 65px;
+  text-align: center;
 }
+
+
+
+@media (min-width: 450px)  {
+  
+  
+  }
+  
+  @media (min-width: 768px) {
+   
+  }
+  
+  
+  @media (min-width: 992px)  {
+     
+  }

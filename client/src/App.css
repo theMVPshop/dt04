@@ -39,7 +39,7 @@ justify-content: space-between;
 div.logout.nav-button{
   height: 40px;
   cursor: pointer;
-  /* margin-top: 5px; */
+  margin: 8px 0 0 7px;
 }
 
 .nav-item button.btn.btn:hover {
@@ -120,27 +120,13 @@ header,
   -o-background-size: cover;
 }
 
-@media (min-width: 994px) and (max-width: 1398px) {
-  .Login form {
-    padding: 5px 20px 20px 20px;
-  }
+
+
+@media (min-width: 992px)  {
+
   .NavBar{
     justify-content: space-between;
   }
 }
 
-@media (min-width: 400px) and (max-width: 766px) {
-  .Login form {
-    max-width: 400px;
-    height: 500px;
-    padding: 10px;
-  }
 
-  .Signup {
-    justify-content: center;
-    margin: auto;
-    padding: 0px 0;
-    height: 100%;
-    width: 100%;
-  }
-}

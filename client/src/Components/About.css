@@ -81,3 +81,20 @@ body {
     font-family: 'Zen Tokyo Zoo', cursive;
    }
 
+
+   @media (min-width: 450px)  {
+  
+  
+  }
+  
+  @media (min-width: 768px) {
+   
+  }
+  
+  
+  @media (min-width: 992px)  {
+    body{
+      width:700px;
+    } 
+    
+  }
