@@ -3,11 +3,9 @@
 .about {
     text-align: center;
     align-items: center;
-    align-self: center;
-    align-content: center;
-    justify-items: center;
+    
     justify-self: center;
-    justify-content: center;
+    justify-content: space-between;
     place-items: center;
     vertical-align: center;
     line-height: 100%;
@@ -19,14 +17,14 @@ body {
   color: #615B5B;
 }
 
-       .OurLogo {
-        justify-content: left;
-        align-content: space-between;
-        align-items: left;
-        position: left;
-        text-align: left;
-        display: grid;
-        justify-content: space-between;
+.OurLogo {
+justify-content: left;
+align-content: space-between;
+align-items: left;
+position: left;
+text-align: left;
+display: grid;
+justify-content: space-between;
         
        
       }
