@@ -88,12 +88,12 @@ module.exports.login_get = async (req, res) => {
 
 module.exports.login_post = async (req, res) => {
   const { email } = req.body;
-  console.log("userController req.body: ", req.body)
-  console.log("userController email: ", email)
+  // console.log("userController req.body: ", req.body)
+  // console.log("userController email: ", email)
   try {
     const user = await User.findOne({ email });
     const userId = user._id
-    console.log("userController user: ", user, 'userController userID :', userId)
+    // console.log("userController user: ", user, 'userController userID :', userId)
 
     if (user) {
       res.json({ userRef: userId });
@@ -118,17 +118,17 @@ module.exports.favorite_update = async (req, res) => {
     { "new": true, "upsert": true },
     function (err, user) {
         if (err) throw err;
-        console.log(user);
+        // console.log(user);
     }
   );
 };
 
 module.exports.favorite_get = async (req, res) => {
-  console.log(req.params)
+  // console.log(req.params)
   const { user_id } = req.params.userId
   try {
     const user = await User.findOne({user_id})
-          console.log("saved jobs", user.saved);
+          // console.log("saved jobs", user.saved);
           res.json(user.saved)
    } catch (err) {
     console.log(" this is the err", err)
