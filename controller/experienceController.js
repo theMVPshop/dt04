@@ -40,18 +40,17 @@ const addExperience = async (req, res) => {
 
 const viewExperience = async (req, res) => {
   const user = req.body.user
-
   console.log("backend user: ", req.body)
  try {
+   
   const expDoc = await Experience.find({ userRef: user })
   if(expDoc){
     console.log(expDoc)
     res.json(expDoc)
   }
  } catch (err) {
-
       const errors = handleError(err);
-      console.log("the error: ", { errors })
+      console.log("the error: ", { errors });
       res.json({ errors });
  }
 };
