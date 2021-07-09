@@ -15,21 +15,16 @@
     position: absolute;
     color:white;
   }
-body {
-  color: #615B5B;
-}
 
-       .OurLogo {
-        justify-content: left;
-        align-content: space-between;
-        align-items: left;
-        position: left;
-        text-align: left;
-        display: grid;
-        justify-content: space-between;
-        
-       
-      }
+  .OurLogo {
+  justify-content: left;
+  align-content: space-between;
+  align-items: left;
+  position: left;
+  text-align: left;
+  display: grid;
+  justify-content: space-between;
+}
 
 
 .Gallery {
@@ -57,7 +52,6 @@ body {
    }
         
   p {
-  font-family: 'Zen Tokyo Zoo', cursive;
   color: #615B5B;
   font-display: center;
   align-content: center;
@@ -76,8 +70,5 @@ body {
   float: right;
        }
 
-       
-   h1 {
-    font-family: 'Zen Tokyo Zoo', cursive;
-   }
+      
 

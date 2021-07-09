@@ -76,6 +76,10 @@ MODAL STYLING .modal-dialog.modal-lg {
 body {
   background-image: linear-gradient(130deg, #6250a6, #59fad2);
   background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #615B5B;
 }
 
 html,
