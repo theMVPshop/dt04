@@ -32,25 +32,29 @@ const LandingPage = (props)=> {
 
   return (
     <div>
+      <div className="welcome">
+        <h2>Medical Job Search</h2>
+        <h4>We Are Here For You!</h4>
+      </div>
       <div className="jobSearch">
         <form id="landingform" onSubmit={handleSubmit}>
-          <div id="what">What</div>
+          {/* <div id="what">What</div> */}
           <input
             id="whatsearch"
             type="text"
             value={searchParams.title}
             name="title"
             onChange={handleChange}
-            // placeholder="Search Jobs"
+            placeholder="What"
           ></input>
-          <div id="where">Where</div>
+          {/* <div id="where">Where</div> */}
           <input
             id="wheresearch"
             type="text"
             value={searchParams.location}
             name="location"
             onChange={handleChange}
-            // placeholder="Search Location"
+            placeholder="Where"
           ></input>
           <button id="landingbutton" type="submit">
             Search

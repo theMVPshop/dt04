@@ -1,8 +1,7 @@
-import React, { useEffect }from "react";
+import React from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import Logo from "../Images/OurLogo.png";
+import Logo from "../Images/medicalJobSearch.png";
 import Login from "./Login";
 
 const Navigation = (props) => {
@@ -12,7 +11,7 @@ const Navigation = (props) => {
   }
 
   return (
-    <Navbar expand="lg" sticky="top" className="NavBar">
+    <Navbar expand="lg" sticky="top" id="NavBar">
       <div className="leftSide">
         <Navbar.Brand href="/" className="App-logo">
           <div className="LogoDiv">
@@ -25,15 +24,11 @@ const Navigation = (props) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           {props.login === false ? (
             <Nav>
-            <NavItem>
-                <Login className="nav-button" user={props.user} setUser={userId => props.setUser(userId)} setLogin={props.setLogin}/>
-              </NavItem>
-        
               <NavItem>
               <Nav.Link as={Link}
                   to={{
                     pathname: '/', user: props.user, login: props.login
-                  }}>Landing</Nav.Link>
+                  }}>Home</Nav.Link>
               </NavItem>
               <NavItem>
                 <Nav.Link as={Link}
@@ -47,16 +42,25 @@ const Navigation = (props) => {
                   pathname: '/signup', user: props.user, setUser: props.setUser
                 }}>Sign Up</Nav.Link>
             </NavItem>
-     
+            <NavItem>
+                <Login className="nav-button" user={props.user} setUser={userId => props.setUser(userId)} setLogin={props.setLogin}/>
+              </NavItem>
           </Nav>
         ) : (
           <Nav>
             <NavItem>
               <Nav.Link as={Link}
+                to={{
+                  pathname: '/', user: props.user, login: props.login
+                }}>Home</Nav.Link>
+            </NavItem>
+            {/* MOVED TO PROFILE PAGE FOR V2 */}
+            {/* <NavItem>
+              <Nav.Link as={Link}
               to={{
                 pathname: '/resumeview', user: props.user
               }}>Resume</Nav.Link>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <Nav.Link as={Link}
               to={{
