@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Login from './Login'
 import ResumeView from './ResumeView'
 import Axios from 'axios'
+import JobCard from './JobCard'
 
 const Profile = (props) => {
   const userId = props.user
@@ -24,18 +25,18 @@ const Profile = (props) => {
     fetchSavedJobs()
   }
 
-  const removeFavorite = (job) => {
-    console.log(job)
-    Axios.delete(`/api/users/saved/`, {
-      job: job,
-      user_id: userId
-    }).then((res) => {
-      let results = res.data
-      console.log("updatedList: ",results)
-      setSaved(results)
-      // fetchSavedJobs()
-    })
-  }
+  // const removeFavorite = (job) => {
+  //   console.log(job)
+  //   Axios.delete(`/api/users/saved/`, {
+  //     job: job,
+  //     user_id: userId
+  //   }).then((res) => {
+  //     let results = res.data
+  //     console.log("updatedList: ",results)
+  //     setSaved(results)
+  //     // fetchSavedJobs()
+  //   })
+  // }
 
   useEffect(() => {
     console.log(savedJobs)
@@ -52,13 +53,13 @@ const Profile = (props) => {
             <ul className="gallery">
               <button onClick={handleToggle}>Hide Saved Jobs</button>
               {savedJobs && savedJobs.map((job, idx) => (
-                <li key={idx}>
-                    <h4>{job.positionTitle}</h4>{"\n"}
-                    Company: {job.companyName} Location: {job.location}{"\n"}
-                    <p>Description: {job.description}</p>
-                    <a href={job.link}>Learn More</a>
-                    <button onClick={() => {removeFavorite(job)}}>Remove</button>
-                </li>
+                <JobCard 
+                  key={idx}
+                  job={job}
+                  userId={userId}
+                  page={'profile'}
+                  setSaved={setSaved}
+                />
               ))}
             </ul>
     
