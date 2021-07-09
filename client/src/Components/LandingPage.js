@@ -1,16 +1,16 @@
 import React from "react";
-import JobResults from "./JobResults";
-import "./Landingpage.css";
+import JobResults from "./JobResults"
+import "./Landingpage.css"
 
-const LandingPage = (props) => {
-  const {
-    indeedJobs,
-    usaJobs,
-    searchParams,
-    setSearchParams,
-    fetchAllJobs,
-    userId,
-  } = props;
+
+const LandingPage = (props)=> {
+  const {indeedJobs,  
+        usaJobs, 
+        searchParams, 
+        setSearchParams, 
+        fetchAllJobs,
+        userId,
+        login} = props
 
   const handleChange = (e) => {
     const newState = { ...searchParams };
@@ -32,25 +32,29 @@ const LandingPage = (props) => {
 
   return (
     <div>
+      <div className="welcome">
+        <h2>Medical Job Search</h2>
+        <h4>We Are Here For You!</h4>
+      </div>
       <div className="jobSearch">
         <form id="landingform" onSubmit={handleSubmit}>
-          <div id="what">What</div>
+          {/* <div id="what">What</div> */}
           <input
             id="whatsearch"
             type="text"
             value={searchParams.title}
             name="title"
             onChange={handleChange}
-            // placeholder="Search Jobs"
+            placeholder="What"
           ></input>
-          <div id="where">Where</div>
+          {/* <div id="where">Where</div> */}
           <input
             id="wheresearch"
             type="text"
             value={searchParams.location}
             name="location"
             onChange={handleChange}
-            // placeholder="Search Location"
+            placeholder="Where"
           ></input>
           <button id="landingbutton" type="submit">
             Search
@@ -58,10 +62,12 @@ const LandingPage = (props) => {
         </form>
       </div>
       <div className="jobs-landing-main-bg">
-        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} />
+        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login} userId={userId}/>
       </div>
+      <div >
+
       <div id="contactSection">
-      <section id="businfo">
+      <footer id="businfo">
         <article id="info">
           OFFICE INFO
           <p>
@@ -77,7 +83,7 @@ const LandingPage = (props) => {
             AssistanceJob Search Youtube Youtube.com/MedicalAssistantJobSearch
           </p>
         </article>
-      </section>
+      </footer>
       <div id="contactform">
         <form>
           <div id="contact">Contact Us!</div>
@@ -86,6 +92,8 @@ const LandingPage = (props) => {
           <p id="message">Message</p>
           <input></input>
         </form>
+</div>
+
       </div>
     </div>
       </div>
