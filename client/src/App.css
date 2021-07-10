@@ -14,7 +14,7 @@
   width: 20%;
 }
 
-.NavBar {
+#NavBar {
 min-width: 100%;
 background-color: white;
 box-shadow: 3px 3px 10px #615B5B;
@@ -38,6 +38,7 @@ justify-content: space-between;
 
 div.logout.nav-button{
   height: 40px;
+  cursor: pointer;
   /* margin-top: 5px; */
 }
 
@@ -64,8 +65,8 @@ MODAL STYLING .modal-dialog.modal-lg {
 }
 
 .LogoDiv img {
-  max-height: 75px;
-  max-width: 90px;
+  max-height: 50px;
+  max-width: 50px;
 }
 
 .Logo{
@@ -75,6 +76,10 @@ MODAL STYLING .modal-dialog.modal-lg {
 body {
   background-image: linear-gradient(130deg, #6250a6, #59fad2);
   background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #615B5B;
 }
 
 html,
@@ -123,7 +128,7 @@ header,
   .Login form {
     padding: 5px 20px 20px 20px;
   }
-  .navbar-expand-lg{
+  .NavBar{
     justify-content: space-between;
   }
 }

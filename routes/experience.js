@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const experienceController = require("../controller/experienceController");
 
-router.post("/:expParams", experienceController.addExperience);
-router.get("/:expParams", experienceController.viewExperience);
+router.post("/", experienceController.addExperience);
+router.post("/user", experienceController.viewExperience);
 
 module.exports = router;

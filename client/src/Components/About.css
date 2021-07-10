@@ -12,9 +12,7 @@
     position: absolute;
     color:white;
   }
-body {
-  color: #615B5B;
-}
+
 
 .OurLogo {
 justify-content: left;
@@ -27,6 +25,17 @@ justify-content: space-between;
         
        
       }
+
+  .OurLogo {
+  justify-content: left;
+  align-content: space-between;
+  align-items: left;
+  position: left;
+  text-align: left;
+  display: grid;
+  justify-content: space-between;
+}
+
 
 
 .Gallery {
@@ -55,8 +64,12 @@ justify-content: space-between;
         
   p {
 
+
   font-family: 'Bree Serif', serif;
   color:#ffffff;
+
+  color: #615B5B;
+  
   font-display: center;
   align-content: center;
   justify-content: center;
@@ -74,8 +87,10 @@ justify-content: space-between;
   float: right;
        }
 
+
        
    h1 {
     font-family: 'Bree Serif', serif;
    }
+
 

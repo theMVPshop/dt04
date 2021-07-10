@@ -1,37 +1,31 @@
 import React from "react"
-import FavoriteButton from './FavoriteButton'
+import JobCard from './JobCard'
 
 const JobResults = (props) => {
   const {indeedJobs, usaJobs, userId, login} = props
-  // console.log("job results user: ", userId)
+  console.log("job results user: ", userId)
 
   return (
     <div>
       <ul className="gallery">
         {indeedJobs &&
           indeedJobs.map((job, idx) => (
-            <li key={idx}>
-              <h4>{job.positionTitle}</h4>
-              {"\n"}
-              Company: {job.companyName} Location: {job.location}
-              {"\n"}
-              <p>Description: {job.description}</p>
-              <a href={job.link}>Learn More</a>
-              {login ? (
-                <FavoriteButton job={job} userId={userId}/>
-              ) : (
-                <></>
-              )}
-          </li>
+            <JobCard 
+              key={idx}
+              job={job}
+              userId={userId}
+              login={login}
+              page={'search'}
+            />
         ))}
           {usaJobs && usaJobs.map((job, idx) => (
-          <li key={idx}>
-              <h4>{job.PositionTitle}</h4>{"\n"}
-              Company: {job.OrganizationName} Location: {job.PositionLocationDisplay}{"\n"}
-              <p>Description: {job.UserArea.Details.JobSummary}</p>
-              <a href={job.PositionURI}>Learn More</a>
-              <FavoriteButton job={job} userId={userId}/>
-          </li>
+            <JobCard 
+              key={idx}
+              job={job}
+              userId={userId}
+              login={login}
+              page={'search'}
+            />
         ))}
       </ul>
     </div>
