@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
 .about {
     text-align: center;
     align-items: center;
-    align-self: center;
-    align-content: center;
-    justify-items: center;
     justify-self: center;
-    justify-content: center;
+    justify-content: space-between;
     place-items: center;
     vertical-align: center;
     line-height: 100%;
@@ -15,6 +12,19 @@
     position: absolute;
     color:white;
   }
+
+
+.OurLogo {
+justify-content: left;
+align-content: space-between;
+align-items: left;
+position: left;
+text-align: left;
+display: grid;
+justify-content: space-between;
+        
+       
+      }
 
   .OurLogo {
   justify-content: left;
@@ -25,6 +35,7 @@
   display: grid;
   justify-content: space-between;
 }
+
 
 
 .Gallery {
@@ -52,11 +63,17 @@
    }
         
   p {
+
+
+  font-family: 'Bree Serif', serif;
+  color:#ffffff;
+
   color: #615B5B;
+  
   font-display: center;
   align-content: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 18px;
   padding: 5px;
   box-sizing: border-box;
   text-align: middle;
@@ -70,5 +87,10 @@
   float: right;
        }
 
-      
+
+       
+   h1 {
+    font-family: 'Bree Serif', serif;
+   }
+
 
