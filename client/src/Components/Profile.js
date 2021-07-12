@@ -3,6 +3,7 @@ import Login from './Login'
 import ResumeView from './ResumeView'
 import Axios from 'axios'
 import JobCard from './JobCard'
+import Button from "react-bootstrap/Button";
 
 const Profile = (props) => {
   const userId = props.user
@@ -51,7 +52,7 @@ const Profile = (props) => {
           </h2>
           {toggle === true ? (
             <ul className="gallery">
-              <button onClick={handleToggle}>Hide Saved Jobs</button>
+              <Button  onClick={handleToggle}>Hide Saved Jobs</Button>
               {savedJobs && savedJobs.map((job, idx) => (
                 <JobCard 
                   key={idx}
@@ -64,7 +65,7 @@ const Profile = (props) => {
             </ul>
     
           ) : (
-          <button onClick  ={handleToggle}>View Saved Jobs</button>
+          <Button onClick  ={handleToggle}>View Saved Jobs</Button>
           )}
     
           <h2>Build a Resume:</h2>
