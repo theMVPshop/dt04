@@ -1,5 +1,6 @@
 import React from 'react'
 import Axios from "axios"
+import SignUp from './SignUp'
 
 const FavoriteButton = (props) => {
   console.log(props.userId)
@@ -17,7 +18,12 @@ const FavoriteButton = (props) => {
 
   return (
     <div>
-      <button onClick={saveFavorite}>Save to Favorites</button>
+      {props.login && 
+        <button onClick={saveFavorite}>Save to Favorites</button>
+      }
+      {!props.login && 
+        <button onClick={() => {<SignUp />}}>Signup to Save</button>
+      }
     </div>
   )
 }
