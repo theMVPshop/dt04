@@ -13,6 +13,16 @@
     color:white;
   }
 
+.container {
+  background-color:white;
+  margin-top: 8rem;
+  
+}
+.container p{
+color:black;
+}
+
+
 
 .OurLogo {
 justify-content: left;
@@ -22,9 +32,7 @@ position: left;
 text-align: left;
 display: grid;
 justify-content: space-between;
-        
-       
-      }
+}
 
   .OurLogo {
   justify-content: left;
@@ -64,12 +72,9 @@ justify-content: space-between;
         
   p {
 
-
+  margin-top:3rem; 
   font-family: 'Bree Serif', serif;
   color:#ffffff;
-
-  color: #615B5B;
-  
   font-display: center;
   align-content: center;
   justify-content: center;
