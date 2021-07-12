@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 
-/* .container{
-  margin-top: 50px;
-} */
 
 .about {
   text-align: center;
@@ -21,26 +18,27 @@
   width: 300px;
 }
 
-
-.OurLogo {
-  justify-content: left;
-  align-content: space-between;
-  align-items: left;
-  position: left;
-  text-align: left;
-  display: grid;
-  justify-content: space-between;
+.container {
+  background-color:white;
+  margin-top: 8rem;
+  
+}
+.container p{
+color:black;
 }
 
+
+
 .OurLogo {
-  justify-content: left;
-  align-content: space-between;
-  align-items: left;
-  position: left;
-  text-align: left;
-  display: grid;
-  justify-content: space-between;
+justify-content: left;
+align-content: space-between;
+align-items: left;
+position: left;
+text-align: left;
+display: grid;
+justify-content: space-between;
 }
+
 
 .Gallery {
   align-content: center;
@@ -56,19 +54,14 @@
 img {
   max-height: 250px;
   max-width: 250px;
-  /* align-content: top;
-  text-align: left;
-  float: left; */
   position: relative;
   margin: 10px 15px 15px 10px;
 }
 
-p {
-  font-family: "Bree Serif", serif;
-  color: #ffffff;
 
-  color: #615b5b;
-
+  margin-top:3rem; 
+  font-family: 'Bree Serif', serif;
+  color:#ffffff;
   font-display: center;
   align-content: center;
   justify-content: center;
