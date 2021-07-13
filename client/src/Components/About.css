@@ -4,12 +4,11 @@
     text-align: center;
     align-items: center;
     justify-self: center;
-    justify-content: space-between;
+    justify-content: center;
     place-items: center;
     vertical-align: center;
     line-height: 100%;
     margin:auto;
-    position: absolute;
     color:rgb(13, 45, 227);
   }
 
