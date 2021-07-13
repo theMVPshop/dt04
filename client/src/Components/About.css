@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 
-
 .about {
   text-align: center;
   place-items: center;
@@ -10,28 +9,23 @@
   color: white;
 }
 
-#connorimg{
+#connorimg {
   width: 300px;
 }
 
-
-.container p{
-color: white;
+.container p {
+  color: white;
 }
-
-
 
 .OurLogo {
-justify-content: left;
-align-content: space-between;
-align-items: left;
-position: left;
-text-align: left;
-display: grid;
-justify-content: space-between;
-
+  justify-content: left;
+  align-content: space-between;
+  align-items: left;
+  position: left;
+  text-align: left;
+  display: grid;
+  justify-content: space-between;
 }
-
 
 .Gallery {
   justify-content: center;
@@ -45,7 +39,7 @@ img {
   max-height: 250px;
   max-width: 250px;
   margin: 10px 15px 15px 10px;
- justify-content: center;
+  justify-content: center;
 }
 
 p {
@@ -59,7 +53,7 @@ p {
   text-align: middle;
 }
 
-.container{
+.container {
   color: white;
 }
 
@@ -72,16 +66,16 @@ h1 {
 }
 
 @media (max-width: 474px) {
-  #navbar{
-   width: 100%;
+  #navbar {
+    width: 100%;
   }
 }
 
-@media(min-width: 574px){
-.Gallery{
-  display: block;
-
-}}
+@media (min-width: 574px) {
+  .Gallery {
+    display: block;
+  }
+}
 
 /* @media (min-width: 768px) {
   #navbar{
@@ -94,5 +88,3 @@ h1 {
     width: 100%;
    }
 } */
-
-

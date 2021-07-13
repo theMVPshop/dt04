@@ -19,22 +19,24 @@ function Login({ user, setUser, setLogin }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('/api/users/login', {
-    email: email 
-    }).then(res => {
-       setUser(res.data.userRef)
-      //  console.log(res.data.userRef)
-       document.cookie = "loggedIn=true";
-       setLogin(true)
-    },(error) => {
-      console.log('Login err :', error)
-    })
-    
-  }
+    axios
+      .post("/api/users/login", {
+        email: email,
+      })
+      .then(
+        (res) => {
+          setUser(res.data.userRef);
+          //  console.log(res.data.userRef)
+          document.cookie = "loggedIn=true";
+          setLogin(true);
+        },
+        (error) => {
+          console.log("Login err :", error);
+        }
+      );
+  };
 
-  useEffect(() => {
-
-  }, [user])
+  useEffect(() => {}, [user]);
 
   const [show, setShow] = useState(false);
 

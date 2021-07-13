@@ -37,11 +37,11 @@
   color: white;
 }
 
-label.form-label{
+label.form-label {
   color: white;
 }
 
-#loginheader{
+#loginheader {
   color: white;
 }
 
@@ -57,8 +57,7 @@ label.form-label{
     color: white;
   }
 
-
-/* .modal {
+  /* .modal {
   max-width: 600px;
   justify-content: center;
   margin: auto;
@@ -67,7 +66,7 @@ label.form-label{
 
 @media (min-width: 768px) {
   .Login form {
-    height:530px;
+    height: 530px;
     justify-content: center;
     margin: auto;
     width: 530px;
@@ -75,7 +74,7 @@ label.form-label{
 }
 
 @media (min-width: 992px) {
-    .nav-item button.btn.btn{
-       margin-right: 10px; 
-    }
+  .nav-item button.btn.btn {
+    margin-right: 10px;
+  }
 }

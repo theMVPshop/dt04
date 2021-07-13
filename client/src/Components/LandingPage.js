@@ -1,16 +1,17 @@
 import React from "react";
-import JobResults from "./JobResults"
-import "./Landingpage.css"
+import JobResults from "./JobResults";
+import "./Landingpage.css";
 
-
-const LandingPage = (props)=> {
-  const {indeedJobs,  
-        usaJobs, 
-        searchParams, 
-        setSearchParams, 
-        fetchAllJobs,
-        userId,
-        login} = props
+const LandingPage = (props) => {
+  const {
+    indeedJobs,
+    usaJobs,
+    searchParams,
+    setSearchParams,
+    fetchAllJobs,
+    userId,
+    login,
+  } = props;
 
   const handleChange = (e) => {
     const newState = { ...searchParams };
@@ -62,41 +63,45 @@ const LandingPage = (props)=> {
         </form>
       </div>
       <div className="jobs-landing-main-bg">
-        <JobResults indeedJobs={indeedJobs} usaJobs={usaJobs} login={login} userId={userId}/>
+        <JobResults
+          indeedJobs={indeedJobs}
+          usaJobs={usaJobs}
+          login={login}
+          userId={userId}
+        />
       </div>
-      <div >
-
-      <div id="contactSection">
-      <footer id="businfo">
-        <article id="info">
-          OFFICE INFO
-          <p>
-            Medical Job Search Location 1356 Congress Avenue Austin, Texas 78701
-            (512) 343-0001 (office)
-          </p>
-        </article>
-        <article id="social">
-          Social Media
-          <p>
-            Twitter- @MedicalAssistantJobSearch
-            Facebook-FB.com/MedicalAssistantJobSearch Instagram @Medical
-            AssistanceJob Search Youtube Youtube.com/MedicalAssistantJobSearch
-          </p>
-        </article>
-      </footer>
-      <div id="contactform">
-        <form>
-          <div id="contact">Contact Us!</div>
-          <p id="name"> Name </p>
-          <input></input>
-          <p id="message">Message</p>
-          <input></input>
-        </form>
-</div>
-
+      <div>
+        <div id="contactSection">
+          <footer id="businfo">
+            <article id="info">
+              OFFICE INFO
+              <p>
+                Medical Job Search Location 1356 Congress Avenue Austin, Texas
+                78701 (512) 343-0001 (office)
+              </p>
+            </article>
+            <article id="social">
+              Social Media
+              <p>
+                Twitter- @MedicalAssistantJobSearch
+                Facebook-FB.com/MedicalAssistantJobSearch Instagram @Medical
+                AssistanceJob Search Youtube
+                Youtube.com/MedicalAssistantJobSearch
+              </p>
+            </article>
+          </footer>
+          <div id="contactform">
+            <form>
+              <div id="contact">Contact Us!</div>
+              <p id="name"> Name </p>
+              <input></input>
+              <p id="message">Message</p>
+              <input></input>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-      </div>
   );
 };
 
