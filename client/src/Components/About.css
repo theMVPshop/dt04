@@ -20,7 +20,10 @@
 }
 .container p{
 color:rgb(12, 145, 165);
-align-content: center;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
 }
 
 
@@ -38,7 +41,7 @@ justify-content: space-between;
 
 
 .Gallery {
-  align-content: left;
+  text-align: center;
   background-color: lightblue;
   justify-content: space-between;
   padding-top: 20px;
@@ -48,6 +51,9 @@ justify-content: space-between;
   display: flex;
   overflow: hidden;
   float: bottom;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 }
 
@@ -71,7 +77,13 @@ justify-content: space-between;
   font-size: 18px;
   padding: 5px;
   box-sizing: border-box;
-  text-align: middle;
+  text-align: justify;
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
   }
 
 
@@ -84,8 +96,6 @@ justify-content: space-between;
 
 
        
-   h1 {
-    font-family: 'Bree Serif', serif;
-   }
+   
 
 
