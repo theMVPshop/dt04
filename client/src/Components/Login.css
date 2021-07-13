@@ -52,7 +52,7 @@ label.form-label{
     margin: auto;
     width: 270px;
   }
-  h4 {
+  #loginheader {
     text-align: center;
     color: white;
   }

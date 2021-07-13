@@ -3,14 +3,10 @@
 
 .about {
   text-align: center;
-  align-items: center;
-  justify-self: center;
-  justify-content: space-between;
   place-items: center;
   vertical-align: center;
   line-height: 100%;
   margin: auto;
-  position: absolute;
   color: white;
 }
 
@@ -33,25 +29,21 @@ position: left;
 text-align: left;
 display: grid;
 justify-content: space-between;
+
 }
 
 
 .Gallery {
-  align-content: center;
   justify-content: center;
   background-color: lightblue;
   padding: 20px;
-  display: flex;
-  overflow: hidden;
-  /* float: bottom; */
-  /* grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); */
-  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  display: block;
 }
 
 img {
   max-height: 250px;
   max-width: 250px;
-  position: relative;
   margin: 10px 15px 15px 10px;
  justify-content: center;
 }
