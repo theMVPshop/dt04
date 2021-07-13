@@ -52,7 +52,7 @@ function Login({ user, setUser, setLogin }) {
             <div>
               <div className="Login">
                 <Form onSubmit={handleSubmit}>
-                  <h4>Sign In</h4>
+                  <h4 id="loginheader">Sign In</h4>
                   <div className="Username">
                     <Form.Group size="lg" controlId="email">
                       <Form.Label>Email</Form.Label>

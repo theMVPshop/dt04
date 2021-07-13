@@ -45,7 +45,8 @@ const About = () => {
         <img id="connorimg" src={Connor} alt="Connor" />
         <img src={Greta} alt="Greta" />
       </div>
-     </div>
+      </div>
+
 
   );
 };
