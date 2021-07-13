@@ -44,6 +44,7 @@
 
 .Gallery {
   align-content: center;
+  justify-content: center;
   background-color: lightblue;
   padding: 20px;
   display: flex;
@@ -56,11 +57,9 @@
 img {
   max-height: 250px;
   max-width: 250px;
-  /* align-content: top;
-  text-align: left;
-  float: left; */
   position: relative;
   margin: 10px 15px 15px 10px;
+  justify-content: center;
 }
 
 p {
