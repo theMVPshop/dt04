@@ -1,30 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
 .about {
-  text-align: center;
-  align-items: center;
-  justify-self: center;
-  justify-content: space-between;
-  place-items: center;
-  vertical-align: center;
-  line-height: 100%;
-  margin: auto;
-  position: absolute;
-  color: white;
-}
-
-#connorimg{
-  width: 300px;
-}
+    text-align: center;
+    align-items: center;
+    justify-self: center;
+    justify-content: space-between;
+    place-items: center;
+    vertical-align: center;
+    line-height: 100%;
+    margin:auto;
+    position: absolute;
+    color:rgb(13, 45, 227);
+  }
 
 .container {
-  background-color:white;
+  background-color:lightblue;
   margin-top: 8rem;
   
 }
 .container p{
-color:black;
+color:rgb(12, 145, 165);
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
 }
 
 
@@ -40,26 +39,36 @@ justify-content: space-between;
 }
 
 
+
 .Gallery {
-  align-content: center;
+  text-align: center;
   background-color: lightblue;
-  padding: 20px;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
   display: flex;
   overflow: hidden;
   float: bottom;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-  width: 100%;
 }
 
-img {
-  max-height: 250px;
-  max-width: 250px;
-  position: relative;
-  margin: 10px 15px 15px 10px;
-}
+   img {
+   max-height: 150px;
+   max-width: 150px;
+   align-content: top;
+   text-align: left;
+   float: left;
+   position: relative;
+   margin: 10px 15px 15px 10px;
 
-
-  margin-top:3rem; 
+   }
+        
+  p {
   font-family: 'Bree Serif', serif;
   color:#ffffff;
   font-display: center;
@@ -68,39 +77,19 @@ img {
   font-size: 18px;
   padding: 5px;
   box-sizing: border-box;
-  text-align: middle;
-}
-
-.bg-div {
-  overflow: hidden;
-}
-
-h1 {
-  font-family: "Bree Serif", serif;
-}
-
-@media (max-width: 474px) {
-  #navbar{
-   width: 100%;
+  text-align: justify;
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
   }
-}
 
-@media(min-width: 574px){
-.Gallery{
-  display: block;
 
-}}
-
-/* @media (min-width: 768px) {
-  #navbar{
-    width: 100%;
+  .bg-div {
+    overflow: hidden;
    }
-}
-
-@media (min-width: 992px) {
-  #navbar{
-    width: 100%;
-   }
-} */
-
-
+  nav {
+  float: right;
+       }
