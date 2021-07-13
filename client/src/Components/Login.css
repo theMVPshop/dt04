@@ -36,24 +36,36 @@
   width: 65%;
 }
 
-@media (min-width: 994px) and (max-width: 1398px) {
+@media (max-width: 574px) {
   .Login form {
-    padding: 5px 20px 20px 20px;
+    height: 500px;
+    justify-content: center;
+    margin: auto;
+    width: 270px;
+  }
+  h4 {
+    text-align: center;
+  }
+
+
+/* .modal {
+  max-width: 600px;
+  justify-content: center;
+  margin: auto;
+} */
+}
+
+@media (min-width: 768px) {
+  .Login form {
+    height: 500px;
+    justify-content: center;
+    margin: auto;
+    width: 550px;
   }
 }
 
-@media (min-width: 400px) and (max-width: 766px) {
-  .Login form {
-    max-width: 400px;
-    height: 500px;
-    padding: 10px;
-  }
-
-  .Signup {
-    justify-content: center;
-    margin: auto;
-    padding: 0px 0;
-    height: 100%;
-    width: 100%;
-  }
+@media (min-width: 992px) {
+    .nav-item button.btn.btn{
+       margin-right: 10px; 
+    }
 }
