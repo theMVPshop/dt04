@@ -12,7 +12,7 @@
   justify-content: center;
   margin: auto;
   max-width: 320px;
-  height: 600px;
+  height: 530px;
   background-image: linear-gradient(130deg, #6250a6, #59fad2);
 }
 
@@ -34,17 +34,27 @@
   padding: 0px 0;
   height: 100%;
   width: 65%;
+  color: white;
 }
 
-@media (max-width: 574px) {
+label.form-label{
+  color: white;
+}
+
+h4{
+  color: white;
+}
+
+@media (max-width: 575px) {
   .Login form {
-    height: 500px;
+    height: 530px;
     justify-content: center;
     margin: auto;
     width: 270px;
   }
   h4 {
     text-align: center;
+    color: white;
   }
 
 
@@ -57,10 +67,10 @@
 
 @media (min-width: 768px) {
   .Login form {
-    height: 500px;
+    height:530px;
     justify-content: center;
     margin: auto;
-    width: 550px;
+    width: 530px;
   }
 }
 
