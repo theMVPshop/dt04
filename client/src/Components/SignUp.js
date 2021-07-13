@@ -16,7 +16,8 @@ const SignUp = ({ user, setUser }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = {
+
+    axios.post('/api/users/signup', {
       email,
       password,
       firstName,
@@ -25,16 +26,10 @@ const SignUp = ({ user, setUser }) => {
       zipcode,
       city,
       state,
-    };
-    console.log(payload);
-
-    axios
-      .post("/api/users/signup", { ...payload })
-      .then((res) => {
-        console.log("signup res: ", res);
-        console.log("signup res.data: ", res.data);
-      })
-      .catch((err) => console.log(err));
+    }).then(res => { 
+      console.log("signup res: ", res) 
+      console.log("signup res.data: ",res.data) 
+    }).catch(err => console.log(err))
   };
 
   return (

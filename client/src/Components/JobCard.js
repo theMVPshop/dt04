@@ -24,20 +24,15 @@ const JobCard = ({ key, job, userId, login, page, setSaved }) => {
       Company: {job.companyName} Location: {job.location}
       {"\n"}
       <p>Description: {job.description}</p>
-      <div className="jobButtons">
-        <a href={job.link}>Learn More</a>
-        {page === "search" && (
-          <FavoriteButton job={job} userId={userId} login={login} />
-        )}
-        {page === "profile" && (
-          <button
-            onClick={() => {
-              removeFavorite(job);
-            }}
-          >
-            Remove
-          </button>
-        )}
+      <div className='jobButtons'>
+        <a target="_blank" href={job.link}>View Post</a>
+        {/* Tabled for v1.1 where we will need login and resume more */}
+        {/* {page === 'search' &&
+          <FavoriteButton job={job} userId={userId} login={login}/>
+        }
+        {page === 'profile' && 
+          <button onClick={() => {removeFavorite(job)}}>Remove</button>
+        } */}
       </div>
     </li>
   );

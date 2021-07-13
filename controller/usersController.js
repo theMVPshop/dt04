@@ -38,10 +38,6 @@ const handleErrors = (err) => {
 
 const maxAge = 3 * 24 * 60 * 60;
 
-module.exports.signup_get = async (req, res) => {
-  res.render("signup");
-};
-
 module.exports.signup_post = async (req, res) => {
   const {
     email,
@@ -76,15 +72,18 @@ module.exports.signup_post = async (req, res) => {
   }
 };
 
+// module.exports.user_post = async (req, res) => {
+//   const { user } = req.body
 
-module.exports.login_get = async (req, res) => {
-  try{
-    console.log("backend user get success")
-  }
-  catch (err) {
-    console.log("backend user get failure: ", err)
-  }
-};
+//   try {
+//     const person = await User.findOne({ _id: user })
+//     res.json({ person })
+//   }
+//   catch (err) {
+//     const errors = handleErrors(err);
+//     res.sendStatus(400).json({ errors });
+//   }
+// }
 
 module.exports.login_post = async (req, res) => {
   const { email } = req.body;

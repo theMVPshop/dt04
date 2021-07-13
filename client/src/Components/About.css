@@ -13,10 +13,6 @@
   width: 300px;
 }
 
-.container p {
-  color: white;
-}
-
 .OurLogo {
   justify-content: left;
   align-content: space-between;
@@ -76,15 +72,3 @@ h1 {
     display: block;
   }
 }
-
-/* @media (min-width: 768px) {
-  #navbar{
-    width: 100%;
-   }
-}
-
-@media (min-width: 992px) {
-  #navbar{
-    width: 100%;
-   }
-} */
