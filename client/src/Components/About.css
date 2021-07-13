@@ -18,13 +18,9 @@
   width: 300px;
 }
 
-.container {
-  background-color:white;
-  margin-top: 8rem;
-  
-}
+
 .container p{
-color:black;
+color: white;
 }
 
 
@@ -47,8 +43,8 @@ justify-content: space-between;
   padding: 20px;
   display: flex;
   overflow: hidden;
-  float: bottom;
-  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  /* float: bottom; */
+  /* grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); */
   width: 100%;
 }
 
@@ -57,7 +53,7 @@ img {
   max-width: 250px;
   position: relative;
   margin: 10px 15px 15px 10px;
-  justify-content: center;
+ justify-content: center;
 }
 
 p {
