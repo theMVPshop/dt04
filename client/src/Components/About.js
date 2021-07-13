@@ -70,7 +70,7 @@ Medical Assistance team</p>
         <img id="connorimg" src={Connor} alt="Connor" />
         <img src={Greta} alt="Greta" />
       </div>
-
+     </div>
 
   );
 };
