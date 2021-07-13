@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
 .about {
   text-align: center;
@@ -15,10 +14,6 @@
 }
 
 
-.container p{
-color: white;
-}
-
 
 
 .OurLogo {
@@ -31,6 +26,7 @@ display: grid;
 justify-content: space-between;
 
 }
+
 
 
 .Gallery {
@@ -74,25 +70,11 @@ h1 {
 @media (max-width: 474px) {
   #navbar{
    width: 100%;
-  }
-}
 
+  }
+  
 @media(min-width: 574px){
 .Gallery{
   display: block;
 
 }}
-
-/* @media (min-width: 768px) {
-  #navbar{
-    width: 100%;
-   }
-}
-
-@media (min-width: 992px) {
-  #navbar{
-    width: 100%;
-   }
-} */
-
-
