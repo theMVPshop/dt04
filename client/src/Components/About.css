@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 
-/* .container{
-  margin-top: 50px;
-} */
 
 .about {
   text-align: center;
@@ -21,26 +18,27 @@
   width: 300px;
 }
 
-
-.OurLogo {
-  justify-content: left;
-  align-content: space-between;
-  align-items: left;
-  position: left;
-  text-align: left;
-  display: grid;
-  justify-content: space-between;
+.container {
+  background-color:white;
+  margin-top: 8rem;
+  
+}
+.container p{
+color:black;
 }
 
+
+
 .OurLogo {
-  justify-content: left;
-  align-content: space-between;
-  align-items: left;
-  position: left;
-  text-align: left;
-  display: grid;
-  justify-content: space-between;
+justify-content: left;
+align-content: space-between;
+align-items: left;
+position: left;
+text-align: left;
+display: grid;
+justify-content: space-between;
 }
+
 
 .Gallery {
   align-content: center;

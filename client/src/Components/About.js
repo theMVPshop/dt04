@@ -15,6 +15,7 @@ import "./About.css";
 const About = () => {
   return (
     <div className="about">
+
       <body>
        
 <div className="container">
@@ -45,7 +46,7 @@ const About = () => {
         <img id="connorimg" src={Connor} alt="Connor" />
         <img src={Greta} alt="Greta" />
       </div>
-    </div>
+
   );
 };
 
