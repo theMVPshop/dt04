@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 
 .about {
+
     text-align: center;
     align-items: center;
     justify-self: center;
@@ -23,24 +24,32 @@ display: flex;
 justify-content: center;
 text-align: center;
 align-items: center;
+
+  text-align: center;
+  place-items: center;
+  vertical-align: center;
+  line-height: 100%;
+  margin: auto;
+  color: white;
+
 }
 
-
+#connorimg {
+  width: 300px;
+}
 
 .OurLogo {
-justify-content: left;
-align-content: space-between;
-align-items: left;
-position: left;
-text-align: left;
-display: grid;
-justify-content: space-between;
+  justify-content: left;
+  align-content: space-between;
+  align-items: left;
+  position: left;
+  text-align: left;
+  display: grid;
+  justify-content: space-between;
 }
 
-
-
 .Gallery {
-  text-align: center;
+  justify-content: center;
   background-color: lightblue;
   justify-content: center;
   padding-top: 20px;
@@ -53,42 +62,49 @@ justify-content: space-between;
   margin-bottom: .5rem;
   font-weight: 500;
   line-height: 1.2;
+  padding: 20px;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  display: block;
 }
 
-   img {
-   max-height: 150px;
-   max-width: 150px;
-   align-content: top;
-   text-align: left;
-   float: left;
-   position: relative;
-   margin: 10px 15px 15px 10px;
+img {
+  max-height: 250px;
+  max-width: 250px;
+  margin: 10px 15px 15px 10px;
+  justify-content: center;
+}
 
-   }
-        
-  p {
-  font-family: 'Bree Serif', serif;
-  color:#ffffff;
+p {
+  font-family: "Bree Serif", serif;
   font-display: center;
   align-content: center;
   justify-content: center;
   font-size: 18px;
   padding: 5px;
   box-sizing: border-box;
-  text-align: justify;
-  width: fit-content;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
+  text-align: middle;
+}
+
+.container {
+  color: white;
+}
+
+.bg-div {
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Bree Serif", serif;
+}
+
+@media (max-width: 474px) {
+  #navbar {
+    width: 100%;
   }
+}
 
-
-  .bg-div {
-    overflow: hidden;
-   }
-  nav {
-  float: right;
-       }
+@media (min-width: 574px) {
+  .Gallery {
+    display: block;
+  }
+}
