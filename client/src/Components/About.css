@@ -1,12 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 
 .about {
+
+    text-align: center;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    place-items: center;
+    vertical-align: center;
+    line-height: 100%;
+    margin:auto;
+    color:rgb(13, 45, 227);
+  }
+
+.container {
+  background-color:lightblue;
+  margin-top: 8rem;
+  
+}
+.container p{
+color:rgb(12, 145, 165);
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+
   text-align: center;
   place-items: center;
   vertical-align: center;
   line-height: 100%;
   margin: auto;
   color: white;
+
 }
 
 #connorimg {
@@ -26,6 +51,17 @@
 .Gallery {
   justify-content: center;
   background-color: lightblue;
+  justify-content: center;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  display: flex;
+  overflow: hidden;
+  float: bottom;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
   padding: 20px;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   display: block;
