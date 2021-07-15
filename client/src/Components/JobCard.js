@@ -1,10 +1,10 @@
 import React from "react";
 import "./JobCard.css";
-import FavoriteButton from "./FavoriteButton";
+// import FavoriteButton from "./FavoriteButton";
 import Axios from "axios";
 
-const JobCard = ({ key, job, userId, login, page, setSaved }) => {
-  const removeFavorite = (job) => {
+const JobCard = ({ bey, job, userId, login, page, setSaved }) => {
+  
     console.log(job);
     Axios.delete(`/api/users/saved/`, {
       job: job,
@@ -15,17 +15,17 @@ const JobCard = ({ key, job, userId, login, page, setSaved }) => {
       setSaved(results);
       // fetchSavedJobs()
     });
-  };
+  ;
 
   return (
-    <li key={key} className="jobCard">
+    <li key={bey} className="jobCard">
       <h4>{job.positionTitle}</h4>
       {"\n"}
       Company: {job.companyName} Location: {job.location}
       {"\n"}
       <p>Description: {job.description}</p>
       <div className='jobButtons'>
-        <a target="_blank" href={job.link}>View Post</a>
+        <a target="_blank" rel="noreferrer" href={job.link}>View Post</a>
         {/* Tabled for v1.1 where we will need login and resume more */}
         {/* {page === 'search' &&
           <FavoriteButton job={job} userId={userId} login={login}/>

@@ -2,8 +2,8 @@ import React from "react";
 import JobCard from "./JobCard";
 
 const JobResults = (props) => {
-  const { indeedJobs, usaJobs, userId, login } = props;
-  console.log("job results user: ", userId);
+  const { indeedJobs, usaJobs} = props;
+  // console.log("job results user: ", userId);
 
   return (
     <div>
@@ -13,8 +13,8 @@ const JobResults = (props) => {
             <JobCard
               key={idx}
               job={job}
-              userId={userId}
-              login={login}
+              // userId={userId}
+              // login={login}
               page={"search"}
             />
           ))}
@@ -23,8 +23,8 @@ const JobResults = (props) => {
             <JobCard
               key={idx}
               job={job}
-              userId={userId}
-              login={login}
+              // userId={userId}
+              // login={login}
               page={"search"}
             />
           ))}

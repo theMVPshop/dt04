@@ -1,32 +1,32 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 
 import About from "./Components/About";
 import LandingPage from "./Components/LandingPage";
-import Login from "./Components/Login";
-import SignUp from "./Components/SignUp";
-import ResumeCreation from "./Components/ResumeCreation";
-import ResumeView from "./Components/ResumeView";
-import Navigation from "./Components/Navigation";
-import Profile from "./Components/Profile";
+// import Login from "./Components/Login";
+// import SignUp from "./Components/SignUp";
+// import ResumeCreation from "./Components/ResumeCreation";
+// import ResumeView from "./Components/ResumeView";
+// import Navigation from "./Components/Navigation";
+// import Profile from "./Components/Profile";
 import "./App.css";
-import cookie from "cookie";
+// import cookie from "cookie";
 import jQuery from "jquery";
 import axios from "axios";
 
-const checkAuth = () => {
-  const cookies = cookie.parse(document.cookie);
-  return cookies["loggedIn"] ? true : false;
-};
+// const checkAuth = () => {
+//   const cookies = cookie.parse(document.cookie);
+//   return cookies["loggedIn"] ? true : false;
+// };
 
 const App = () => {
-  const [login, setLogin] = useState(false);
-  const [userId, setUserId] = useState(null);
+  // const [login, setLogin] = useState(false);
+  // const [userId, setUserId] = useState(null);
   const [indeedJobs, setIndeed] = useState([]);
   const [usaJobs, setUSA] = useState([]);
   const [searchParams, setSearchParams] = useState({
@@ -34,9 +34,9 @@ const App = () => {
     location: "",
   });
 
-  useEffect(() => {
-    console.log("app userId :", userId);
-  }, [userId, setUserId]);
+  // useEffect(() => {
+  //   console.log("app userId :", userId);
+  // }, [userId, setUserId]);
 
   var JQUERYconvertRSS;
   var normalizedJobs = [];
@@ -98,7 +98,7 @@ const App = () => {
 
     JQUERYconvertRSS({
       FeedUrl: `https://rss.indeed.com/rss?${searchArray}`,
-      MaxCount: 120,
+      MaxCount: 420,
     });
   };
 
@@ -170,34 +170,34 @@ const App = () => {
     fetchUSAJobs();
   };
 
-  const ProtectedRoute = ({ component: Component, ...rest }) => {
-    return (
-      <Route
-        {...rest}
-        render={(props) =>
-          checkAuth() ? (
-            <Component
-              {...props}
-              user={userId}
-              setUser={(userId) => setUserId(userId)}
-            />
-          ) : (
-            <Redirect to="/login" />
-          )
-        }
-      />
-    );
-  };
+  // const ProtectedRoute = ({ component: Component, ...rest }) => {
+  //   return (
+  //     <Route
+  //       {...rest}
+  //       render={(props) =>
+  //         checkAuth() ? (
+  //           <Component
+  //             {...props}
+  //             user={userId}
+  //             setUser={(userId) => setUserId(userId)}
+  //           />
+  //         ) : (
+  //           <Redirect to="/login" />
+  //         )
+  //       }
+  //     />
+  //   );
+  // };
 
   return (
     <Fragment>
       <Router>
-        <Navigation
+        {/* <Navigation
           user={userId}
           setUser={(userId) => setUserId(userId)}
           login={login}
           setLogin={setLogin}
-        />
+        /> */}
 
         <Switch>
           <Route
@@ -210,39 +210,39 @@ const App = () => {
                 searchParams={searchParams}
                 setSearchParams={setSearchParams}
                 fetchAllJobs={fetchAllJobs}
-                userId={userId}
-                setUserId={setUserId}
-                login={login}
+                // userId={userId}
+                // setUserId={setUserId}
+                // login={login}
               />
             )}
           />
           <Route exact path="/about" component={About}></Route>
-          <Route
+          {/* <Route
             exact
             path="/login"
             render={() => (
               <Login user={userId} setUser={(userId) => setUserId(userId)} />
             )}
-          />
-          <Route
+          /> */}
+          {/* <Route
             exact
             path="/signUp"
             render={() => (
               <SignUp user={userId} setUser={(userId) => setUserId(userId)} />
             )}
-          />
-          <Route
+          /> */}
+          {/* <Route
             exact
             path="/profile"
             render={() => <Profile user={userId} />}
-          />
+          /> */}
 
-          <ProtectedRoute
+          {/* <ProtectedRoute
             exact
             path="/resumecreation"
             component={ResumeCreation}
           />
-          <ProtectedRoute exact path="/resumeview" component={ResumeView} />
+          <ProtectedRoute exact path="/resumeview" component={ResumeView} /> */}
         </Switch>
       </Router>
     </Fragment>
