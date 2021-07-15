@@ -13,12 +13,11 @@ import SignUp from "./Components/SignUp";
 import ResumeCreation from "./Components/ResumeCreation";
 import ResumeView from "./Components/ResumeView";
 import Navigation from "./Components/Navigation";
-import Profile from "./Components/Profile"
+import Profile from "./Components/Profile";
 import "./App.css";
 import cookie from "cookie";
 import jQuery from "jquery";
 import axios from "axios";
-
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
@@ -26,18 +25,18 @@ const checkAuth = () => {
 };
 
 const App = () => {
-  const [login, setLogin] = useState(false)
-  const [userId, setUserId] = useState(null)
-  const [indeedJobs, setIndeed] = useState([])
-  const [usaJobs, setUSA] = useState([])
+  const [login, setLogin] = useState(false);
+  const [userId, setUserId] = useState(null);
+  const [indeedJobs, setIndeed] = useState([]);
+  const [usaJobs, setUSA] = useState([]);
   const [searchParams, setSearchParams] = useState({
     title: "",
     location: "",
   });
 
   useEffect(() => {
-    console.log("app userId :", userId)
-  }, [userId, setUserId])
+    console.log("app userId :", userId);
+  }, [userId, setUserId]);
 
   var JQUERYconvertRSS;
   var normalizedJobs = [];
@@ -193,7 +192,12 @@ const App = () => {
   return (
     <Fragment>
       <Router>
-        <Navigation user={userId} setUser={userId => setUserId(userId)} login={login} setLogin={setLogin}/>
+        <Navigation
+          user={userId}
+          setUser={(userId) => setUserId(userId)}
+          login={login}
+          setLogin={setLogin}
+        />
 
         <Switch>
           <Route
@@ -227,10 +231,11 @@ const App = () => {
               <SignUp user={userId} setUser={(userId) => setUserId(userId)} />
             )}
           />
-          <Route exact path="/profile" render={() =>
-            <Profile
-            user={userId} />}
-           />
+          <Route
+            exact
+            path="/profile"
+            render={() => <Profile user={userId} />}
+          />
 
           <ProtectedRoute
             exact
@@ -238,7 +243,6 @@ const App = () => {
             component={ResumeCreation}
           />
           <ProtectedRoute exact path="/resumeview" component={ResumeView} />
-            
         </Switch>
       </Router>
     </Fragment>
