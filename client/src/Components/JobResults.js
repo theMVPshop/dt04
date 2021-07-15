@@ -1,5 +1,6 @@
 import React from "react";
 import JobCard from "./JobCard";
+import "./JobCard.css"
 
 const JobResults = (props) => {
   const { indeedJobs, usaJobs} = props;

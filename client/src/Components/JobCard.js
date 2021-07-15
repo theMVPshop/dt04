@@ -15,9 +15,7 @@ const JobCard = ({ bey, job, userId, login, page, setSaved }) => {
       setSaved(results);
       // fetchSavedJobs()
     });
-
-  };
-  
+  ;
 
   return (
     <li key={bey} className="jobCard">
@@ -27,8 +25,7 @@ const JobCard = ({ bey, job, userId, login, page, setSaved }) => {
       {"\n"}
       <p>Description: {job.description || job.UserArea.Details.MajorDuties}</p>
       <div className='jobButtons'>
-
-        <a target="_blank" rel ="noreferrer" href={job.link || job.ApplyURI}>View Post</a>
+        <a target="_blank" rel="noreferrer" href={job.link || job.ApplyURI}>View Job</a>
         {/* Tabled for v1.1 where we will need login and resume more */}
         {/* {page === 'search' &&
           <FavoriteButton job={job} userId={userId} login={login}/>
