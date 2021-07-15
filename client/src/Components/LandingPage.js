@@ -71,7 +71,7 @@ const LandingPage = (props) => {
         />
       </div>
       <div>
-        <div id="contactSection">
+        {/* <div id="contactSection">
           <footer id="businfo">
             <article id="info">
               OFFICE INFO
@@ -99,7 +99,7 @@ const LandingPage = (props) => {
               <input></input>
             </form>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

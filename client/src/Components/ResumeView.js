@@ -7,7 +7,8 @@ const ResumeView = (props) => {
   useEffect(() => {
     // const reqExp = axios.post(`/api/experience/user`, { user: props.user })
     // const reqUser = axios.post('api/users')
-    // // change to post req and see if that solves it.
+
+    // change to post req and see if that solves it.
     axios
       .post(`/api/experience/user`, { user: props.user })
       .then((res) => {
