@@ -5,7 +5,7 @@ import Keith from "../Images/Keith.png";
 import Connor from "../Images/Connor.png";
 import Greta from "../Images/Greta.png";
 import Dwaylan from "../Images/Dwaylan.png"
-import Logo from "../Images/OurLogo.png";
+
 
 // import Logo from "../Images/OurLogo.png";
 
@@ -57,14 +57,8 @@ const About = () => {
 </div>
 
 
-      <div className="Gallery">
-        <img src={Claire} alt="Claire" />
-        <img src={Austin} alt="Austin" />
-        <img src={Keith} alt="Keith" />
-        <img id="connorimg" src={Connor} alt="Connor" />
-        <img src={Greta} alt="Greta" />
-      </div>
-    </div>
+
+    
 
   );
 };
