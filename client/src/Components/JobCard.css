@@ -3,13 +3,14 @@
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #495057;
-  width: 90vw;
+  /* width: 90vw; */
   background-color: white;
   list-style: none;
   margin: auto;
   border-radius: 5px;
   margin-bottom: 2vh;
   padding: 15px;
+  height: 330px;
 }
 
 .jobCard p {
@@ -18,6 +19,12 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1em;
   color: black;
+}
+
+.jobCard:hover{
+  transform: scale(1.15);
+  transition-duration: 0.5s;
+  box-shadow: 3px 3px 15px 5px #000000;
 }
 
 .jobButtons {
@@ -36,7 +43,7 @@
   text-align: center;
   vertical-align: middle;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  box-shadow 0.15s ease-in-out;
   font-family: inherit;
   font: 400 13.3333px Arial;
   padding: 0.5rem 1rem;
@@ -44,3 +51,12 @@
   color: white;
   box-shadow: 1px 1px 3px #635ca9;
 }
+
+.results-gallery{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+
+

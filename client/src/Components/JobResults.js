@@ -1,5 +1,6 @@
 import React from "react";
 import JobCard from "./JobCard";
+import "./JobCard.css"
 
 const JobResults = (props) => {
   const { indeedJobs, usaJobs} = props;
@@ -7,7 +8,7 @@ const JobResults = (props) => {
 
   return (
     <div>
-      <ul className="gallery">
+      <ul className="results-gallery">
         {indeedJobs &&
           indeedJobs.map((job, idx) => (
             <JobCard
