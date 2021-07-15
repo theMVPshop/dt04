@@ -5,7 +5,6 @@ import Keith from "../Images/Keith.png";
 import Connor from "../Images/Connor.png";
 import Greta from "../Images/Greta.png";
 import Dwaylan from "../Images/Dwaylan.png"
-import Logo from "../Images/OurLogo.png";
 import "./About.css";
 
 <style>
@@ -19,6 +18,7 @@ const About = () => {
 
       <body>
        
+
 <div className="container">
         <p>
           Welcome to the Medical Assistant Program, your number one source for
