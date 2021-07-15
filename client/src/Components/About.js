@@ -4,6 +4,7 @@ import Austin from "../Images/Austin.png";
 import Keith from "../Images/Keith.png";
 import Connor from "../Images/Connor.png";
 import Greta from "../Images/Greta.png";
+import Dwaylan from "../Images/Dwaylan.png"
 // import Logo from "../Images/OurLogo.png";
 import "./About.css";
 
@@ -37,14 +38,24 @@ const About = () => {
           </p>
         </div>
       </body>
-      <div className="Gallery">
-        <img src={Claire} alt="Claire" />
-        <img src={Austin} alt="Austin" />
-        <img src={Keith} alt="Keith" />
-        <img id="connorimg" src={Connor} alt="Connor" />
-        <img src={Greta} alt="Greta" />
-      </div>
-    </div>
+
+
+
+
+      <div className ="Gallery">
+         <img src={Claire} alt="Claire"/>
+         <img src={Austin} alt="Austin"/>
+         <img src={Keith}  alt="Keith"/>
+         <img src={Connor} alt="Connor"/>
+         <img src={Dwaylan} alt="Dwaylan"/>
+         <img src={Greta} alt ="Greta"/>
+       </div>
+      
+</div>
+
+
+
+   
   );
 };
 
