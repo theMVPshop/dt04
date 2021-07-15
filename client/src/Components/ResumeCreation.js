@@ -23,14 +23,16 @@ const ResumeCreation = ({ user, setUser }) => {
     console.log(payload);
     axios
       .post("/api/experience", {
-
-        ...payload
+        ...payload,
       })
-      .then(res => {
-        console.log("resumeCreatioin response: ", res);
-      }, (error) => {
-        console.log("resumeCreation err: ", error);
-      })
+      .then(
+        (res) => {
+          console.log("resumeCreatioin response: ", res);
+        },
+        (error) => {
+          console.log("resumeCreation err: ", error);
+        }
+      )
       .then(
         (res) => {
           console.log(res);
