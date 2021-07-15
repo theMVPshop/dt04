@@ -7,7 +7,7 @@ const JobResults = (props) => {
 
   return (
     <div>
-      <ul className="gallery">
+      <ul className="results-gallery">
         {indeedJobs &&
           indeedJobs.map((job, idx) => (
             <JobCard 
