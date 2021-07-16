@@ -1,6 +1,10 @@
 import React from "react"
 import JobCard from './JobCard'
 
+
+
+
+
 const JobResults = (props) => {
   const {indeedJobs, usaJobs, userId, login} = props
   console.log("job results user: ", userId)
