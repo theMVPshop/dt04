@@ -6,60 +6,12 @@
   color: #61dafb;
 }
 
-.Login {
-  justify-content: center;
-  margin: auto;
-  height: 100%;
-  background-color: none;
-}
-
-.Login form {
-  padding: 15px;
-  border: solid;
-  border-radius: 25px;
-  justify-content: center;
-  margin: auto;
-  max-width: 320px;
-  height: 600px;
-  background-image: linear-gradient(130deg, #6250a6, #59fad2);
-}
-
 .Username {
   padding: 19px;
   margin-top: 75px;
 }
-.Signup {
-  justify-content: center;
-  margin: auto;
-  padding: 0px 0;
-  height: 100%;
-  width: 20%;
-}
 
-.Signup h4 {
-  justify-content: center;
-  margin: auto;
-  padding: 0 0 15px 65px;
-}
 
-.Login button {
-  margin: auto;
-  width: 250px;
-  justify-content: center;
-  border-radius: 50px;
-}
-
-.Login p.signuptext {
-  justify-content: center;
-  margin: auto;
-  padding: 0px 0;
-  height: 100%;
-  width: 70%;
-}
-
-.signin {
-  text-size-adjust: 25px;
-}
 
 .resume {
   justify-content: center;
@@ -70,11 +22,10 @@
 }
 
 #NavBar {
-min-width: 100%;
-background-color: white;
-box-shadow: 3px 3px 10px #615B5B;
-max-height: 80px;
-justify-content: space-between;
+  background-color: white;
+  box-shadow: 3px 3px 10px #615b5b;
+  max-height: 80px;
+  justify-content: space-between;
 }
 
 .nav-button {
@@ -90,8 +41,7 @@ justify-content: space-between;
   background-color: linear-gradient(130deg, #6250a6, #59fad2) important!;
 }
 
-
-div.logout.nav-button{
+div.logout.nav-button {
   height: 40px;
   cursor: pointer;
   margin: 8px 0 0 7px;
@@ -124,7 +74,7 @@ MODAL STYLING .modal-dialog.modal-lg {
   max-width: 50px;
 }
 
-.Logo{
+.Logo {
   max-width: 100%;
 }
 
@@ -132,9 +82,9 @@ body {
   background-image: linear-gradient(130deg, #6250a6, #59fad2);
   background-attachment: fixed;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: #615B5B;
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #615b5b;
 }
 
 html,
@@ -180,10 +130,7 @@ header,
 }
 
 @media (min-width: 994px) and (max-width: 1398px) {
-  
-  .NavBar{
+  .NavBar {
     justify-content: space-between;
   }
 }
-
-

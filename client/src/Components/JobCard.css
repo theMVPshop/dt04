@@ -1,5 +1,7 @@
-.jobCard{
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+.jobCard {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #495057;
   /* width: 90vw; */
   background-color: white;
@@ -11,12 +13,16 @@
 }
 
 .jobCard p {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1em;
   color:black;
+
+
 }
 
-.jobButtons{
+.jobButtons {
   display: flex;
   justify-content: space-between;
 }
@@ -25,13 +31,14 @@
   color: #635ca9;
 }
 
-.jobButtons button{
+.jobButtons button {
   border-radius: 10px;
-  background-color: #04A7D5;
+  background-color: #04a7d5;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   font-family: inherit;
   font: 400 13.3333px Arial;
   padding: 0.5rem 1rem;
