@@ -40,7 +40,8 @@ const About = () => {
             turn our passion into our own website. We hope you enjoy our Medical
             Assistance job search website as much as we enjoy offering it to
             you. If you have any questions or comments, please don't hesitate to
-            contact us. All the best, Medical Assistance team
+            contact us. 
+            All the best, Medical Assistance team.
           </p>
         </div>
       </body>
