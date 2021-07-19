@@ -32,9 +32,6 @@ color: white;
 
 }
 
-#connorimg {
-  width: 300px;
-}
 
 .OurLogo {
   justify-content: left;
@@ -66,8 +63,8 @@ color: white;
 }
 
 img {
-  max-height: 250px;
-  max-width: 250px;
+  max-height: 200px;
+  max-width: 200px;
   margin: 10px 15px 15px 10px;
   justify-content: center;
 }
@@ -81,6 +78,7 @@ p {
   padding: 5px;
   box-sizing: border-box;
   text-align: middle;
+  
 }
 
 .container {
