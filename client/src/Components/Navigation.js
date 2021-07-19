@@ -2,12 +2,10 @@ import React from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../Images/medicalJobSearch.png";
-import Login from "./Login";
+// import Login from "./Login";
 
 const Navigation = (props) => {
-  const handleLogout = () => {
-    props.setLogin(false);
-  };
+
 
   return (
     <Navbar expand="lg" sticky="top" id="NavBar">

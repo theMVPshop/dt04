@@ -66,8 +66,8 @@ const LandingPage = (props) => {
         <JobResults
           indeedJobs={indeedJobs}
           usaJobs={usaJobs}
-          login={login}
-          userId={userId}
+          // login={login}
+          // userId={userId}
         />
       </div>
       <div>
