@@ -192,13 +192,7 @@ const App = () => {
   return (
     <Fragment>
       <Router>
-        <Navigation
-          // user={userId}
-          // setUser={(userId) => setUserId(userId)}
-          // login={login}
-          // setLogin={setLogin}
-        />
-
+        <Navigation />
         <Switch>
           <Route
             exact

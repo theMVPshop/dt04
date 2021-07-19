@@ -24,13 +24,11 @@ display: flex;
 justify-content: center;
 text-align: center;
 align-items: center;
-
-  text-align: center;
-  place-items: center;
-  vertical-align: center;
-  line-height: 100%;
-  margin: auto;
-  color: white;
+text-align: center;
+place-items: center;
+vertical-align: center;
+line-height: 100%;
+color: white;
 
 }
 
