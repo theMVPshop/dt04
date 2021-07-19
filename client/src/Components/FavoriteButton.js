@@ -1,6 +1,6 @@
 import React from "react";
 import Axios from "axios";
-import SignUp from "./SignUp";
+// import SignUp from "./SignUp";
 
 const FavoriteButton = (props) => {
   console.log(props.userId);
