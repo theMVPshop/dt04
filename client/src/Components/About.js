@@ -5,10 +5,7 @@ import Keith from "../Images/Keith.png";
 import Connor from "../Images/Connor.png";
 import Greta from "../Images/Greta.png";
 import Dwaylan from "../Images/Dwaylan.png"
-
-
 // import Logo from "../Images/OurLogo.png";
-
 import "./About.css";
 
 <style>
@@ -19,9 +16,6 @@ import "./About.css";
 const About = () => {
   return (
     <div className="about">
-   
-
-    
       <body>
         <div className="container">
           <p>
@@ -45,6 +39,9 @@ const About = () => {
         </div>
       </body>
 
+
+
+
       <div className ="Gallery">
          <img src={Claire} alt="Claire"/>
          <img src={Austin} alt="Austin"/>
@@ -58,8 +55,7 @@ const About = () => {
 
 
 
-    
-
+   
   );
 };
 

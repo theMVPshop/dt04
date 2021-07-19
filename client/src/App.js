@@ -12,7 +12,7 @@ import LandingPage from "./Components/LandingPage";
 // import SignUp from "./Components/SignUp";
 // import ResumeCreation from "./Components/ResumeCreation";
 // import ResumeView from "./Components/ResumeView";
-// import Navigation from "./Components/Navigation";
+import Navigation from "./Components/Navigation";
 // import Profile from "./Components/Profile";
 import "./App.css";
 // import cookie from "cookie";
@@ -192,13 +192,7 @@ const App = () => {
   return (
     <Fragment>
       <Router>
-        {/* <Navigation
-          user={userId}
-          setUser={(userId) => setUserId(userId)}
-          login={login}
-          setLogin={setLogin}
-        /> */}
-
+        <Navigation />
         <Switch>
           <Route
             exact
