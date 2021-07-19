@@ -59,7 +59,13 @@
   grid-template-columns: repeat(3,1fr);
   grid-auto-rows: auto;
   grid-gap: 1rem;
-}
+
+.jobCard:hover {
+  transform: scale(1.15);
+  transition-duration: 0.5s;
+  box-shadow: 3px 3px 15px 5px #000000;
+ 
+
 @media screen and (max-width: 950px) {
   .results-gallery {
     display: grid;
@@ -76,5 +82,5 @@
     grid-auto-rows: auto;
     grid-gap: 1rem;
   }
-}
 
+}
