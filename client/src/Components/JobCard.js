@@ -1,3 +1,11 @@
+
+import React from "react";
+import "./JobCard.css";
+// import FavoriteButton from "./FavoriteButton";
+import Axios from "axios";
+
+
+
 const JobCard = ({ bey, job, userId, login, page, setSaved }) => {
   
   console.log(job);
